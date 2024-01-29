@@ -1,0 +1,17 @@
+<table class="">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody class="">
+      <tr class="bg-red-500 " *ngFor="let user of users">
+        <td [queryParams]={allowEdit:1} fragment="loading" [routerLink]="['/users',user.name,user.city]" class="p-3">{{ user.name }}</td>
+        <td class="p-3">{{ user.city }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <router-outlet></router-outlet>
