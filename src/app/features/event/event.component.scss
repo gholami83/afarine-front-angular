@@ -6,5 +6,34 @@
 //     font-family:'IRANYekanRegular',sans-serif ;
 // }
 .background-white{
-    background-color: #f1eef6;
+    background-color: #f9f9f9;
+}
+.background-glassy{
+    background: rgba(255, 255, 255, 0.34);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+}
+.background-glassy:hover{
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+.background-test:hover{
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+.poster-event{
+    img {
+        max-width: 100%;
+        width: 1000px;
+    }
+}
+.background-test{
+    background: rgb(247,211,0);
+    background: linear-gradient(159deg, rgba(247,211,0,1) 0%, rgba(163,177,38,1) 39%, rgba(0,111,112,1) 100%);
+}
+.background-header{
+    background-color: #f7d300;
+}
+.background-teacher{background: rgb(207,177,0);
+    background: linear-gradient(180deg, rgba(207,177,0,0.7443977591036415) 20%, rgba(0,0,0,1) 100%);
 }
