@@ -37,3 +37,51 @@
 .background-teacher{background: rgb(207,177,0);
     background: linear-gradient(180deg, rgba(207,177,0,0.7443977591036415) 20%, rgba(0,0,0,1) 100%);
 }
+.background-body{
+    background-color: #2f825a;
+}
+@media screen and (min-width:460px) {
+   .response-class{
+    grid-template-columns: repeat(2,1fr); 
+   }  
+}
+@media screen and (min-width:640px) {
+   .response-class{
+    grid-template-columns: repeat(3,1fr); 
+   }  
+}
+@media screen and (min-width:1024px) {
+   .response-class{
+    grid-template-columns: repeat(5,1fr); 
+   }  
+}
+@media screen and (min-width:1280) {
+   .response-class{
+    grid-template-columns: repeat(6,1fr); 
+   }  
+}
+@media screen and (min-width:460px) {
+   .response-users{
+    grid-template-columns: repeat(2,1fr); 
+   }  
+}
+// @media screen and (min-width:640px) {
+//    .response-users{
+//     grid-template-columns: repeat(3,1fr); 
+//    }  
+// }
+@media screen and (min-width:1024px) {
+   .response-users{
+    grid-template-columns: repeat(4,1fr); 
+   }  
+}
+@media screen and (min-width:1280) {
+   .response-users{
+    grid-template-columns: repeat(5,1fr); 
+   }  
+}
+.region-grid{
+    height: 100px;
+    background-color: aqua;
+    z-index: 1;
+}
