@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-event',
   templateUrl: './event.component.html',
   styleUrls: ['./event.component.scss']
 })
-export class EventComponent {
+export class EventComponent implements OnInit{
    public users = [
       {
         'name':'حسین غلامی',
@@ -61,4 +61,8 @@ public institutes = [
     'name':"شرکت آفرینه",
   },
 ]
+
+ngOnInit(): void {
+}
+
   }

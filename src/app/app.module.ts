@@ -13,6 +13,8 @@ import { AboutComponent } from './features/about/about.component';
 import { UserComponent } from './features/users/user/user.component';
 import { NotfoundComponent } from './features/notfound/notfound.component';
 import { EventComponent } from './features/event/event.component';
+import { EventlistComponent } from './features/eventlist/eventlist.component';
+import { EventRoutingModule } from './features/eventlist/event-routing.module';
 
 
 @NgModule({
@@ -26,11 +28,13 @@ import { EventComponent } from './features/event/event.component';
     UserComponent,
     NotfoundComponent,
     EventComponent,
+    EventlistComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    EventRoutingModule,
     AppRoutingModule
   ],
   providers: [],

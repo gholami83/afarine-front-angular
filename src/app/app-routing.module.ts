@@ -6,6 +6,7 @@ import { UserComponent } from './features/users/user/user.component';
 import { NotfoundComponent } from './features/notfound/notfound.component';
 import { AboutComponent } from './features/about/about.component';
 import { EventComponent } from './features/event/event.component';
+import { EventlistComponent } from './features/eventlist/eventlist.component';
 
 const approute: Route[] = [
   {
@@ -13,7 +14,12 @@ const approute: Route[] = [
     component: CarouselComponent,
   },
   {
-    path:'events/:id',component:EventComponent
+    path:'events',
+    component:EventlistComponent,
+  },
+  {
+    path:'events/:id',
+    component:EventComponent,
   },
   {
     path: 'users',
