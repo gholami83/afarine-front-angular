@@ -1,1 +1,28 @@
-<p>eventlist works!</p>
+<div class="flex font-site w-full h-auto">
+    <div class="grid event-grid w-full h-full xl:m-4">
+        <div *ngFor="let event of events;let index" class=" background-white shadow-lg hover:shadow-xl rounded-lg p-1 m-3">
+            <div class="block transition-card">
+                <div class="flex image-card justify-items-center items-center p-2 div-img-card">
+                    <img [src]="event.image" alt="event" class="rounded-md">
+                </div>
+                <div class="p-card relative bg-gray-200 opacity-90 -top-10 p-3 rounded-lg leading-loose">
+                    <div class="text-md text-gray-700 ">
+                        {{ event.date }}
+                    </div>
+                    <div class="text-xl text-gray-700 font-bold">
+                        {{event.name}}
+                    </div>
+                    <div class="text-md text-gray-700 ">
+                        {{event.location}}
+                    </div>
+                    <div class="text-md text-gray-700 ">
+                        {{event.price}} تومان
+                    </div>
+                    <div class="text-md text-gray-700 ">
+                        {{event.executer}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
