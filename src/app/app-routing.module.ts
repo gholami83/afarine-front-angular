@@ -5,48 +5,17 @@ import { UsersComponent } from './features/users/users.component';
 import { UserComponent } from './features/users/user/user.component';
 import { NotfoundComponent } from './features/notfound/notfound.component';
 import { AboutComponent } from './features/about/about.component';
-import { EventComponent } from './features/event/event.component';
+import { EventComponent } from './features/eventlist/event/event.component';
 import { EventlistComponent } from './features/eventlist/eventlist.component';
 
-const approute: Route[] = [
-  {
-    path: '',
-    component: CarouselComponent,
-  },
-  {
-    path:'events',
-    component:EventlistComponent,
-  },
-  // {
-  //   path:'events/:id',
-  //   component:EventComponent,
-  // },
-  {
-    path: 'users',
-    component: UsersComponent,
-    children: [
-      {
-        path: ':name/:city',
-        component: UserComponent,
-      },
-    ],
-  },
-  {
-    path: '**',
-    redirectTo:'notfound',
-  },
-  {
-    path: 'notfound',
-    component: NotfoundComponent,
-  },
-  {
-    path: 'about',
-    component: AboutComponent,
-  },
+
+const route: Routes = [
+  { path:'',component:CarouselComponent },
+  { path:"events",loadChildren: () => import('./features/eventlist/eventlist.module').then(m=>m.EventlistModule) }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(approute)],
+  imports: [RouterModule.forRoot(route)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
