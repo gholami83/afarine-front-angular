@@ -4,6 +4,9 @@ import { NgModule } from "@angular/core";
 
 
 const eventroute:Route[] =[
+  {
+    path:':id',component:EventComponent
+  }
 ]
 
 @NgModule({

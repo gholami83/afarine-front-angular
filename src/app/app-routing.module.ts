@@ -17,10 +17,10 @@ const approute: Route[] = [
     path:'events',
     component:EventlistComponent,
   },
-  {
-    path:'events/:id',
-    component:EventComponent,
-  },
+  // {
+  //   path:'events/:id',
+  //   component:EventComponent,
+  // },
   {
     path: 'users',
     component: UsersComponent,
