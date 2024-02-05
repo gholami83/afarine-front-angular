@@ -10,7 +10,7 @@ import { EventlistComponent } from './features/eventlist/eventlist.component';
 
 
 const route: Routes = [
-  { path:'',component:CarouselComponent },
+  { path:'',component:CarouselComponent,pathMatch:'full' },
   { path:"events",loadChildren: () => import('./features/eventlist/eventlist.module').then(m=>m.EventlistModule) }
 ];
 

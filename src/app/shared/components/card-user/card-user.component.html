@@ -1,0 +1,26 @@
+<div
+    class="grid grid-cols-1 response-users gap-3 sm:gap-4 xl:gap-5 justify-items-center w-full m-auto  ">
+    <div *ngFor="let user of users"
+        class="grid items-center justify-items-center justify-center col-span-1 background-white shadow-lg hover:shadow-xl rounded-lg p-4 sm:p-4 lg:px-6 xl:py-8 response-user m-auto">
+        <div class="text-2xl order-1 p-2 text-end w-32 ">
+            <img src="../../../assets/imgs/1701071988810.jpg"
+                class="rounded-full border-2 border-red-600">
+        </div>
+        <div
+            class="text-center font-bold text-xl order-2 py-2 leading-relaxed">
+            {{user.name}}
+        </div>
+        <div
+            class="text-center text-gray-700 font-extrabold text-lg order-2 py-2">
+            {{user.position}}
+        </div>
+        <div
+            class="text-center text-md font-semibold order-2 py-2 leading-relaxed">
+            {{user.educate}}
+        </div>
+        <div
+            class="text-center text-md font-semibold order-2 py-2 leading-loose">
+            {{user.executive}}
+        </div>
+    </div>
+</div>

@@ -4,8 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './shared/header/header.component';
-import { FooterComponent } from './shared/footer/footer.component';
+import { HeaderComponent } from './shared/components/header/header.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
 import { CarouselComponent } from './features/carousel/carousel.component';
 import { Route, RouterModule } from '@angular/router';
 import { UsersComponent } from './features/users/users.component';
@@ -14,6 +14,11 @@ import { UserComponent } from './features/users/user/user.component';
 import { NotfoundComponent } from './features/notfound/notfound.component';
 import { EventComponent } from './features/eventlist/event/event.component';
 import { EventlistComponent } from './features/eventlist/eventlist.component';
+import { CardUserComponent } from './shared/components/card-user/card-user.component';
+import { CardInstituteComponent } from './shared/components/card-institute/card-institute.component';
+import { CardCategoryComponent } from './shared/components/card-category/card-category.component';
+import { CardDetailComponent } from './shared/components/card-detail/card-detail.component';
+import { CardPosterComponent } from './shared/components/card-poster/card-poster.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +30,11 @@ import { EventlistComponent } from './features/eventlist/eventlist.component';
     AboutComponent,
     UserComponent,
     NotfoundComponent,
+    CardUserComponent,
+    CardInstituteComponent,
+    CardCategoryComponent,
+    CardDetailComponent,
+    CardPosterComponent,
   ],
   imports: [
     BrowserModule,
