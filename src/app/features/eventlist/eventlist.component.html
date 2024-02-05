@@ -1,11 +1,11 @@
 <div class="flex font-site w-full h-auto">
-    <div class="grid event-grid w-full h-full xl:m-4">
-        <div *ngFor="let event of events;let index" class=" background-white shadow-lg hover:shadow-xl rounded-lg p-1 m-3">
+    <div class="grid event-grid w-full h-full xl:m-4" >
+        <div *ngFor="let event of events;let i =index" class=" background-white shadow-lg hover:shadow-xl rounded-lg p-1 m-3" [routerLink]="[i]">
             <div class="block transition-card">
                 <div class="flex image-card justify-items-center items-center div-img-card rounded-md">
                     <img [src]="event.image" alt="event" class="">
                 </div>
-                <div class="p-card relative bg-gray-200 opacity-90 -top-10 m-3 p-3 rounded-lg leading-loose">
+                <div class="p-card relative bg-gray-200 opacity-90 -top-12 m-3 p-3 rounded-lg leading-loose">
                     <div class="text-md text-gray-700 ">
                         {{ event.date }}
                     </div>
