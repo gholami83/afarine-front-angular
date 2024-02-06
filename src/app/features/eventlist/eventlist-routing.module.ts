@@ -10,7 +10,7 @@ const route:Routes = [
   { path:'conference/:id',loadChildren: ()=>import('./conference/conference.module').then(m => m.ConferenceModule) },
   { path:'demo/:id',loadChildren: ()=>import('./demo/demo.module').then(m => m.DemoModule) },
   { path:'meeting/:id',loadChildren: ()=>import('./meeting/meeting.module').then(m => m.MeetingModule) },
-  { path:'startapp/:id',loadChildren: ()=>import('./startapp/startapp.module').then(m => m.StartappModule) },
+  { path:'startup/:id',loadChildren: ()=>import('./startapp/startapp.module').then(m => m.StartappModule) },
   { path:'workshop/:id',loadChildren: ()=>import('./workshop/workshop.module').then(m => m.WorkshopModule) }, 
 ];
 @NgModule({
