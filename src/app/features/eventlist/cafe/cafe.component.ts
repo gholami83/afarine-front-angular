@@ -44,6 +44,24 @@ public users = [
     position: 'مجری دوره',
   },
 ]
+public institutes = [
+  {
+    name: 'شرکت آفرینه',
+  },
+  {
+    name: 'شرکت آفرینه',
+  },
+  {
+    name: 'شرکت آفرینه',
+  },
+  {
+    name: 'شرکت آفرینه',
+  },
+  {
+    name: 'شرکت آفرینه',
+  },
+];
+
 ngOnInit() { 
 }
 }

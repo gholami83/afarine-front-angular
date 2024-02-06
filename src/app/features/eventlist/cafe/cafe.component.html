@@ -1,4 +1,4 @@
-<div class="background-site font-site">
+<div class="background-site font-site" style="background-image: url(../../../../assets/imgs/polygon-scatter-haikei\ \(3\).svg); background-repeat: no-repeat;background-position: center;background-attachment:fixed;background-size: cover;">
     <div class="flex flex-col  text-white pb-32 "
         style="background: rgb(63,94,251);
     background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,132,70,1) 95%);">
@@ -26,14 +26,15 @@
             </div>
         </div>
     </div>
-    <div class="grid lg:grid-cols-6 p-10 py-24">
-        <div class="col-span-3 order-1 mx-3 grid justify-center">
+    <div class="grid lg:grid-cols-6 p-10 py-24 background-site">
+        <div class="col-span-3 order-1 mx-3 grid justify-center items">
             <img class
                 src="../../../../assets/imgs/digital-business-conference-flyer-design-template-5328947015bafd2306e7f33adbbbb3fa_screen(1).jpg"
                 alt>
         </div>
         <div
-            class="col-span-3 px-10 mx-3 leading-10 text-lg border-gray-500 border-l-2 ">
+            style="background-image: url(../../../../assets/imgs/Light\ bulb-bro.svg) ; background-repeat: no-repeat; opacity: 0.8; background-position: bottom; "
+            class="col-span-3 px-10 mx-3 leading-10 text-lg font-bold">
             <p>این مفهوم معمولاً به منظور توسعه و پیشرفت فناوری، بهبود فرآیندها
                 و محصولات، و جذب استعدادهای نوآور و خلاق در سازمان‌ها بکار
                 می‌رود.
@@ -43,6 +44,11 @@
                 حوافز برای ایده‌های نوآورانه، تسهیل فرآیندهای تجزیه و تحلیل
                 ایده‌ها و تبدیل آنها به پروژه‌های عملی، و ایجاد ارتباطات بین
                 بخش‌های مختلف سازمان انجام شود.</p>
+        </div>
+    </div>
+    <div>
+        <div class="">
+
         </div>
     </div>
     <div
@@ -57,7 +63,7 @@
             </div>
         </div>
         <div
-            class="w-5/12 justify-center text-xl leading-loose flex items-center gap-2">
+            class="w-5/12 justify-center text-xl leading-loose flex items-center gap-2 tracking-wider">
             <div class="order-2">
                 زمان شروع:14/5/1402
                 <br>
@@ -76,7 +82,7 @@
             </div>
         </div>
     </div>
-    <div class="flex flex-col justify-center ">
+    <div class="flex flex-col justify-center">
         <div class=" justify-center flex">
             <img class="w-full rotate-180"
                 src="../../../../assets/imgs/wave-haikei (2)-cropped.svg" alt>
@@ -90,5 +96,26 @@
                 <app-card-user [user]="user"></app-card-user>
             </div>
         </div>
+    </div>
+    <div class="flex flex-col py-20">
+        <div class="flex justify-center" style="background-image: url(); ">
+            <div class="w-1/2 justify-center flex py-10">
+                <p class="text-5xl font-bold">حامیان دوره</p>
+            </div>
+            <!-- <div class="w-1/2 justify-center flex">
+                <img class="w-52"
+                    src="../../../../assets/imgs/Bachelor party-cuate (2).svg"
+                    alt>
+            </div> -->
+        </div>
+        <div
+            class="grid grid-cols-1 response-brand gap-2 xl:gap-5 justify-items-center w-full p-2 lg:p-5">
+            <div *ngFor="let institute of institutes">
+                <app-card-institute
+                    [institute]="institute"></app-card-institute>
+            </div>
+        </div>
+    </div>
+    <div>
     </div>
 </div>
