@@ -27,6 +27,7 @@
     "fortawesome": "^0.0.1-security",
     "jquery": "^3.7.1",
     "rxjs": "~7.8.0",
+    "swiper": "^7.0.0-alpha.40",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
   },

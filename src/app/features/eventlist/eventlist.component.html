@@ -1,27 +1,72 @@
-<div class="flex font-site w-full h-auto">
-    <div class="grid event-grid w-full h-full xl:m-4" >
-        <div *ngFor="let event of events;let i =index" class=" background-white shadow-lg hover:shadow-xl rounded-lg p-1 m-3" [routerLink]="[i]">
-            <div class="block transition-card">
-                <div class="flex image-card justify-items-center items-center div-img-card rounded-md">
-                    <img [src]="event.image" alt="event" class="">
+<div class="font-site">
+    <div class="background-white shadow-lg p-3 m-3 rounded-2xl flex justify-center">
+        <p class="w-1/2">
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
+        </p>
+    </div>
+    <div class="flex h-auto">
+        <div class="flex w-3/4 order-2">
+            <div class="flex w-full h-auto">
+                <div class="grid event-grid w-full h-full xl:m-4">
+                    <div *ngFor="let event of events;let i =index"
+                        class=" background-white shadow-lg hover:shadow-xl rounded-lg p-1 m-3"
+                        [routerLink]="[i]">
+                        <div class="block transition-card">
+                            <div
+                                class="flex image-card justify-items-center items-center div-img-card rounded-md">
+                                <img [src]="event.image" alt="event" class>
+                            </div>
+                            <div
+                                class="p-card relative bg-gray-200 opacity-90 -top-12 m-3 p-3 rounded-lg leading-loose">
+                                <div class="text-md text-gray-700 ">
+                                    {{ event.date }}
+                                </div>
+                                <div class="text-lg text-gray-700 font-bold">
+                                    {{event.name}}
+                                </div>
+                                <div class="text-md text-gray-700 ">
+                                    {{event.location}}
+                                </div>
+                                <div class="text-md text-gray-700 ">
+                                    {{event.price}} تومان
+                                </div>
+                                <div class="text-md text-gray-700 ">
+                                    {{event.executer}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="p-card relative bg-gray-200 opacity-90 -top-12 m-3 p-3 rounded-lg leading-loose">
-                    <div class="text-md text-gray-700 ">
-                        {{ event.date }}
-                    </div>
-                    <div class="text-xl text-gray-700 font-bold">
-                        {{event.name}}
-                    </div>
-                    <div class="text-md text-gray-700 ">
-                        {{event.location}}
-                    </div>
-                    <div class="text-md text-gray-700 ">
-                        {{event.price}} تومان
-                    </div>
-                    <div class="text-md text-gray-700 ">
-                        {{event.executer}}
-                    </div>
-                </div>
+            </div>
+        </div>
+        <div class="flex flex-col w-1/4 h-fit rounded-lg p-2 m-3 background-white shadow-lg ">
+            <div class="flex justify-center text-md font-extrabold ">
+                <p>صفحه فبلتر</p>
+            </div>
+            <div class="flex h-full">
+               
+            </div>
+            <ul class="p-3">
+                <li>list</li>
+                <li>list</li>
+                <li>list</li>
+                <li>list</li>
+            </ul>
+            <div class="flex gap-3 items-center">
+                <input class="rounded-lg" type="checkbox">
+                <label>توسعه فردی</label>
+            </div>
+            <div class="flex gap-3 items-center">
+                <input class="rounded-lg" type="checkbox">
+                <label>توسعه فردی</label>
+            </div>
+            <div class="flex gap-3 items-center">
+                <input class="rounded-lg" type="checkbox">
+                <label>توسعه فردی</label>
+            </div>
+            <div class="flex gap-3 items-center">
+                <input class="rounded-lg" type="checkbox">
+                <label>توسعه فردی</label>
             </div>
         </div>
     </div>

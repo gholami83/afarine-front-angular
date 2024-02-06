@@ -17,7 +17,6 @@ import { DemoComponent } from './demo/demo.component';
     WorkshopComponent,
     StartappComponent,
     MeetingComponent,
-    CafeComponent,
     ConferenceComponent,
     DemoComponent
   ],

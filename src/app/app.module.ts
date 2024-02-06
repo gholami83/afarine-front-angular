@@ -19,28 +19,25 @@ import { CardInstituteComponent } from './shared/components/card-institute/card-
 import { CardCategoryComponent } from './shared/components/card-category/card-category.component';
 import { CardDetailComponent } from './shared/components/card-detail/card-detail.component';
 import { CardPosterComponent } from './shared/components/card-poster/card-poster.component';
+import { CardFilterAsideComponent } from './shared/components/card-filter-aside/card-filter-aside.component';
+import { CafeModule } from './features/eventlist/cafe/cafe.module';
+import { ShareModule } from './shared/components/share/share.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    FooterComponent,
     CarouselComponent,
     UsersComponent,
     AboutComponent,
     UserComponent,
     NotfoundComponent,
-    CardUserComponent,
-    CardInstituteComponent,
-    CardCategoryComponent,
-    CardDetailComponent,
-    CardPosterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    ShareModule
   ],
   providers: [],
   bootstrap: [AppComponent],

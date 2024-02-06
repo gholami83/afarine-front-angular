@@ -6,5 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./card-user.component.scss']
 })
 export class CardUserComponent {
-@Input() users:any
+@Input() user:any;
+
 }
