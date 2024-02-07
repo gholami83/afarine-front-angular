@@ -14,11 +14,6 @@ import { DemoComponent } from './demo/demo.component';
 @NgModule({
   declarations: [
     EventlistComponent,
-    WorkshopComponent,
-    StartappComponent,
-    MeetingComponent,
-    ConferenceComponent,
-    DemoComponent
   ],
   imports: [
     CommonModule,
