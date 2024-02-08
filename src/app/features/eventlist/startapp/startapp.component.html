@@ -130,13 +130,12 @@
                 style="transform: scale(1,-1);" alt>
         </div> -->
     </div>
-    <div class="flex flex-col bg-gray-900" style="background: rgb(17,24,39);
-    background: linear-gradient(180deg, rgba(17,24,39,1) 0%, rgba(54,19,99,1) 73%);background-attachment: fixed;background-repeat: no-repeat;background-position: center;">
+    <div class="flex flex-col bg-gray-900" style=" background-image: url(../../../../assets/imgs/pattern\(startup\).svg);background-attachment: fixed;background-repeat: no-repeat;background-position: center;">
         <div class="flex justify-start py-5 text-white">
             <p class="text-6xl font-extrabold">مدرسان دوره</p>
         </div>
         <div
-            class="grid grid-cols-1 response-users gap-3 sm:gap-4 xl:gap-5 justify-items-center w-full m-auto my-20">
+            class="grid grid-cols-1 response-users gap-3 sm:gap-4 xl:gap-5 justify-items-center w-full m-auto my-16">
             <div *ngFor="let user of users">
                 <app-card-user [user]="user"></app-card-user>
             </div>
