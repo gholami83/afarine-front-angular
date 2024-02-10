@@ -44,7 +44,8 @@
         </div>
     </div>
     <div class="block"
-        style="background-image: url(../../../../assets/imgs/magicpattern-starry-night-1707228130178.png);">
+        style="background-image: url(../../../../assets/imgs/magicpattern-starry-night-1707228130178.png);"
+        >
         <div class="flex flex-row p-10  text-white">
             <div class="w-1/2 order-2 flex justify-center items-start">
                 <img src="../../../../assets/imgs/Startup life-amico.svg"
@@ -125,28 +126,28 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="w-26 relative bg-opacity-10">
-            <img src="../../../../assets/imgs/wav" class=" h-1/2 w-full   "
+        <!-- <div class="w-26 relative top-40 ">
+            <img src="../../../../assets/imgs/wave-haikei (2)-cropped.svg" class=" h-1/2 w-full   "
                 style="transform: scale(1,-1);" alt>
         </div> -->
     </div>
-    <div class="flex flex-col bg-gray-900" style=" background-image: url(../../../../assets/imgs/pattern\(startup\).svg);background-attachment: fixed;background-repeat: no-repeat;background-position: center;">
-        <div class="flex justify-start py-5 text-white">
-            <p class="text-6xl font-extrabold">مدرسان دوره</p>
+    <div class="flex flex-col bg-gray-900">
+        <div class="flex justify-center  py-5 text-white">
+            <p class="text-6xl font-extrabold text-yellow-400">مدرسان دوره</p>
         </div>
         <div
-            class="grid grid-cols-1 response-users gap-3 sm:gap-4 xl:gap-5 justify-items-center w-full m-auto my-16">
+            class="grid grid-cols-1 response-users gap-3 sm:gap-4 xl:gap-5 justify-items-center w-full px-24 my-16">
             <div *ngFor="let user of users">
-                <app-card-user [user]="user"></app-card-user>
+                <app-card-user [bgstyle]="'bg-slate-950 bg-opacity-70'" [textstyle]="'text-white'" [rolestyle]="'text-gray-200'" [user]="user"></app-card-user>
             </div>
         </div>
-        <div class="flex justify-start py-5" style="background-image: url(); ">
-            <p class="text-5xl font-bold text-white">حامیان دوره</p>
+        <div class="flex justify-center py-5" style="background-image: url(); ">
+            <p class="text-5xl font-bold text-yellow-400">حامیان دوره</p>
         </div>
         <div
             class="grid grid-cols-1 response-brand gap-2 xl:gap-5 justify-items-center w-full p-2 lg:p-5">
             <div *ngFor="let institute of institutes">
-                <app-card-institute
+                <app-card-institute [textstyle]="'text-white'" [bgstyle]="'bg-slate-950 bg-opacity-70'"
                     [institute]="institute"></app-card-institute>
             </div>
         </div>

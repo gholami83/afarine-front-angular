@@ -26,11 +26,11 @@
         grid-template-columns: repeat(4, 1fr);
     }
 }
-@media screen and (min-width: 1300px) {
-    .response-users {
-        grid-template-columns: repeat(5, 1fr);
-    }
-}
+// @media screen and (min-width: 1300px) {
+//     .response-users {
+//         grid-template-columns: repeat(5, 1fr);
+//     }
+// }
 ////////////////////////////
 @media screen and (min-width:460px) {
    .response-brand{
