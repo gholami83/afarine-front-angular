@@ -1,0 +1,41 @@
+.rotate-img{
+    transform: scale(1,-1);
+}
+.bg-article{
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,132,70,1) 95%);
+}
+.svg-noavary{
+    background-image: url('../../../../assets/imgs/Lightbulb-bro.svg') ; 
+    background-repeat: no-repeat; 
+    opacity: 0.8; 
+    background-position: bottom; 
+}
+svg {
+    animation: spin 30s linear infinite;
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.bg-card{
+    position: relative;
+}
+.bg-card::before {
+    content: "";
+    position: absolute;
+    top:  0;
+    left:  0;
+    width:  100%;
+    height:  100%;
+    background-image: url(../../../../assets/imgs/animatesvg.svg);
+    background-repeat: repeat-y;
+    background-position: center;
+    background-size:  60%;
+    opacity:  0.5; /* Set the desired opacity level */
+    z-index: -1;
+}

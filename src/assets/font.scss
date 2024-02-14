@@ -1,9 +1,29 @@
 @font-face {
     font-family:'IRANYekanRegular';
+    font-style: normal;
+    font-weight: 400;
     src: url('./fonts/IRANYekanRegular.woff') format('woff');
+}
+@font-face {
+    font-style: bold;
+    font-weight: 700;
+    font-family:'IRANYekanBold';
+    src: url('./fonts/IRANYekanBold.woff') format('woff');
+}
+@font-face {
+    font-style: light;
+    font-weight: 300;
+    font-family:'IRANYekanLight';
+    src: url('./fonts/IRANYekanLight.woff') format('woff');
 }
 .font-site{
     font-family:'IRANYekanRegular',sans-serif ;
+}
+.font-site-b{
+    font-family:'IRANYekanBold',sans-serif ;
+}
+.font-site-l{
+    font-family:'IRANYekanLight',sans-serif ;
 }
 .background-site{
     background-color: #f5f6f7;

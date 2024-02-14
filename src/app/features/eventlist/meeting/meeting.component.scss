@@ -1,1 +1,8 @@
-// <path style="fill:#ff1a51;" d="M 18.441597,78.106256 H 198.58126 v 39.288614 c 0,0 -43.10672,-27.825245 -73.47599,-19.687823 -30.369264,8.137423 -46.832208,12.548653 -46.832208,12.548653 0,0 -32.775418,8.05972 -46.735258,0 C 17.577964,102.19598 18.441597,78.106256 18.441597,78.106256 Z"></path>
+.bg-meeting{
+    background-image: url('../../../../assets/imgs/paattern-meeting.svg');
+    background-attachment: fixed;background-repeat: no-repeat;
+    background-position: center;
+}
+.rotate-img{
+    transform: scale(1,-1);
+}

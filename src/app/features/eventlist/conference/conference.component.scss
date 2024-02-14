@@ -1,0 +1,39 @@
+.bg-confer {
+    background-image: url("../../../../assets/imgs/bg-confer.svg");
+    background-attachment: fixed;
+}
+
+// svg {
+//     animation: spin 30s linear infinite;
+// }
+// @keyframes spin {
+//     from {
+//         transform: rotate(0deg);
+//     }
+//     to {
+//         transform: rotate(360deg);
+//     }
+// }
+
+.custom-shape-divider-bottom-1707913104 {
+    // position: absolute;
+    // bottom: 0;
+    // left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+.custom-shape-divider-bottom-1707913104 svg{
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 50px;
+}
+.custom-shape-divider-bottom-1707913104:last-child svg{
+    rotate: 180deg;
+    height: 40px;
+}
+.custom-shape-divider-bottom-1707913104 .shape-fill {
+    fill: #34d399;
+}

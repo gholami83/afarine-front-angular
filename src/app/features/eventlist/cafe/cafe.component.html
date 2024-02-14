@@ -1,8 +1,5 @@
-<div class="background-site font-site"
-    style=" background-repeat: no-repeat;background-position: center;background-attachment:fixed">
-    <div class="flex flex-col  text-white pb-32 "
-        style="background: rgb(63,94,251);
-    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,132,70,1) 95%);">
+<div class="background-site font-site">
+    <div class="flex flex-col  text-white pb-32 bg-article">
         <div class="pt-8 ">
             <p class="text-pretty text-7xl font-extrabold text-center">
                 کافه نوآوری
@@ -34,8 +31,7 @@
                 alt>
         </div>
         <div
-            style="background-image: url(../../../../assets/imgs/Light\ bulb-bro.svg) ; background-repeat: no-repeat; opacity: 0.8; background-position: bottom; "
-            class="col-span-3 px-10 mx-3 leading-10 text-lg font-bold">
+            class="col-span-3 px-10 mx-3 leading-10 text-lg font-bold svg-noavary">
             <p>این مفهوم معمولاً به منظور توسعه و پیشرفت فناوری، بهبود فرآیندها
                 و محصولات، و جذب استعدادهای نوآور و خلاق در سازمان‌ها بکار
                 می‌رود.
@@ -48,8 +44,7 @@
         </div>
     </div>
     <div
-        class="flex flex-row text-2xl bg-indigo-700 text-white p-9 py-12 justify-center items-center leading-loose gap-4"
-        style>
+        class="flex flex-row text-2xl bg-indigo-700 text-white p-9 py-12 justify-center items-center leading-loose gap-4">
         <div class="w-1/4 text-start flex justify-center gap-2">
             <div class="order-2">
                 ۵۰,۰۰۰ تومان
@@ -94,30 +89,32 @@
             </div>
         </div>
     </div>
-    <div class="flex flex-col justify-center">
+    <div class="bg-blue-300">
         <div class=" justify-center flex">
-            <img class="w-full " style="transform: scale(1,-1);"
+            <img class="w-full" class="rotate-img "
                 src="../../../../assets/imgs/wave-haikei (2)-cropped.svg" alt>
         </div>
-        <div class="flex justify-center py-5">
-            <p class="text-6xl text-yellow-300 font-extrabold">مدرسان دوره</p>
-        </div>
-        <div
-            class="grid grid-cols-1  response-users gap-3 sm:gap-4 xl:gap-5 justify-items-center w-full px-24 my-20">
-            <div *ngFor="let user of users">
-                <app-card-user [textstyle]="'text-gray-900'" [bgstyle]="'bg-white bg-opacity-70 '" [user]="user"></app-card-user>
+        <div class="flex flex-col justify-center ">
+            <div class="flex justify-center py-5">
+                <p class="text-6xl text-yellow-300 font-extrabold">مدرسان دوره</p>
+            </div>
+            <div
+                class="grid grid-cols-1  response-users gap-3 sm:gap-4 xl:gap-5 justify-items-center w-full px-24 my-20">
+                <div *ngFor="let user of users">
+                    <app-card-user [textstyle]="'text-gray-900'" [bgstyle]="'bg-white bg-opacity-70 '" [user]="user"></app-card-user>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="flex flex-col py-8">
-        <div class="flex justify-center text-yellow-300 py-5" style="background-image: url(); ">
-            <p class="text-5xl font-bold">حامیان دوره</p>
-        </div>
-        <div
-            class="grid grid-cols-1 response-brand gap-2 xl:gap-5 justify-items-center w-full p-2 lg:p-5">
-            <div *ngFor="let institute of institutes">
-                <app-card-institute [bgstyle]="'bg-white bg-opacity-70 '" 
-                    [institute]="institute"></app-card-institute>
+        <div class="flex flex-col py-8 ">
+            <div class="flex justify-center text-yellow-300 py-5" >
+                <p class="text-5xl font-bold">حامیان دوره</p>
+            </div>
+            <div
+                class="grid grid-cols-1 response-brand gap-2 xl:gap-5 justify-items-center w-full p-2 lg:p-5">
+                <div *ngFor="let institute of institutes">
+                    <app-card-institute [bgstyle]="'bg-white bg-opacity-70 '" 
+                        [institute]="institute"></app-card-institute>
+                </div>
             </div>
         </div>
     </div>
