@@ -1,0 +1,19 @@
+.custom-shape-divider-bottom-1707913104 {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+.custom-shape-divider-bottom-1707913104 svg{
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 50px;
+}
+.custom-shape-divider-bottom-1707913104:last-child svg{
+    rotate: 180deg;
+    height: 40px;
+}
+.custom-shape-divider-bottom-1707913104 .shape-fill {
+    fill: rgba(0,3,69,1);
+}
