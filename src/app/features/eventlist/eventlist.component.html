@@ -1,11 +1,11 @@
 <div class="font-site background-site pt-2">
-    <div class=" shadow-lg p-3 rounded-2xl flex justify-center border-2 mx-10">
+    <div class=" shadow-lg p-3 rounded-2xl flex justify-center border-2 lg:mx-10">
         <p class="w-1/2">
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
         </p>
     </div>
-    <div class="flex  pb-10">
-        <div class="flex w-3/4 order-2">
+    <div class="flex flex-col lg:flex-row  pb-10">
+        <div class="flex lg:w-3/4 order-2">
             <div class="flex w-full h-auto">
                 <div class="grid event-grid w-full h-full xl:m-4">
                     <div *ngFor="let event of events;let i =index"
@@ -13,10 +13,10 @@
                         [routerLink]="[event.type,event.name]">
                         <div class="block transition-card">
                             <div
-                                class="flex image-card justify-items-center items-center div-img-card rounded-md">
-                                <img [src]="event.image" alt="event" class>
+                                class="block image-card justify-items-center items-center div-img-card rounded-md">
+                                <img [src]="event.image" alt="event" class="relative h-full">
                             </div>
-                            <div
+                                <div
                                 class="p-card relative bg-gray-200 opacity-90 -top-12 m-3 p-3 rounded-lg leading-loose">
                                 <div class="text-md text-gray-700 ">
                                     {{ event.date }}
@@ -42,7 +42,7 @@
                 </div>
             </div>
         </div>
-        <div class="flex flex-col w-1/4 h-fit rounded-lg p-2 m-3 background-white shadow-lg ">
+        <div class="flex flex-col lg:w-1/4 h-fit rounded-lg p-2 m-3 background-white shadow-lg ">
             <div class="flex justify-center text-md font-extrabold ">
                 <p>صفحه فبلتر</p>
             </div>
