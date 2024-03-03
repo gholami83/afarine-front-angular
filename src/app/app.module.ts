@@ -22,6 +22,7 @@ import { CardPosterComponent } from './shared/components/card-poster/card-poster
 import { CardFilterAsideComponent } from './shared/components/card-filter-aside/card-filter-aside.component';
 import { CafeModule } from './features/eventlist/cafe/cafe.module';
 import { ShareModule } from './shared/components/share/share.module';
+import { GeneralService } from './services/general.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,9 @@ import { ShareModule } from './shared/components/share/share.module';
     AppRoutingModule,
     ShareModule
   ],
-  providers: [],
+  providers: [
+    {provide:'api_url',useValue:'127.0.0.1/events'}
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

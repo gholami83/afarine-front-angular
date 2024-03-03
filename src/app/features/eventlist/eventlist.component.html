@@ -43,7 +43,7 @@ background: linear-gradient(4deg, rgba(4,74,120,1) 20%, rgba(0,130,140,1) 100%);
                 </div>
             </div>
         </div>
-        <div class="flex flex-col lg:w-1/4 text-white h-fit rounded-2xl border-2 border-cyan-700 p-4 m-3 shadow-xl backdrop-brightness-75 bg-opacity-45">
+        <div class="flex flex-col lg:w-1/4 text-white h-fit rounded-2xl border-2 border-cyan-700 p-4 m-3 shadow-lg backdrop-brightness-75 bg-opacity-45">
             <div class="flex justify-center text-md font-extrabold ">
                 <p>صفحه فیلتر</p>
             </div>
@@ -72,6 +72,8 @@ background: linear-gradient(4deg, rgba(4,74,120,1) 20%, rgba(0,130,140,1) 100%);
                 <input class="rounded-lg" type="checkbox">
                 <label>توسعه فردی</label>
             </div>
+            <input class="text-black" type="text" (input)="onChange($event)">
+            <button type="submit" (click)="log()">ok</button>
         </div>
     </div>
 </div>

@@ -1,17 +1,12 @@
-import { Component, NgModule, OnInit } from '@angular/core';
+import { Component, Inject, NgModule, OnInit, inject } from '@angular/core';
+import { GeneralService } from 'src/app/services/general.service';
 import GlobalService from 'src/app/services/global.service';
 @Component({
   selector: 'app-eventlist',
   templateUrl: './eventlist.component.html',
-  styleUrls: ['./eventlist.component.scss'],
+  styleUrls: ['./eventlist.component.scss']
 })
 export class EventlistComponent{
-  // constructor(private GlobalService: GlobalService) {}
-
-  // eventlist() {
-  //   this.GlobalService.eventlist();
-  // }
-
   events = [
     {
       image: 'assets/imgs/wp11572314.jpg',
@@ -86,4 +81,11 @@ export class EventlistComponent{
       type: 'startup',
     },
   ];
+  constructor(private generalService:GeneralService,@Inject('api_url') url:string){}
+  public log(){
+    this.generalService.log(this.generalService.username)
+  }
+  public onChange(event: Event){
+    this.generalService.username = (event.target as HTMLInputElement).value
+  }
 }
