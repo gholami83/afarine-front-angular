@@ -1,6 +1,5 @@
 <div class="backgroud-site font-site bg-meeting">
-    <div class=" "
-        >
+    <div class=" ">
         <div class="py-8 px-10  ">
             <div class="flex flex-row py-10 bg-slate-300 pb-24">
                 <div class="flex justify-center w-2/5">
@@ -27,7 +26,7 @@
                 class="relative -top-20 border-2 border-gray-500 backdrop-blur-sm p-12 mx-10 rounded-md shadow-gray-400 shadow-md ">
                 <div class="flex flex-row">
                     <div class="w-1/2">
-                        <img class=""
+                        <img class
                             src="../../../../assets/imgs/digital-business-conference-flyer-design-template-5328947015bafd2306e7f33adbbbb3fa_screen(1).jpg"
                             alt>
                     </div>
@@ -111,30 +110,38 @@
         </div>
     </div>
     <div class="flex flex-col">
-        <div class="">
+        <div class>
             <div class=" justify-center flex">
                 <img class="w-full " class="rotate-img"
                     src="../../../../assets/imgs/wave-meeting.svg" alt>
             </div>
-            <div class="flex justify-center py-5 text-white" >
-                <p class="text-6xl font-extrabold bg-zinc-600 p-10 rounded-3xl" >مدرسان دوره</p>
+            <div class="flex justify-center py-5 text-white">
+                <p class="text-6xl font-extrabold bg-zinc-600 p-10 rounded-3xl"
+                    style="background-image: url(../../../../assets/imgs/svg-seperate-demo.svg);">مدرسان
+                    دوره</p>
             </div>
             <div
                 class=" grid grid-cols-1 response-users gap-3 sm:gap-3  px-24 justify-items-center p-5 self-center ">
                 <div *ngFor="let user of users">
-                    <app-card-user [bgstyle]="'bg-slate-900 bg-opacity-70'" [rolestyle]="'text-gray-200'" [textstyle]="'text-white'" [user]="user"></app-card-user>
+                    <app-card-user [bgstyle]="'bg-slate-900 bg-opacity-70'"
+                        [rolestyle]="'text-gray-200'" [textstyle]="'text-white'"
+                        [user]="user"></app-card-user>
                 </div>
             </div>
         </div>
-        <div class="">
+        <div class>
 
-            <div class="flex justify-center py-5" style="background-image: url(../../../../assets/imgs/seperate-meeting.svg);">
-                <p class="text-5xl font-bold text-white bg-zinc-500 p-10 rounded-3xl">حامیان دوره</p>
+            <div class="flex justify-center py-5">
+                <p
+                    class="text-5xl font-bold text-white bg-zinc-500 p-10 rounded-3xl"
+                    style="background-image: url(../../../../assets/imgs/svg-seperate-demo.svg);">حامیان
+                    دوره</p>
             </div>
             <div
                 class="grid grid-cols-1 response-brand gap-2 xl:gap-5 justify-items-center w-full p-2 lg:p-5">
                 <div *ngFor="let institute of institutes">
-                    <app-card-institute [textstyle]="'text-white'" [bgstyle]="'bg-slate-900 bg-opacity-70'"
+                    <app-card-institute [textstyle]="'text-white'"
+                        [bgstyle]="'bg-slate-900 bg-opacity-70'"
                         [institute]="institute"></app-card-institute>
                 </div>
             </div>
