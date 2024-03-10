@@ -11,7 +11,7 @@ background: linear-gradient(4deg, rgba(4,74,120,1) 20%, rgba(0,130,140,1) 100%);
                 <div class="grid event-grid w-full h-full xl:m-4">
                     <div *ngFor="let event of events;let i =index"
                         class=" background-white shadow-lg hover:shadow-2xl transition-shadow rounded-xl p-1 m-3"
-                        [routerLink]="[event.type,event.name]">
+                        [routerLink]="[event.type,event.id]" [queryParams]="{eventfound:'true'}" fragment="title" (clicck)="onChange($event)">
                         <div class="block transition-card">
                             <div
                                 class="block image-card justify-items-center items-center div-img-card rounded-md">
@@ -72,7 +72,7 @@ background: linear-gradient(4deg, rgba(4,74,120,1) 20%, rgba(0,130,140,1) 100%);
                 <input class="rounded-lg" type="checkbox">
                 <label>توسعه فردی</label>
             </div>
-            <input class="text-black" type="text" (input)="onChange($event)">
+            <input class="text-black" type="text">
             <button type="submit" (click)="log()">ok</button>
         </div>
     </div>

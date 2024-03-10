@@ -1,4 +1,4 @@
-<div class="background-site font-site">
+<div class="background-site font-site" *ngIf="eventfound" >
     <div class="flex flex-col  text-white pb-32 bg-article">
         <div class="pt-24 ">
             <p class="text-pretty text-7xl font-extrabold text-center">
@@ -89,12 +89,12 @@
             </div>
         </div>
     </div>
-    <div class="bg-blue-300 z-0">
-        <div class=" justify-center flex z-0 -mt-16 ">
-            <img class="w-full" class="rotate-img "
+    <div class="bg-blue-300 z-0 -mt-2">
+        <div class=" justify-center flex z-0 -mt-2 w-full">
+            <img class="w-full rotate-img"
                 src="../../../../assets/imgs/wave-haikei (2)-cropped.svg" alt>
         </div>
-        <div class="flex flex-col justify-center ">
+        <div class="flex flex-col justify-center my-10">
             <div class="flex justify-center py-3 ">
                 <p class="text-6xl text-violet-700 rounded-3xl bg-blue-400 p-10 font-extrabold">مدرسان دوره</p>
             </div>
@@ -119,3 +119,8 @@
         </div>
     </div>
 </div>
+<ng-template *ngIf="!eventfound" >
+    <h1>
+        event Not found 
+    </h1>
+</ng-template>

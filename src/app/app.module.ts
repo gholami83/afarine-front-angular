@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { InjectionToken, Injector, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -24,6 +24,14 @@ import { CafeModule } from './features/eventlist/cafe/cafe.module';
 import { ShareModule } from './shared/components/share/share.module';
 import { GeneralService } from './services/general.service';
 
+export function deviceNameProvider( USER_AGENT:string,SCREEN_HEIGHT:string,SCREEN_WIDTH:string ):string{
+  return USER_AGENT+' '+SCREEN_HEIGHT+'  '+SCREEN_WIDTH 
+  }
+export const DEVICE_NAME = new InjectionToken<string>('DEVICE_NAME');
+export const USER_AGENT =  new InjectionToken<string>('USRER_AGENT');
+export const SCREEN_HEIGHT =  new InjectionToken<string>('SCREEN_WIDTH');
+export const SCREEN_WIDTH =  new InjectionToken<string>('SCREEN_HEIGHT');
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,9 +47,13 @@ import { GeneralService } from './services/general.service';
     BrowserAnimationsModule,
     AppRoutingModule,
     ShareModule
-  ],
+  ], 
   providers: [
-    {provide:'api_url',useValue:'127.0.0.1/events'}
+  { provide:'api_url',useValue:'127.0.0.1/events' },
+  { provide: USER_AGENT, useValue:window.navigator.userAgent },
+  { provide: SCREEN_WIDTH, useValue:window.screen.width },
+  { provide: SCREEN_HEIGHT, useValue:window.screen.height},
+  { provide: DEVICE_NAME, useFactory:deviceNameProvider}
   ],
   bootstrap: [AppComponent],
 })
