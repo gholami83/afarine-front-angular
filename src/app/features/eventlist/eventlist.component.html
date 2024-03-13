@@ -1,8 +1,12 @@
-<div class="font-site background-site pt-2" style="min-height: 1000px;" style="background: rgb(4,74,120);
-background: linear-gradient(4deg, rgba(4,74,120,1) 20%, rgba(0,130,140,1) 100%);">
-    <div class=" shadow-lg p-3 rounded-2xl flex justify-center border-2 lg:mx-10">
-        <p class="w-1/2">
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
+<div class="font-site background-site pt-2">
+    <div
+        class="shadow-lg p-3 rounded-2xl flex-col justify-start border-2 mx-5 my-4">
+        <p class="text-2xl text-gray-600 font-extrabold">
+            رویدادهای نوآوری؛
+        </p>
+        <p class="text-start text-gray-700 font-extrabold text-xl">رویدادهایی در
+            حوزه‌ی کارآفرینی با موضوع نوآوری در آفرینه، در رویداد مورد علاقه‌تان
+            ثبت‌نام کنید.
         </p>
     </div>
     <div class="flex flex-col lg:flex-row  pb-10">
@@ -10,32 +14,36 @@ background: linear-gradient(4deg, rgba(4,74,120,1) 20%, rgba(0,130,140,1) 100%);
             <div class="flex w-full h-auto">
                 <div class="grid event-grid w-full h-full xl:m-4">
                     <div *ngFor="let event of events;let i =index"
-                        class=" background-white shadow-lg hover:shadow-2xl transition-shadow rounded-xl p-1 m-3"
-                        [routerLink]="[event.type,event.id]" [queryParams]="{eventfound:'true'}" fragment="title" (clicck)="onChange($event)">
-                        <div class="block transition-card">
+                        class=" shadow-lg hover:shadow-2xl  rounded-xl  m-3"
+                        style="background-color: #232323;"
+                        [routerLink]="[event.type_name ,event.id]"
+                        [queryParams]="{eventfound:'true'}" fragment="title">
+                        <div class=" transition-card">
                             <div
-                                class="block image-card justify-items-center items-center div-img-card rounded-md">
-                                <img [src]="event.image" alt="event" class="relative h-full">
+                                class="image-card justify-items-center items-center div-img-card rounded-md">
+                                <img src="../../../assets/imgs/wp4700266.jpg" alt="event"
+                                    class="relative h-full">
                             </div>
+                            <div
+                                class="p-card relative backdrop-blur-2xl border-2 border-yellow-400 bg-opacity-30 opacity-90 m-3 p-3 rounded-lg leading-loose text-white">
                                 <div
-                                class="p-card relative bg-gray-200 opacity-90 -top-12 m-3 p-3 rounded-lg leading-loose">
-                                <div class="text-md text-gray-700 ">
-                                    {{ event.date }}
+                                    class="text-md bg-yellow-400 text-black my-2 px-1 rounded-md">
+                                    {{ changeJalaiDate(event.start_date) }}
                                 </div>
-                                <div class="text-lg text-gray-700 font-bold">
-                                    {{event.name}}
+                                <div class="text-lg font-bold">
+                                    {{event.title}}
                                 </div>
-                                <div class="text-md text-gray-700 ">
+                                <div class="text-md ">
                                     {{event.location}}
                                 </div>
-                                <div class="text-md text-gray-700 ">
+                                <div class="text-md  ">
                                     {{event.price}} تومان
                                 </div>
-                                <div class="text-md text-gray-700 ">
-                                    {{event.executer}}
+                                <div class="text-md  ">
+                                    {{event.institute}}
                                 </div>
-                                <div class="text-md text-gray-700 ">
-                                    {{event.type}}
+                                <div class="text-md" [class]="bgStyle">
+                                    {{ getTranslateEvent(event.type_name) }}
                                 </div>
                             </div>
                         </div>
@@ -43,37 +51,40 @@ background: linear-gradient(4deg, rgba(4,74,120,1) 20%, rgba(0,130,140,1) 100%);
                 </div>
             </div>
         </div>
-        <div class="flex flex-col lg:w-1/4 text-white h-fit rounded-2xl border-2 border-cyan-700 p-4 m-3 shadow-lg backdrop-brightness-75 bg-opacity-45">
-            <div class="flex justify-center text-md font-extrabold ">
-                <p>صفحه فیلتر</p>
+        <div class="max-h-full lg:w-1/4 px-2">
+            <div
+            style="background-color: #232323;" class="sticky top-[80px] left-0 w-full flex flex-col text-white rounded-2xl border-2 border-yellow-400 p-4 shadow-lg backdrop-brightness-125 my-3 xl:my-7 ">
+                <div class="flex justify-center text-md font-extrabold ">
+                    <p>صفحه فیلتر</p>
+                </div>
+                <div class="flex h-full">
+    
+                </div>
+                <ul class="p-3">
+                    <li>list</li>
+                    <li>list</li>
+                    <li>list</li>
+                    <li>list</li>
+                </ul>
+                <div class="flex gap-3 items-center">
+                    <input class="rounded-lg" type="checkbox">
+                    <label>توسعه فردی</label>
+                </div>
+                <div class="flex gap-3 items-center">
+                    <input class="rounded-lg" type="checkbox">
+                    <label>توسعه فردی</label>
+                </div>
+                <div class="flex gap-3 items-center">
+                    <input class="rounded-lg" type="checkbox">
+                    <label>توسعه فردی</label>
+                </div>
+                <div class="flex gap-3 items-center">
+                    <input class="rounded-lg" type="checkbox">
+                    <label>توسعه فردی</label>
+                </div>
+                <input class="text-black" type="text" #inputFilter #mouse>
+                <button type="submit" (click)="log()">ok</button>
             </div>
-            <div class="flex h-full">
-               
-            </div>
-            <ul class="p-3">
-                <li>list</li>
-                <li>list</li>
-                <li>list</li>
-                <li>list</li>
-            </ul>
-            <div class="flex gap-3 items-center">
-                <input class="rounded-lg" type="checkbox">
-                <label>توسعه فردی</label>
-            </div>
-            <div class="flex gap-3 items-center">
-                <input class="rounded-lg" type="checkbox">
-                <label>توسعه فردی</label>
-            </div>
-            <div class="flex gap-3 items-center">
-                <input class="rounded-lg" type="checkbox">
-                <label>توسعه فردی</label>
-            </div>
-            <div class="flex gap-3 items-center">
-                <input class="rounded-lg" type="checkbox">
-                <label>توسعه فردی</label>
-            </div>
-            <input class="text-black" type="text">
-            <button type="submit" (click)="log()">ok</button>
         </div>
     </div>
 </div>

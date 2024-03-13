@@ -6,7 +6,7 @@
 .div-img-card img{
     transition: transform 0.4s ease-in-out;
 }
-.transition-card:hover:hover img{
+.transition-card:hover img{
     transition-duration: 500ms;
     transform: scale(1.1);
 }
@@ -20,7 +20,7 @@
     // padding: 0px;
 }
 .transition-card:hover .p-card {
-    --tw-translate-y: 0.8rem /* 8px */;
+    // --tw-translate-y: 0.8rem /* 8px */;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x))
      scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 
@@ -28,7 +28,7 @@
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 900ms;
     transition-duration: all;
-    background-color: #a3f6f8;
+    // background-color: #a3f6f8;
     opacity: 0.85;
 }
 @media screen and (min-width:490px) {

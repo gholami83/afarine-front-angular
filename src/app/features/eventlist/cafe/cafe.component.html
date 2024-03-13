@@ -1,4 +1,4 @@
-<div class="background-site font-site" *ngIf="eventfound" >
+<div class="background-site font-site"  >
     <div class="flex flex-col  text-white pb-32 bg-article">
         <div class="pt-24 ">
             <p class="text-pretty text-7xl font-extrabold text-center">
@@ -99,7 +99,7 @@
                 <p class="text-6xl text-violet-700 rounded-3xl bg-blue-400 p-10 font-extrabold">مدرسان دوره</p>
             </div>
             <div
-                class="grid grid-cols-1  response-users gap-3 sm:gap-4 xl:gap-5 justify-items-center w-full px-24 my-16">
+                class="grid grid-cols-1  response-users gap-3 sm:gap-4 xl:gap-5 justify-items-center w-full xl:px-24 my-16">
                 <div *ngFor="let user of users">
                     <app-card-user [textstyle]="'text-gray-900'" [bgstyle]="'bg-white bg-opacity-70 '" [user]="user"></app-card-user>
                 </div>

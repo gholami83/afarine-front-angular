@@ -60,6 +60,5 @@ export class DemoComponent {
     {
       name: 'شرکت آفرینه',
     },
-  ];
-  
+  ];  
 }

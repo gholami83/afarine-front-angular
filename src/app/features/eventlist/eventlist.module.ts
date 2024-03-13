@@ -8,6 +8,7 @@ import { MeetingComponent } from './meeting/meeting.component';
 import { CafeComponent } from './cafe/cafe.component';
 import { ConferenceComponent } from './conference/conference.component';
 import { DemoComponent } from './demo/demo.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -16,6 +17,7 @@ import { DemoComponent } from './demo/demo.component';
     EventlistComponent,
   ],
   imports: [
+    HttpClientModule,
     CommonModule,
     EventlistRoutingModule
   ]
