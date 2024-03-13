@@ -17,7 +17,7 @@ export let eventTypeList:{name:string,translateName:string}[] = [
     },
     {
         name:'Startup-Weekend',
-        translateName:'رویداد کارآفرین',
+        translateName:'استارتاپ ویکند',
     },
     {
         name:'Inovation-Cafe',
