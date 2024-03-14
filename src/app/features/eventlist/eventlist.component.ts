@@ -26,7 +26,9 @@ import GlobalService from 'src/app/services/global.service';
 import { HttpClient } from '@angular/common/http';
 import { eventTypeList } from 'src/app/shared/models/event-type-list';
 import { eventInterface } from 'src/app/shared/interfaces/event-interface';
-import * as moment from 'jalali-moment';
+import { format } from 'date-fns';
+import { enUS } from 'date-fns/locale';
+import { toDate, format as formatJalali } from 'date-fns-jalali';
 
 @Component({
   selector: 'app-eventlist',
@@ -109,7 +111,7 @@ export class EventlistComponent implements OnInit {
   //   {
   //     id: 7,
   //     image: 'assets/imgs/wp12154950.jpg',
-  //     name: 'رویداد کارآفرینی و کارگری',
+  //     name: 'رویداد ��ارآفرینی و کارگری',
   //     date: 'سه شنبه ساعت 5 عصر',
   //     price: '5,000,000',
   //     location: 'پاساژ زیتون',
@@ -162,15 +164,45 @@ export class EventlistComponent implements OnInit {
       return item.name === name;
     })?.translateName;
   }
-  public changeJalaiDate(data: string) {
-    let MomentDate = moment(data, 'jYYYY-jMM-jDD HH:mm:ss');
-    // console.log('moment date', MomentDate)
-    return MomentDate.locale('fa').format('jYYYY-jMM-jDD HH:mm:ss');
+
+  
+  public changeJalaiDate(data: string): string {
+  
+    const date = new Date(data);
+    
+    if (isNaN(date.getTime())) {
+        console.error("Invalid date object.");
+        return '';
+    }
+    const jalaliDateWithTime = formatJalali(date, 'yyyy/MM/dd HH:mm:ss', { locale: enUS });
+
+    return this.formatDateToPersian(jalaliDateWithTime);
+  }
+
+   formatDateToPersian(dateString:string) {
+    const persianDigits = {
+      '0': '۰',
+      '1': '۱',
+      '2': '۲',
+      '3': '۳',
+      '4': '۴',
+      '5': '۵',
+      '6': '۶',
+      '7': '۷',
+      '8': '۸',
+      '9': '۹'
+  };
+
+  let formattedDate = dateString;
+  for (const digit in persianDigits) {
+    formattedDate = formattedDate.replace(new RegExp(digit, 'g'), persianDigits[digit as keyof typeof persianDigits]);
 }
 
+  return formattedDate;
+}
   @ViewChild('inputFilter', { static: true }) input!: ElementRef;
-
   ngOnInit(): void {
+  
     // const interval$: Observable<any> = new Observable((observer: Observer<number>) => {
     //     vlet count = 0;
     //     setInterval(() => {
