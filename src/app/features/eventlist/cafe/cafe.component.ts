@@ -10,7 +10,7 @@ import { EventService } from 'src/app/services/event.service';
 })
 export class CafeComponent implements OnInit {
   eventId!: number;
-  event!: any;
+  event: any;
   eventfound: boolean = true;
   public users = [
     {
@@ -71,11 +71,15 @@ export class CafeComponent implements OnInit {
   constructor(private route: ActivatedRoute,private router:Router,private eventService:EventService) {}
 
   ngOnInit() {
-    this.event = this.eventService.events.find(event => event.id === +this.route.snapshot.params['id'])
-    console.log(this.event)
-    if (!this.event){
-      this.eventfound = false;
-      this.router.navigate(['/events']);
-    }
+    const eventId = this.route.snapshot.params['id']
+    const eventTitle = this.router.url.split('/')[2]
+    // this.event = this.eventService.events.find(event => event.id === +this.route.snapshot.params['id'])
+    // console.log(this.event)
+    // if (!this.event){
+    //   this.eventfound = false;
+    //   this.router.navigate(['/events']);
+    // }
+    this.eventService.getEvent(eventTitle.toLowerCase(),eventId).subscribe((event)=>(this.event=event))
+    this.eventService.getEvent(eventTitle.toLowerCase(),eventId).subscribe(console.log)
   }
 }

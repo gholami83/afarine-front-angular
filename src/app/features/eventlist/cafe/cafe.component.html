@@ -2,16 +2,13 @@
     <div class="flex flex-col  text-white pb-32 bg-article">
         <div class="pt-24 ">
             <p class="text-pretty text-7xl font-extrabold text-center">
-                کافه نوآوری
+                {{ event.meeting.title }} 
             </p>
         </div>
-        <div class="flex justify-center items-center ">
+        <div class="flex justify-center items-center pt-8">
             <div class="w-1/3 order-2">
-                <p class="text-xl text-center leading-loose">
-                    کافه نوآوری در شرکت‌ها محیطی است که برای تشویق خلاقیت و
-                    ایده‌پردازی، ارائه فرصت‌های آزاد برای تفکر آزاد و تبادل
-                    ایده‌ها
-                    ایجاد می‌شود.
+                <p class="text-xl text-center leading-loose ">
+                    {{ event.meeting.slogan }}
                 </p>
             </div>
             <div class="w-1/4 flex justify-center order-1">
@@ -31,16 +28,10 @@
                 alt>
         </div>
         <div
-            class="col-span-3 px-10 mx-3 leading-10 text-lg font-bold svg-noavary">
-            <p>این مفهوم معمولاً به منظور توسعه و پیشرفت فناوری، بهبود فرآیندها
-                و محصولات، و جذب استعدادهای نوآور و خلاق در سازمان‌ها بکار
-                می‌رود.
-
-                کافه نوآوری می‌تواند از راهکارهای مختلفی مانند ایجاد فضای کار
-                مشترک، ساماندهی جلسات ایده‌پردازی و همکاری تیمی، ارائه جوایز و
-                حوافز برای ایده‌های نوآورانه، تسهیل فرآیندهای تجزیه و تحلیل
-                ایده‌ها و تبدیل آنها به پروژه‌های عملی، و ایجاد ارتباطات بین
-                بخش‌های مختلف سازمان انجام شود.</p>
+            class="col-span-3 px-10 mx-3 leading-10 text-lg font-bold svg-noavary pb-8">
+            <p>
+                {{ event.meeting.description }}
+            </p>
         </div>
     </div>
     <div

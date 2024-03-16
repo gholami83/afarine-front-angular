@@ -1,4 +1,12 @@
-export class EventService {
+import { Injectable } from '@angular/core';
+import { HttpInterceptor, HttpEvent, HttpHandler, HttpRequest,HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+
+@Injectable({
+  providedIn:'root'
+})
+export class EventService{
   events = [
     {
       id:0,
@@ -81,5 +89,9 @@ export class EventService {
       type: 'startup',
     },
   ];
-  constructor() { }
+  BASE_URL = 'http://afarine.inolinx.com/api/events/'
+  constructor(private http:HttpClient)  { }
+    getEvent(name:string,id:string ){
+      return this.http.get(`${this.BASE_URL}${name}/list/${id}`)
+    }
 }

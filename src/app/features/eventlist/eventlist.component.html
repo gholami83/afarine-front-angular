@@ -17,18 +17,19 @@
                         class=" shadow-lg hover:shadow-2xl  rounded-xl  m-3"
                         style="background-color: #232323;"
                         [routerLink]="[event.type_name ,event.id]"
-                        [queryParams]="{eventfound:'true'}" fragment="title" appScrollToTop>
+                        [queryParams]="{eventfound:'true'}" fragment="title" 
+                        appScrollToTop>
                         <div class=" transition-card">
                             <div
                                 class="image-card justify-items-center items-center div-img-card rounded-md">
-                                <img src="../../../assets/imgs/wp4700266.jpg" alt="event"
+                                <img [src]="event.poster" alt="event"
                                     class="relative h-full">
                             </div>
                             <div
                                 class="p-card relative backdrop-blur-2xl border-2 border-yellow-400 bg-opacity-30 opacity-90 m-3 p-3 rounded-lg leading-loose text-white">
                                 <div
-                                    class="text-md bg-yellow-400 text-black my-2 px-1 rounded-md">
-                                    {{ changeJalaiDate(event.start_date) }}
+                                    class="text-md bg-yellow-300 text-black my-2 px-1 rounded-md">
+                                    شروع رویداد: {{ changeJalaiDate(event.start_date)[0] }}<br>ساعت: {{ changeJalaiDate(event.start_date)[1]  }}
                                 </div>
                                 <div class="text-lg font-bold">
                                     {{event.title}}
@@ -37,13 +38,13 @@
                                     {{event.location}}
                                 </div>
                                 <div class="text-md  ">
-                                    {{formatDateToPersian(event.price)}} تومان
-                                </div>
-                                <div class="text-md  ">
                                     {{event.institute}}
                                 </div>
                                 <div class="text-md" [class]="bgStyle">
                                     {{ getTranslateEvent(event.type_name) }}
+                                </div>
+                                <div class="text-md text-end text-yellow-400">
+                                    {{formatPriceToPersian(event.price)}} تومان
                                 </div>
                             </div>
                         </div>
