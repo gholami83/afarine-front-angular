@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ChangeSerice } from 'src/app/services/change.service';
+import { EventService } from 'src/app/services/event.service';
 
 @Component({
   selector: 'app-meeting',
@@ -61,4 +64,23 @@ export class MeetingComponent {
       name: 'شرکت آفرینه',
     },
   ];
+  
+  event: any;
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private eventService: EventService,
+    public changeSerice: ChangeSerice
+  ) {}
+  ngOnInit(): void {
+    const eventId = this.route.snapshot.params['id'];
+    const eventTitle = this.router.url.split('/')[2];
+    this.eventService.getEvent(eventTitle.toLowerCase(), eventId).subscribe(
+      (event) => {
+        this.event = event;
+        console.log(event)
+      }
+      // (err)=>{}
+    );
+  }
 }

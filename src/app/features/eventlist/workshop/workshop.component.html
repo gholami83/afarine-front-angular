@@ -4,13 +4,10 @@
         <div class="flex flex-row ">
             <div class="w-1/2 order-2 py-8">
                 <p class="text-4xl font-site-b font-extrabold text-pretty">
-                    کارگاه نوآوری و کسب‌ وکار
+                    {{ event.title}}
                 </p>
                 <p class="text-lg leading-loose text-wrap ">
-                    این مفهوم معمولاً به منظور توسعه و پیشرفت فناوری، بهبود
-                    فرآیندها
-                    و محصولات، و جذب استعدادهای نوآور و خلاق در سازمان‌ها بکار
-                    می‌رود.
+                    {{ event.slogan }}
                 </p>
             </div>
             <div class="w-1/2 order-1">
@@ -25,11 +22,7 @@
                 محتوای کارگاه
             </div>
             <p class="text-xl leading-loose text-wrap">
-                اگر به توسعه‌ی بک‌اند علاقه‌مندید، در انتخاب این مسیر آموزشی شک
-                نکنید. در این مسیر، ابتدا زبان پایتون را به‌عنوان یک زبان
-                عام‌منظوره یاد می‌گیرید. در ادامه، فریم‌ورک جنگو و زیر و بم آن
-                را خواهید آموخت. در این مسیر، با اصول توسعه‌ی نرم‌افزار نیز آشنا
-                خواهید شد که از موارد مورد نیاز برای ورود به بازار کار هستند.
+                {{event.description}}
             </p>
         </div>
     </div>
@@ -40,7 +33,7 @@
             <div
                 class="w-1/4 flex flex-row justify-center items-center gap-2 bg-gray-200 border-2 border-orange-300 shadow-md bg-opacity-90 rounded-lg h-36">
                 <div class="order-2">
-                    ۵۰,۰۰۰ تومان
+                    {{ changeSerice.formatPriceToPersian(event.price) }}
                 </div>
                 <div class="text-2xl order-1 p-2 text-end ">
                     <i class="fa-solid fa-coins"></i>
@@ -53,9 +46,7 @@
                 </div>
                 <div class="flex flex-row">
                     <div class="order-2">
-                        زمان شروع: ۱۴۰۲/۱۱/۲۲
-                        <br>
-                        زمان پایان: ۱۴۰۲/۱۱/۲۳
+                        شروع رویداد: {{ changeSerice.changeJalaiDate(event.start_date)[0] }}<br>ساعت: {{ changeSerice.changeJalaiDate(event.start_date)[1]  }}
                     </div>
                     <div class="text-2xl order-1 p-2 text-end">
                         <i class="fa-regular fa-clock"></i>
@@ -65,7 +56,7 @@
             <div
                 class="w-1/3 text-start flex items-center justify-center gap-2 bg-gray-200 bg-opacity-90 border-2 border-orange-300 shadow-md rounded-lg h-36 px-2">
                 <div class="order-2">
-                    بابل، خیابان امام رضا، میدان کشوری
+                    {{event.location}}
                 </div>
                 <div class="text-2xl p-2 text-end order-1">
                     <i class="fa-solid fa-location-dot"></i>

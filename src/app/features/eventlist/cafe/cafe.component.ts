@@ -1,5 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ChangeSerice } from 'src/app/services/change.service';
 import { EventService } from 'src/app/services/event.service';
 
 @Component({
@@ -68,18 +69,23 @@ export class CafeComponent implements OnInit {
     },
   ];
 
-  constructor(private route: ActivatedRoute,private router:Router,private eventService:EventService) {}
-
+  constructor(private route: ActivatedRoute,private router:Router,private eventService:EventService,public changeSerice:ChangeSerice) {}
   ngOnInit() {
     const eventId = this.route.snapshot.params['id']
     const eventTitle = this.router.url.split('/')[2]
     // this.event = this.eventService.events.find(event => event.id === +this.route.snapshot.params['id'])
     // console.log(this.event)
     // if (!this.event){
-    //   this.eventfound = false;
-    //   this.router.navigate(['/events']);
-    // }
-    this.eventService.getEvent(eventTitle.toLowerCase(),eventId).subscribe((event)=>(this.event=event))
-    this.eventService.getEvent(eventTitle.toLowerCase(),eventId).subscribe(console.log)
+      //   this.eventfound = false;
+      //   this.router.navigate(['/events']);
+      // }
+      this.eventService.getEvent(eventTitle.toLowerCase(),eventId).subscribe(
+        (event)=>{
+          this.event=event;
+          console.log(event)
+        },
+        (err)=>{}
+      )
+      // this.eventService.getEvent(eventTitle.toLowerCase(),eventId).subscribe(console.log)
   }
 }

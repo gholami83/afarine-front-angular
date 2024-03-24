@@ -7,36 +7,32 @@
         </div>
         <div class="flex flex-col order-1 text-white px-10 w-7/12 items-start">
             <div class="text-3xl py-5 text-yellow-300 font-bold">
-                استارتاپ ویکند آفرینه
+                {{event.startup_weekend.title}}
             </div>
             <div class="flex leading-8 text-lg">
                 <p>
-                    استارت آپ ویکند برنامه ای جهانی است که تاکنون در بیش از ۱۰۰۰
-                    شهر دنیا (۱۳۵ کشور) برگزار شده و شبکه ای وسیع از کارآفرینان
-                    را گرد هم آورده است. ویژگی اصلی این رویداد، طوفان فکری و
-                    بررسی ایده ها است
+                    {{ event.startup_weekend.slogan }}
                 </p>
             </div>
             <div class="flex gap-4 text-xl items-center py-5">
-                <div class="order-2 leading-loose p-3 rounded-xl">
-                    زمان شروع: ۱۴۰۲/۱۱/۲۲
-                    <br>
-                    زمان پایان: ۱۴۰۲/۱۱/۲۳                </div>
-                <div class="order-1 text-4xl text-yellow-300">
-                    <i class="fa-regular fa-calendar-days"></i>
-                </div>
-            </div>
-            <div class="flex gap-4 text-xl items-center py-5">
                 <div class="order-2 p-3">
-                    ۵۰,۰۰۰ تومان
+                    {{ changeSerice.formatPriceToPersian(event.startup_weekend.price) }}
                 </div>
                 <div class="text-4xl order-1  text-yellow-300">
                     <i class="fa-solid fa-coins"></i>
                 </div>
             </div>
+            <div class="flex gap-4 text-xl items-center py-5">
+                <div class="order-2 leading-loose p-3 rounded-xl">
+                    شروع رویداد: {{ changeSerice.changeJalaiDate(event.startup_weekend.start_date)[0] }}<br>ساعت: {{ changeSerice.changeJalaiDate(event.startup_weekend.start_date)[1]  }}
+                </div>
+                <div class="order-1 text-4xl text-yellow-300">
+                    <i class="fa-regular fa-calendar-days"></i>
+                </div>
+            </div>
             <div class="flex text-start items-center gap-4 py-5">
                 <div class="order-2 text-xl p-3">
-                    بابل، خیابان امام رضا، میدان کشوری
+                {{ event.startup_weekend.location }}
                 </div>
                 <div class="text-4xl order-1 text-yellow-300">
                     <i class="fa-solid fa-location-dot"></i>
@@ -69,36 +65,8 @@
         </div>
         <div
             class="flex flex-row text-2xl text-white p-9 py-12 justify-center items-center leading-loose gap-4">
-            <div class="w-1/2 flex flex-col justify-start gap-4">
-                <div class=" h-full text-start flex justify-start gap-2">
-                    <div class="order-2">
-                        ۵۰,۰۰۰ تومان
-                    </div>
-                    <div class="text-2xl order-1 p-2 text-end place-self-start">
-                        <i class="fa-solid fa-coins"></i>
-                    </div>
-                </div>
-                <div
-                    class=" justify-start text-xl leading-loose flex items-center gap-2 tracking-wider">
-                    <div class="order-2">
-                        زمان شروع: ۱۴۰۲/۱۱/۲۲
-                        <br>
-                        زمان پایان: ۱۴۰۲/۱۱/۲۳
-                    </div>
-                    <div class="text-2xl order-1 p-2 text-end place-self-start">
-                        <i class="fa-regular fa-clock"></i>
-                    </div>
-                </div>
-                <div class="text-start flex items-center justify-start gap-2">
-                    <div class="order-2">
-                        بابل، خیابان امام رضا، میدان کشوری
-                    </div>
-                    <div class="text-2xl p-2 text-end order-1 place-self-start">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="w-1/2 flex flex-col">
+            
+            <div class="flex flex-col">
                 <div class="bg-indigo-800 text-white leading-8 p-10">
                     <div class="flex justify-start">
                         <div class="text-2xl font-extrabold py-8">

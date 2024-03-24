@@ -9,12 +9,10 @@
             class="flex flex-col text-center  w-1/2 order-2 items-center text-wrap text-white">
             <div
                 class="text-5xl text-center leading-relaxed font-extrabold py-16">
-                رویداد جذب سرمایه برای استارتاپ‌ها
+                {{ event.meeting.title }}
             </div>
             <p class="leading-loose text-xl">
-                رویداد جذب سرمایه برای استارتاپ‌ها با موضوع Mobility & Logistics
-                با همکاری مرکز نوآوری و تحول دیجیتال اتاق بازرگانی تهران و صندوق
-                پژوهش و فناوری وستا برگزار خواهد شد.
+                {{ event.meeting.slogan }}
             </p>
         </div>
         <div class="flex w-1/4 order-1">
@@ -36,18 +34,41 @@
             </div>
         </div>
         <div class="w-1/2">
-            <div>
-                درباره رویداد
+            <div
+                class="w-full flex flex-col justify-around gap-5 md:gap-10 text-2xl items-start pr-10 md:pr-0 ">
+                <div
+                    class=" h-full text-start flex items-center gap-2">
+                    <div class="order-2">
+                        ۵۰,۰۰۰ تومان
+                    </div>
+                    <div
+                        class="text-2xl order-1 p-2 text-end place-self-start">
+                        <i class="fa-solid fa-coins"></i>
+                    </div>
+                </div>
+                <div
+                    class=" justify-start  leading-loose flex items-center gap-2 tracking-wider">
+                    <div class="order-2">
+                        زمان شروع: ۱۴۰۲/۱۱/۲۲
+                        <br>
+                        زمان پایان: ۱۴۰۲/۱۱/۲۳
+                    </div>
+                    <div
+                        class="text-2xl order-1 p-2 text-end place-self-start">
+                        <i class="fa-regular fa-clock"></i>
+                    </div>
+                </div>
+                <div
+                    class="text-start flex items-center justify-start gap-2">
+                    <div class="order-2">
+                        بابل، خیابان امام رضا، میدان کشوری
+                    </div>
+                    <div
+                        class="text-2xl p-2 text-end order-1 place-self-start">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                </div>
             </div>
-            <p>این مفهوم معمولاً به منظور توسعه و پیشرفت فناوری، بهبود فرآیندها
-                و محصولات، و جذب استعدادهای نوآور و خلاق در سازمان‌ها بکار
-                می‌رود.
-
-                کافه نوآوری می‌تواند از راهکارهای مختلفی مانند ایجاد فضای کار
-                مشترک، ساماندهی جلسات ایده‌پردازی و همکاری تیمی، ارائه جوایز و
-                حوافز برای ایده‌های نوآورانه، تسهیل فرآیندهای تجزیه و تحلیل
-                ایده‌ها و تبدیل آنها به پروژه‌های عملی، و ایجاد ارتباطات بین
-                بخش‌های مختلف سازمان انجام شود.</p>
         </div>
     </div>
     <div class="flex flex-col "
@@ -57,106 +78,23 @@
                 src="../../../../assets/imgs/layered-waves-haikei (1).svg" alt>
         </div>
         <div
-            class="flex flex-col text-black leading-8 p-10 bg-white bg-opacity-80 backdrop-brightness-110 border-2 border-gray-200 rounded-3xl mx-20 my-5">
-            <div class="flex justify-start text-3xl font-extrabold py-8">
-                مخاطبین رویداد
-            </div>
-            <div class="text-right text-wrap text-lg leading-loose">
-                <div>
-                    اگر به توسعه‌ی بک‌اند علاقه‌مندید، در انتخاب این مسیر آموزشی
-                    شک
-                    نکنید. در این مسیر، ابتدا زبان پایتون را به‌عنوان یک زبان
-                    عام‌منظوره یاد می‌گیرید. در ادامه، فریم‌ورک جنگو و زیر و بم
-                    آن
-                    را خواهید آموخت. در این مسیر، با اصول توسعه‌ی نرم‌افزار نیز
-                    آشنا
-                    خواهید شد که از موارد مورد نیاز برای ورود به بازار کار
-                    هستند.
-                    اگر به توسعه‌ی بک‌اند علاقه‌مندید، در انتخاب این مسیر آموزشی
-                    شک
-                    نکنید. در این مسیر، ابتدا زبان پایتون را به‌عنوان یک زبان
-                    عام‌منظوره یاد می‌گیرید. در ادامه، فریم‌ورک جنگو و زیر و بم
-                    آن
-                    را خواهید آموخت. در این مسیر، با اصول توسعه‌ی نرم‌افزار نیز
-                    آشنا
-                    خواهید شد که از موارد مورد نیاز برای ورود به بازار کار
-                    هستند.
-                    اگر به توسعه‌ی بک‌اند علاقه‌مندید، در انتخاب این مسیر آموزشی
-                    شک
-                    نکنید. در این مسیر، ابتدا زبان پایتون را به‌عنوان یک زبان
-                    عام‌منظوره یاد می‌گیرید. در ادامه، فریم‌ورک جنگو و زیر و بم
-                    آن
-                    را خواهید آموخت. در این مسیر، با اصول توسعه‌ی نرم‌افزار نیز
-                    آشنا
-                    خواهید شد که از موارد مورد نیاز برای ورود به بازار کار
-                    هستند.
-                </div>
+        class="flex flex-col text-black leading-8 p-10 bg-white bg-opacity-80 backdrop-brightness-110 border-2 border-gray-200 rounded-3xl mx-20 my-5">
+        <div class="flex justify-start text-3xl font-extrabold py-8">
+             درباره رویداد
+        </div>
+        <div class="text-right text-wrap text-lg leading-loose">
+            <div>
+            {{ event.meeting.description }}
             </div>
         </div>
-        <div>
-            <div class="w-full custom-shape-divider-bottom-1707913104 -mb-1">
-                <!-- <img src="../../../../assets/imgs/wave-haikei (3).svg" alt=""> -->
-                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 1200 120" preserveAspectRatio="none">
-                    <path
-                        d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z"
-                        class="shape-fill"></path>
-                </svg>
-            </div>
-            <div class="py-10 text-white"
-                style="background-color: rgba(0,3,69,1);">
-                <div
-                    class="w-full flex flex-col md:flex-row justify-around gap-5 md:gap-3 text-xl items-start pr-10 md:pr-0 md:items-center">
-                    <div
-                        class=" h-full text-start flex items-center gap-2">
-                        <div class="order-2">
-                            ۵۰,۰۰۰ تومان
-                        </div>
-                        <div
-                            class="text-2xl order-1 p-2 text-end place-self-start">
-                            <i class="fa-solid fa-coins"></i>
-                        </div>
-                    </div>
-                    <div
-                        class=" justify-start  leading-loose flex items-center gap-2 tracking-wider">
-                        <div class="order-2">
-                            زمان شروع: ۱۴۰۲/۱۱/۲۲
-                            <br>
-                            زمان پایان: ۱۴۰۲/۱۱/۲۳
-                        </div>
-                        <div
-                            class="text-2xl order-1 p-2 text-end place-self-start">
-                            <i class="fa-regular fa-clock"></i>
-                        </div>
-                    </div>
-                    <div
-                        class="text-start flex items-center justify-start gap-2">
-                        <div class="order-2">
-                            بابل، خیابان امام رضا، میدان کشوری
-                        </div>
-                        <div
-                            class="text-2xl p-2 text-end order-1 place-self-start">
-                            <i class="fa-solid fa-location-dot"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div
-                class="w-full custom-shape-divider-bottom-1707913104 z-10 -mt-1">
-                <!-- <img src="../../../../assets/imgs/wave-haikei (3).svg" alt=""> -->
-                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 1200 120" preserveAspectRatio="none">
-                    <path
-                        d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z"
-                        class="shape-fill"></path>
-                </svg>
-            </div>
-
-        </div>
+    </div>
+       
         <div class>
             <div class="flex flex-col justify-center sticky">
                 <div class="flex justify-center py-5 ">
-                    <p class="text-6xl text-yellow-300 font-extrabold bg-indigo-900 rounded-3xl p-10" style="background-image: url(../../../../assets/imgs/svg-seperate-demo.svg);">
+                    <p
+                        class="text-6xl text-yellow-300 font-extrabold bg-indigo-900 rounded-3xl p-10"
+                        style="background-image: url(../../../../assets/imgs/svg-seperate-demo.svg);">
                         مدرسان دوره</p>
                 </div>
                 <div
@@ -170,7 +108,9 @@
             </div>
             <div class="flex flex-col py-8 ">
                 <div class="flex justify-center text-yellow-300 py-5">
-                    <p class="text-5xl font-bold bg-indigo-900 rounded-3xl p-10" style="background-image: url(../../../../assets/imgs/svg-seperate-demo.svg);">حامیان دوره</p>
+                    <p class="text-5xl font-bold bg-indigo-900 rounded-3xl p-10"
+                        style="background-image: url(../../../../assets/imgs/svg-seperate-demo.svg);">حامیان
+                        دوره</p>
                 </div>
                 <div
                     class="grid grid-cols-1 response-brand gap-2 xl:gap-5 justify-items-center w-full p-2 lg:p-5">

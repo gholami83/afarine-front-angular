@@ -25,6 +25,7 @@ import { ShareModule } from './shared/components/share/share.module';
 import { GeneralService } from './services/general.service';
 import { ScrollToTopDirective } from './shared/directives/scroll.directive';
 import { ScrollService } from './services/scroll.service';
+import { HttpClientModule } from '@angular/common/http';
 
 export function deviceNameProvider( USER_AGENT:string,SCREEN_HEIGHT:string,SCREEN_WIDTH:string ):string{
   return USER_AGENT+' '+SCREEN_HEIGHT+'  '+SCREEN_WIDTH 
@@ -50,6 +51,7 @@ export const SCREEN_WIDTH =  new InjectionToken<string>('SCREEN_HEIGHT');
     BrowserAnimationsModule,
     AppRoutingModule,
     ShareModule,
+    HttpClientModule
   ], 
   providers: [
   { provide:'api_url',useValue:'127.0.0.1/events' },

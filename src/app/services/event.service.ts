@@ -89,7 +89,7 @@ export class EventService{
       type: 'startup',
     },
   ];
-  BASE_URL = 'http://afarine.inolinx.com/api/events/'
+  BASE_URL = 'http://afarine.noarino.ir/api/events/'
   constructor(private http:HttpClient)  { }
     getEvent(name:string,id:string ){
       return this.http.get(`${this.BASE_URL}${name}/list/${id}`)

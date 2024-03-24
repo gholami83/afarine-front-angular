@@ -9,16 +9,10 @@
                 </div>
                 <div class="w-3/5 px-5 py-12  ">
                     <p class="text-4xl font-semibold py-4">
-                        نشست تخصصی
+                        {{ event.meeting.title }}
                     </p>
                     <p class="text-lg font-bold text-wrap leading-loose">
-                        میتوان گفت شورای امور اقتصادی و مالی، گسترده ترین نهاد
-                        تصمیم
-                        گیری مالی منطقه یورو است. این شورا سیاست های اقتصادی 28
-                        کشور
-                        عضو را هماهنگ می کند و ابتکارات و تصمیمات آنها می تواند
-                        تأثیر گسترده ای بر سلامت اقتصادی منطقه یورو داشته باشد،
-                        بنابراین میتواند برای معامله گران مهم باشد.
+                        {{ event.meeting.slogan }}
                     </p>
                 </div>
             </div>
@@ -35,7 +29,9 @@
                         <div
                             class="  text-start flex justify-center gap-2">
                             <div class="order-2">
-                                ۵۰,۰۰۰ تومان
+                                {{
+                                changeSerice.formatPriceToPersian(event.meeting.price)
+                                }}
                             </div>
                             <div
                                 class="text-yellow-300 text-2xl order-1 p-2 text-end self-start">
@@ -45,9 +41,7 @@
                         <div
                             class="justify-center text-xl leading-loose flex items-center gap-2 tracking-wider">
                             <div class="order-2">
-                                زمان شروع: ۱۴۰۲/۱۱/۲۲
-                                <br>
-                                زمان پایان: ۱۴۰۲/۱۱/۲۳
+                                شروع رویداد: {{ changeSerice.changeJalaiDate(event.meeting.start_date)[0] }}<br>ساعت: {{ changeSerice.changeJalaiDate(event.meeting.start_date)[1]  }}
                             </div>
                             <div
                                 class="text-yellow-300 text-2xl order-1 p-2 text-end self-start">
@@ -57,9 +51,7 @@
                         <div
                             class=" text-start flex items-center justify-center gap-2">
                             <div class="order-2">
-                                بابل، خیابان امام رضا، میدان کشوری
-                                بابل، خیابان امام رضا، میدان کشوری
-                                بابل، خیابان امام رضا، میدان کشوری
+                                {{event.meeting.location}}
                             </div>
                             <div
                                 class="text-yellow-300 text-2xl p-2 text-end order-1 self-start">
@@ -71,41 +63,15 @@
             </div>
         </div>
     </div>
-    <div class="flex flex-col relative bg-opacity-90 text-white p-10 gap-4" style="background-color: #193e41">
+    <div class="flex flex-col relative bg-opacity-90 text-white p-10 gap-4"
+        style="background-color: #193e41">
         <div
             class="flex justify-start items-center font-extrabold text-4xl w-full">
             توضیحات
         </div>
         <div class="flex">
             <p class="text-lg font-bold text-wrap leading-[40px]">
-                میتوان گفت شورای امور اقتصادی و مالی، گسترده ترین نهاد
-                تصمیم
-                گیری مالی منطقه یورو است. این شورا سیاست های اقتصادی 28
-                کشور
-                عضو را هماهنگ می کند و ابتکارات و تصمیمات آنها می تواند
-                تأثیر گسترده ای بر سلامت اقتصادی منطقه یورو داشته باشد،
-                بنابراین میتواند برای معامله گران مهم باشد.
-                میتوان گفت شورای امور اقتصادی و مالی، گسترده ترین نهاد
-                تصمیم
-                گیری مالی منطقه یورو است. این شورا سیاست های اقتصادی 28
-                کشور
-                عضو را هماهنگ می کند و ابتکارات و تصمیمات آنها می تواند
-                تأثیر گسترده ای بر سلامت اقتصادی منطقه یورو داشته باشد،
-                بنابراین میتواند برای معامله گران مهم باشد.
-                میتوان گفت شورای امور اقتصادی و مالی، گسترده ترین نهاد
-                تصمیم
-                گیری مالی منطقه یورو است. این شورا سیاست های اقتصادی 28
-                کشور
-                عضو را هماهنگ می کند و ابتکارات و تصمیمات آنها می تواند
-                تأثیر گسترده ای بر سلامت اقتصادی منطقه یورو داشته باشد،
-                بنابراین میتواند برای معامله گران مهم باشد.
-                میتوان گفت شورای امور اقتصادی و مالی، گسترده ترین نهاد
-                تصمیم
-                گیری مالی منطقه یورو است. این شورا سیاست های اقتصادی 28
-                کشور
-                عضو را هماهنگ می کند و ابتکارات و تصمیمات آنها می تواند
-                تأثیر گسترده ای بر سلامت اقتصادی منطقه یورو داشته باشد،
-                بنابراین میتواند برای معامله گران مهم باشد.
+                {{ event.meeting.description }}
             </p>
         </div>
     </div>

@@ -215,15 +215,16 @@ export class EventlistComponent implements OnInit {
       '7': '۷',
       '8': '۸',
       '9': '۹'
-  };
-
-  let formattedDate = dateString;
-  for (const digit in persianDigits) {
-    formattedDate = formattedDate.replace(new RegExp(digit, 'g'), persianDigits[digit as keyof typeof persianDigits]);
-}
-
-  return formattedDate;
-}
+    };
+    
+    let formattedDate = dateString;
+    for (const digit in persianDigits) {
+      formattedDate = formattedDate.replace(new RegExp(digit, 'g'), persianDigits[digit as keyof typeof persianDigits]);
+    }
+    
+    return formattedDate;
+  }
+  BASE_URL = 'http://afarine.noarino.ir'
   @ViewChild('inputFilter', { static: true }) input!: ElementRef;
   ngOnInit(): void {
   
@@ -247,10 +248,10 @@ export class EventlistComponent implements OnInit {
     //   )
     // this.http.get('https://jsonplaceholder.typicode.com/todos').subscribe(console.log)
     this.http
-      .get<eventInterface[]>('http://afarine.inolinx.com/api/events/all/')
+      .get<eventInterface[]>(this.BASE_URL+'/api/events/all/')
       .subscribe((events) => (this.events = events));
     this.http
-      .get('http://afarine.inolinx.com/api/events/all/')
+      .get(this.BASE_URL+'/api/events/all/')
       .subscribe(console.log);
 
     fromEvent(this.input.nativeElement, 'input').subscribe();

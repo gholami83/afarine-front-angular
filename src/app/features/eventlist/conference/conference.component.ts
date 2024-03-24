@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ChangeSerice } from 'src/app/services/change.service';
+import { EventService } from 'src/app/services/event.service';
 
 @Component({
   selector: 'app-conference',
   templateUrl: './conference.component.html',
-  styleUrls: ['./conference.component.scss']
+  styleUrls: ['./conference.component.scss'],
 })
-export class ConferenceComponent {
+export class ConferenceComponent implements OnInit {
   public users = [
     {
       name: 'حسین غلامی',
@@ -43,7 +46,7 @@ export class ConferenceComponent {
       executive: 'مدیر ارشد هلدینگ آفرینه',
       position: 'مجری دوره',
     },
-  ]
+  ];
   public institutes = [
     {
       name: 'شرکت آفرینه',
@@ -61,5 +64,22 @@ export class ConferenceComponent {
       name: 'شرکت آفرینه',
     },
   ];
-  
+  event: any;
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private eventService: EventService,
+    public changeSerice: ChangeSerice
+  ) {}
+  ngOnInit(): void {
+    const eventId = this.route.snapshot.params['id'];
+    const eventTitle = this.router.url.split('/')[2];
+    this.eventService.getEvent(eventTitle.toLowerCase(), eventId).subscribe(
+      (event) => {
+        this.event = event;
+        console.log(event)
+      }
+      // (err)=>{}
+    );
+  }
 }
