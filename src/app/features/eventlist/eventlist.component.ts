@@ -224,7 +224,7 @@ export class EventlistComponent implements OnInit {
     
     return formattedDate;
   }
-  BASE_URL = 'http://afarine.noarino.ir'
+  BASE_URL = 'https://afarine.noarino.ir'
   @ViewChild('inputFilter', { static: true }) input!: ElementRef;
   ngOnInit(): void {
   

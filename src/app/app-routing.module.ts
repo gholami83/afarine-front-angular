@@ -11,8 +11,7 @@ import { HomeComponent } from './features/home/home.component';
 
 
 const route: Routes = [
-  { path:'',component:CarouselComponent,pathMatch:'full' },
-  { path:'home',component:HomeComponent,pathMatch:'full' },
+  { path:"",loadChildren: () => import('./features/home/home.module').then(m=>m.HomeModule) },
   { path:"events",loadChildren: () => import('./features/eventlist/eventlist.module').then(m=>m.EventlistModule) },
   { path:'**',redirectTo: '404'},
   { path:'404',component:NotfoundComponent }

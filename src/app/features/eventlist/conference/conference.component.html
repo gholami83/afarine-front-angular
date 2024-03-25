@@ -4,7 +4,7 @@
         <div class="p-3 md:p-16 block">
             <div class="flex w-full h-full">
                 <img class="w-full rounded-t-xl"
-                    [src]="event.meeting.poster"
+                    [src]="event.conference.poster"
                     alt>
             </div>
             <div
@@ -23,13 +23,13 @@
                             class=" rounded-xl leading-8 p-10">
                             <div class="flex justify-start">
                                 <div class="text-2xl font-extrabold py-8">
-                                    {{ event.meeting.title }}
+                                    {{ event.conference.title }}
                                 </div>
                             </div>
                             <div
                                 class="text-right text-wrap leading-relaxed text-lg">
                                 <div>
-                                    {{ event.meeting.slogan}}
+                                    {{ event.conference.slogan}}
                                 </div>
                             </div>
                             <div
@@ -41,7 +41,7 @@
                             <div
                                 class="text-right text-wrap leading-relaxed text-lg">
                                 <div>
-                                    {{ event.meeting.description}}
+                                    {{ event.conference.description}}
                                 </div>
                             </div>
                         </div>
@@ -58,7 +58,7 @@
                             </div>
                         </div>
                         <div class="text-right text-wrap leading-9 text-lg ">
-                        {{ event.meeting.description }}
+                        {{ event.conference.description }}
                         </div>
                     </div>
                     <div class="w-1/2">
@@ -83,7 +83,7 @@
                 <div
                     class=" h-full text-start flex items-center gap-2">
                     <div class="order-2">
-                        {{ changeSerice.formatPriceToPersian(event.meeting.price) }}
+                        {{ changeSerice.formatPriceToPersian(event.conference.price) }}
                     </div>
                     <div
                         class="text-2xl order-1 p-2 text-end place-self-start">
@@ -93,7 +93,7 @@
                 <div
                     class=" justify-start  leading-loose flex items-center gap-2 tracking-wider">
                     <div class="order-2">
-                        شروع رویداد: {{ changeSerice.changeJalaiDate(event.meeting.start_date)[0] }}<br>ساعت: {{ changeSerice.changeJalaiDate(event.meeting.start_date)[1]  }}
+                        شروع رویداد: {{ changeSerice.changeJalaiDate(event.conference.start_date)[0] }}<br>ساعت: {{ changeSerice.changeJalaiDate(event.conference.start_date)[1]  }}
                     </div>
                     <div
                         class="text-2xl order-1 p-2 text-end place-self-start">
@@ -103,7 +103,7 @@
                 <div
                     class="text-start flex items-center justify-start gap-2">
                     <div class="order-2">
-                        {{event.meeting.location}}
+                        {{event.conference.location}}
                     </div>
                     <div
                         class="text-2xl p-2 text-end order-1 place-self-start">

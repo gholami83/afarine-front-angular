@@ -9,10 +9,10 @@
             class="flex flex-col text-center  w-1/2 order-2 items-center text-wrap text-white">
             <div
                 class="text-5xl text-center leading-relaxed font-extrabold py-16">
-                {{ event.meeting.title }}
+                {{ event.demo_day.title }}
             </div>
             <p class="leading-loose text-xl">
-                {{ event.meeting.slogan }}
+                {{ event.demo_day.slogan }}
             </p>
         </div>
         <div class="flex w-1/4 order-1">
@@ -39,8 +39,9 @@
                 <div
                     class=" h-full text-start flex items-center gap-2">
                     <div class="order-2">
-                        ۵۰,۰۰۰ تومان
-                    </div>
+                        {{
+                        changeSerice.formatPriceToPersian(event.demo_day.price)
+                        }} </div>
                     <div
                         class="text-2xl order-1 p-2 text-end place-self-start">
                         <i class="fa-solid fa-coins"></i>
@@ -49,9 +50,7 @@
                 <div
                     class=" justify-start  leading-loose flex items-center gap-2 tracking-wider">
                     <div class="order-2">
-                        زمان شروع: ۱۴۰۲/۱۱/۲۲
-                        <br>
-                        زمان پایان: ۱۴۰۲/۱۱/۲۳
+                        شروع رویداد: {{ changeSerice.changeJalaiDate(event.demo_day.start_date)[0] }}<br>ساعت: {{ changeSerice.changeJalaiDate(event.demo_day.start_date)[1]  }}
                     </div>
                     <div
                         class="text-2xl order-1 p-2 text-end place-self-start">
@@ -61,7 +60,7 @@
                 <div
                     class="text-start flex items-center justify-start gap-2">
                     <div class="order-2">
-                        بابل، خیابان امام رضا، میدان کشوری
+                        {{event.demo_day.location}}
                     </div>
                     <div
                         class="text-2xl p-2 text-end order-1 place-self-start">
@@ -78,17 +77,17 @@
                 src="../../../../assets/imgs/layered-waves-haikei (1).svg" alt>
         </div>
         <div
-        class="flex flex-col text-black leading-8 p-10 bg-white bg-opacity-80 backdrop-brightness-110 border-2 border-gray-200 rounded-3xl mx-20 my-5">
-        <div class="flex justify-start text-3xl font-extrabold py-8">
-             درباره رویداد
-        </div>
-        <div class="text-right text-wrap text-lg leading-loose">
-            <div>
-            {{ event.meeting.description }}
+            class="flex flex-col text-black leading-8 p-10 bg-white bg-opacity-80 backdrop-brightness-110 border-2 border-gray-200 rounded-3xl mx-20 my-5">
+            <div class="flex justify-start text-3xl font-extrabold py-8">
+                درباره رویداد
+            </div>
+            <div class="text-right text-wrap text-lg leading-loose">
+                <div>
+                    {{ event.demo_day.description }}
+                </div>
             </div>
         </div>
-    </div>
-       
+
         <div class>
             <div class="flex flex-col justify-center sticky">
                 <div class="flex justify-center py-5 ">
