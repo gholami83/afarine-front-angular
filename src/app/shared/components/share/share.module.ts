@@ -8,6 +8,7 @@ import { CardUserComponent } from '../card-user/card-user.component';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { CardPosterComponent } from '../card-poster/card-poster.component';
+import { LoaderComponent } from '../loader/loader.component';
 
 
 
@@ -21,6 +22,7 @@ import { CardPosterComponent } from '../card-poster/card-poster.component';
     HeaderComponent,
     FooterComponent,
     CardPosterComponent,
+    LoaderComponent,
   ],
   imports: [
     CommonModule
@@ -34,6 +36,7 @@ import { CardPosterComponent } from '../card-poster/card-poster.component';
     HeaderComponent,
     FooterComponent,
     CardPosterComponent,
+    LoaderComponent,
   ]
 })
 export class ShareModule { }

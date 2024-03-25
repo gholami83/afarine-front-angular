@@ -35,7 +35,6 @@ import { toDate, format as formatJalali } from 'date-fns-jalali';
   templateUrl: './eventlist.component.html',
   styleUrls: ['./eventlist.component.scss'],
 })
-
 export class EventlistComponent implements OnInit {
   // events = [
   //   {
@@ -119,6 +118,7 @@ export class EventlistComponent implements OnInit {
   //     type: 'startupweekend',
   //   },
   // ];
+  isloading = true;
 
   public events: eventInterface[] = [
     {
@@ -132,7 +132,7 @@ export class EventlistComponent implements OnInit {
       description: '',
       institute: [],
       executer: [],
-      start_date:'',
+      start_date: '',
     },
   ];
   bgStyle: string = '';
@@ -144,7 +144,11 @@ export class EventlistComponent implements OnInit {
     private router: Router,
     private ApiService: ApiService,
     private http: HttpClient
-  ) {}
+  ) {
+    setTimeout(() => {
+      this.isloading = false;
+    }, 2000);
+  }
 
   public log() {
     this.generalService.log(this.generalService.username);
@@ -165,21 +169,21 @@ export class EventlistComponent implements OnInit {
     })?.translateName;
   }
 
-  
   public changeJalaiDate(data: string) {
-  
     const date = new Date(data);
-    
+
     if (isNaN(date.getTime())) {
-        // console.error("Invalid date object.");
-        return '';
+      // console.error("Invalid date object.");
+      return '';
     }
-    const jalaliDateWithTime = formatJalali(date, 'yyyy/MM/dd HH:mm:ss', { locale: enUS });
-    const time = jalaliDateWithTime.split(' ')
-    return this.formatDateToPersian(time)
+    const jalaliDateWithTime = formatJalali(date, 'yyyy/MM/dd HH:mm:ss', {
+      locale: enUS,
+    });
+    const time = jalaliDateWithTime.split(' ');
+    return this.formatDateToPersian(time);
   }
 
-   formatDateToPersian(dateString:string[]) {
+  formatDateToPersian(dateString: string[]) {
     const persianDigits = {
       '0': '۰',
       '1': '۱',
@@ -190,44 +194,52 @@ export class EventlistComponent implements OnInit {
       '6': '۶',
       '7': '۷',
       '8': '۸',
-      '9': '۹'
-  };
-
-  let formattedDate = dateString;
-  for (const digit in persianDigits) {
-    formattedDate[0] = formattedDate[0].replace(new RegExp(digit, 'g'), persianDigits[digit as keyof typeof persianDigits]);
-}
-  for (const digit in persianDigits) {
-    formattedDate[1] = formattedDate[1].replace(new RegExp(digit, 'g'), persianDigits[digit as keyof typeof persianDigits]);
-}
-
-  return formattedDate;
-}
-   formatPriceToPersian(dateString:string) {
-    const persianDigits = {
-      '0': '۰',
-      '1': '۱',
-      '2': '۲',
-      '3': '۳',
-      '4': '۴',
-      '5': '۵',
-      '6': '۶',
-      '7': '۷',
-      '8': '۸',
-      '9': '۹'
+      '9': '۹',
     };
-    
+
     let formattedDate = dateString;
     for (const digit in persianDigits) {
-      formattedDate = formattedDate.replace(new RegExp(digit, 'g'), persianDigits[digit as keyof typeof persianDigits]);
+      formattedDate[0] = formattedDate[0].replace(
+        new RegExp(digit, 'g'),
+        persianDigits[digit as keyof typeof persianDigits]
+      );
     }
-    
+    for (const digit in persianDigits) {
+      formattedDate[1] = formattedDate[1].replace(
+        new RegExp(digit, 'g'),
+        persianDigits[digit as keyof typeof persianDigits]
+      );
+    }
+
     return formattedDate;
   }
-  BASE_URL = 'https://afarine.noarino.ir'
+  formatPriceToPersian(dateString: string) {
+    const persianDigits = {
+      '0': '۰',
+      '1': '۱',
+      '2': '۲',
+      '3': '۳',
+      '4': '۴',
+      '5': '۵',
+      '6': '۶',
+      '7': '۷',
+      '8': '۸',
+      '9': '۹',
+    };
+
+    let formattedDate = dateString;
+    for (const digit in persianDigits) {
+      formattedDate = formattedDate.replace(
+        new RegExp(digit, 'g'),
+        persianDigits[digit as keyof typeof persianDigits]
+      );
+    }
+
+    return formattedDate;
+  }
+  BASE_URL = 'https://afarine.noarino.ir';
   @ViewChild('inputFilter', { static: true }) input!: ElementRef;
   ngOnInit(): void {
-  
     // const interval$: Observable<any> = new Observable((observer: Observer<number>) => {
     //     vlet count = 0;
     //     setInterval(() => {
@@ -248,11 +260,9 @@ export class EventlistComponent implements OnInit {
     //   )
     // this.http.get('https://jsonplaceholder.typicode.com/todos').subscribe(console.log)
     this.http
-      .get<eventInterface[]>(this.BASE_URL+'/api/events/all/')
+      .get<eventInterface[]>(this.BASE_URL + '/api/events/all/')
       .subscribe((events) => (this.events = events));
-    this.http
-      .get(this.BASE_URL+'/api/events/all/')
-      .subscribe(console.log);
+    this.http.get(this.BASE_URL + '/api/events/all/').subscribe(console.log);
 
     fromEvent(this.input.nativeElement, 'input').subscribe();
     fromEvent(document, 'click')
@@ -268,4 +278,3 @@ export class EventlistComponent implements OnInit {
       .subscribe();
   }
 }
-

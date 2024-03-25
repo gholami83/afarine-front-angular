@@ -4,8 +4,11 @@
         <p class="text-2xl text-gray-600 font-extrabold">
             رویدادهای نوآوری؛
         </p>
-        <p class="text-start text-gray-700 font-extrabold text-xl">رویدادهایی در
-            حوزه‌ی کارآفرینی با موضوع نوآوری در آفرینه، در رویداد مورد علاقه‌تان
+        <p
+            class="text-start text-gray-700 font-extrabold text-xl">رویدادهایی
+            در
+            حوزه‌ی کارآفرینی با موضوع نوآوری در آفرینه، در رویداد مورد
+            علاقه‌تان
             ثبت‌نام کنید.
         </p>
     </div>
@@ -17,7 +20,7 @@
                         class=" shadow-lg hover:shadow-2xl  rounded-xl  m-3"
                         style="background-color: #232323;"
                         [routerLink]="[event.type_name ,event.id]"
-                        [queryParams]="{eventfound:'true'}" fragment="title" 
+                        [queryParams]="{eventfound:'true'}" fragment="title"
                         appScrollToTop>
                         <div class=" transition-card">
                             <div
@@ -29,7 +32,10 @@
                                 class="p-card relative backdrop-blur-2xl border-2 border-yellow-400 bg-opacity-30 opacity-90 m-3 p-3 rounded-lg leading-loose text-white">
                                 <div
                                     class="text-md bg-yellow-300 text-black my-2 px-1 rounded-md">
-                                    شروع رویداد: {{ changeJalaiDate(event.start_date)[0] }}<br>ساعت: {{ changeJalaiDate(event.start_date)[1]  }}
+                                    شروع رویداد: {{
+                                    changeJalaiDate(event.start_date)[0]
+                                    }}<br>ساعت: {{
+                                    changeJalaiDate(event.start_date)[1] }}
                                 </div>
                                 <div class="text-lg font-bold">
                                     {{event.title}}
@@ -43,8 +49,10 @@
                                 <div class="text-md" [class]="bgStyle">
                                     {{ getTranslateEvent(event.type_name) }}
                                 </div>
-                                <div class="text-md text-end text-yellow-400">
-                                    {{formatPriceToPersian(event.price)}} تومان
+                                <div
+                                    class="text-md text-end text-yellow-400">
+                                    {{formatPriceToPersian(event.price)}}
+                                    تومان
                                 </div>
                             </div>
                         </div>
@@ -54,12 +62,13 @@
         </div>
         <div class="max-h-full lg:w-1/4 px-2">
             <div
-            style="background-color: #232323;" class="sticky top-[80px] left-0 w-full flex flex-col text-white rounded-2xl border-2 border-yellow-400 p-4 shadow-lg backdrop-brightness-125 my-3 xl:my-7 ">
+                style="background-color: #232323;"
+                class="sticky top-[80px] left-0 w-full flex flex-col text-white rounded-2xl border-2 border-yellow-400 p-4 shadow-lg backdrop-brightness-125 my-3 xl:my-7 ">
                 <div class="flex justify-center text-md font-extrabold ">
                     <p>صفحه فیلتر</p>
                 </div>
                 <div class="flex h-full">
-    
+
                 </div>
                 <ul class="p-3">
                     <li>list</li>

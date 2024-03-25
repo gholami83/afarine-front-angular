@@ -1,9 +1,8 @@
-<app-header></app-header>
-<div class="pt-[60px] bg-indigo-900">
+<app-loader *ngIf="isloading"></app-loader>
+<div *ngIf="!isloading">
+    <app-header></app-header>
+    <div class="pt-[60px] bg-indigo-900">
+    </div>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
 </div>
-<!-- <div class="w-40 h-40 z-50 bg-green-900">
-    <app-loader></app-loader>
-</div> -->
-<router-outlet></router-outlet>
-
-<app-footer></app-footer>

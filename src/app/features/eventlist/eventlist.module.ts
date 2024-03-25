@@ -9,6 +9,8 @@ import { CafeComponent } from './cafe/cafe.component';
 import { ConferenceComponent } from './conference/conference.component';
 import { DemoComponent } from './demo/demo.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ShareModule } from 'src/app/shared/components/share/share.module';
+import { LoaderComponent } from 'src/app/shared/components/loader/loader.component';
 
 
 
@@ -19,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     HttpClientModule,
     CommonModule,
-    EventlistRoutingModule
+    EventlistRoutingModule,
+    ShareModule,
   ]
 })
 export class EventlistModule { }

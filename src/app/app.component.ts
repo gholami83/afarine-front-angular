@@ -11,4 +11,10 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     initFlowbite();
   }
+  isloading = true
+  constructor(){
+    setTimeout(() => {
+      this.isloading = false; 
+    }, 2000);
+  }
 }

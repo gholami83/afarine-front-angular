@@ -45,7 +45,6 @@ export const SCREEN_WIDTH =  new InjectionToken<string>('SCREEN_HEIGHT');
     UserComponent,
     NotfoundComponent,
     ScrollToTopDirective,
-    LoaderComponent,
   ],
   imports: [
     BrowserModule,
