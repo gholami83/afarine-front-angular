@@ -1,26 +1,26 @@
 <!-- <div
     class="grid grid-cols-1 response-users gap-3 sm:gap-4 xl:gap-5 justify-items-center w-full m-auto  "> -->
     <div [class]="textstyle+' '+ bgstyle"
-        class="grid items-center justify-items-center justify-center backdrop-blur shadow-sm  shadow-gray-500 hover:shadow-xl rounded-xl p-4 sm:p-4 lg:px-6 xl:py-8 response-user m-auto ">  
+        class="grid items-center justify-items-center justify-center backdrop-blur shadow-sm  shadow-gray-500 hover:shadow-xl rounded-xl p-4 sm:p-4 lg:px-6 xl:py-8 response-user w-56 ">  
         <div class=" order-1 p-2 text-end w-32 ">
-            <img src="../../../assets/imgs/1701071988810.jpg"
+            <img [src]="user.user.image"
                 class="rounded-full border-2 border-yellow-400">
         </div>
         <div
             class="text-center font-bold text-lg order-2 py-2 leading-relaxed">
-            {{user.name}}
+            {{user.user.name}}
         </div>
         <div
             [class]="rolestyle" class="text-center font-extrabold text-md order-2 py-2">
-            {{user.position}}
+            {{user.role}}
         </div>
         <div
             class="text-center text-md font-semibold order-2 py-2 leading-relaxed">
-            {{user.educate}}
+            {{user.user.degree_of_education}}
         </div>
         <div
             class="text-center text-md font-semibold order-2 py-2 leading-loose">
-            {{user.executive}}
+            {{getTranslateField(user.user.bussiness_fields)}}
         </div>
     </div>
 <!-- </div> -->

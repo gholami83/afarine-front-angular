@@ -15,6 +15,6 @@ export class AppComponent implements OnInit {
   constructor(){
     setTimeout(() => {
       this.isloading = false; 
-    }, 2000);
+    }, 0);
   }
 }

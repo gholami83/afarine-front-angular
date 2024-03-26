@@ -29,6 +29,7 @@ import { eventInterface } from 'src/app/shared/interfaces/event-interface';
 import { format } from 'date-fns';
 import { enUS } from 'date-fns/locale';
 import { toDate, format as formatJalali } from 'date-fns-jalali';
+import { ChangeService } from 'src/app/services/change.service';
 
 @Component({
   selector: 'app-eventlist',
@@ -143,7 +144,8 @@ export class EventlistComponent implements OnInit {
     @Inject('api_url') url: string,
     private router: Router,
     private ApiService: ApiService,
-    private http: HttpClient
+    private http: HttpClient,
+    private changeService:ChangeService
   ) {
     setTimeout(() => {
       this.isloading = false;

@@ -6,7 +6,7 @@ import { eventTypeList } from 'src/app/shared/models/event-type-list';
 @Injectable({
   providedIn: 'root',
 })
-export class ChangeSerice {
+export class ChangeService {
   public getTranslateEvent(name: string) {
     return eventTypeList.find((item: any) => {
       return item.name === name;

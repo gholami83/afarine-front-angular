@@ -99,7 +99,7 @@
                 <div
                     class="grid grid-cols-1  response-users gap-3 sm:gap-4 xl:gap-5 justify-items-center w-full xL:px-24 my-20">
                     <div *ngFor="let user of users">
-                        <app-card-user [textstyle]="'text-gray-900'"
+                        <app-card-user [user]="user" [textstyle]="'text-gray-900'"
                             [bgstyle]="'bg-white bg-opacity-70 '"
                             [user]="user"></app-card-user>
                     </div>

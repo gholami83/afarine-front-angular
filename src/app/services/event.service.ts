@@ -91,7 +91,7 @@ export class EventService{
   ];
   BASE_URL = 'https://afarine.noarino.ir/api/events/'
   constructor(private http:HttpClient)  { }
-    getEvent(name:string,id:string ){
-      return this.http.get(`${this.BASE_URL}${name}/list/${id}`)
-    }
+  getEvent(name:string,id:string ){
+    return this.http.get(`${this.BASE_URL}${name}/list/${id}`)
+  }
 }

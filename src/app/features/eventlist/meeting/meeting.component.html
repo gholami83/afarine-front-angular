@@ -1,71 +1,74 @@
 <div class="backgroud-site font-site">
-    <div class=" ">
-        <div class="py-8 px-10  ">
-            <div class="flex flex-row py-10 bg-slate-300 pb-24">
-                <div class="flex justify-center w-2/5">
-                    <img class="w-80 -rotate-6"
-                        src="../../../../assets/imgs/Standup meeting-pana (1).svg"
+    <div class="py-8 px-3 md:px-10">
+        <div
+            class="flex flex-row items-center justify-center py-10 bg-slate-300 pb-24">
+            <div class="hidden md:flex justify-center w-2/5">
+                <img class="w-80 -rotate-6"
+                    src="../../../../assets/imgs/Standup meeting-pana (1).svg"
+                    alt>
+            </div>
+            <div class="w-full text-center md:text-right md:w-3/5 px-5 py-12  ">
+                <p class="text-4xl font-semibold py-4">
+                    {{ event.meeting.title }}
+                </p>
+                <p class="text-lg font-bold text-wrap leading-loose">
+                    {{ event.meeting.slogan }}
+                </p>
+            </div>
+        </div>
+        <div
+            class="relative -top-20 border-2 border-gray-500 backdrop-blur-sm p-5 md:p-12 mx-3 md:mx-10 rounded-md shadow-gray-400 shadow-md ">
+            <div class="flex flex-col md:flex-row ">
+                <div class="md:w-1/2">
+                    <img class
+                        src="../../../../assets/imgs/digital-business-conference-flyer-design-template-5328947015bafd2306e7f33adbbbb3fa_screen(1).jpg"
                         alt>
                 </div>
-                <div class="w-3/5 px-5 py-12  ">
-                    <p class="text-4xl font-semibold py-4">
-                        {{ event.meeting.title }}
-                    </p>
-                    <p class="text-lg font-bold text-wrap leading-loose">
-                        {{ event.meeting.slogan }}
-                    </p>
-                </div>
-            </div>
-            <div
-                class="relative -top-20 border-2 border-gray-500 backdrop-blur-sm p-12 mx-10 rounded-md shadow-gray-400 shadow-md ">
-                <div class="flex flex-row">
-                    <div class="w-1/2">
-                        <img class
-                            src="../../../../assets/imgs/digital-business-conference-flyer-design-template-5328947015bafd2306e7f33adbbbb3fa_screen(1).jpg"
-                            alt>
+                <div
+                    class="md:w-1/2 flex flex-col  font-bold text-2xl px-1 md:px-9 py-12 justify-center items-start leading-loose gap-4">
+                    <div
+                        class="  text-start flex justify-center gap-2">
+                        <div class="order-2">
+                            {{
+                            changeSerice.formatPriceToPersian(event.meeting.price)
+                            }}
+                        </div>
+                        <div
+                            class="text-yellow-300 text-2xl order-1 p-2 text-end self-start">
+                            <i class="fa-solid fa-coins"></i>
+                        </div>
                     </div>
                     <div
-                        class="w-1/2 flex flex-col  font-bold text-2xl  p-9 py-12 justify-center items-start leading-loose gap-4">
-                        <div
-                            class="  text-start flex justify-center gap-2">
-                            <div class="order-2">
-                                {{
-                                changeSerice.formatPriceToPersian(event.meeting.price)
-                                }}
-                            </div>
-                            <div
-                                class="text-yellow-300 text-2xl order-1 p-2 text-end self-start">
-                                <i class="fa-solid fa-coins"></i>
-                            </div>
+                        class="justify-center text-xl leading-loose flex items-center gap-2 tracking-wider">
+                        <div class="order-2">
+                            شروع رویداد: {{
+                            changeSerice.changeJalaiDate(event.meeting.start_date)[0]
+                            }}<br>ساعت: {{
+                            changeSerice.changeJalaiDate(event.meeting.start_date)[1]
+                            }}
                         </div>
                         <div
-                            class="justify-center text-xl leading-loose flex items-center gap-2 tracking-wider">
-                            <div class="order-2">
-                                شروع رویداد: {{ changeSerice.changeJalaiDate(event.meeting.start_date)[0] }}<br>ساعت: {{ changeSerice.changeJalaiDate(event.meeting.start_date)[1]  }}
-                            </div>
-                            <div
-                                class="text-yellow-300 text-2xl order-1 p-2 text-end self-start">
-                                <i class="fa-regular fa-clock"></i>
-                            </div>
+                            class="text-yellow-300 text-2xl order-1 p-2 text-end self-start">
+                            <i class="fa-regular fa-clock"></i>
+                        </div>
+                    </div>
+                    <div
+                        class=" text-start flex items-center justify-center gap-2">
+                        <div class="order-2">
+                            {{event.meeting.location}}
                         </div>
                         <div
-                            class=" text-start flex items-center justify-center gap-2">
-                            <div class="order-2">
-                                {{event.meeting.location}}
-                            </div>
-                            <div
-                                class="text-yellow-300 text-2xl p-2 text-end order-1 self-start">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
+                            class="text-yellow-300 text-2xl p-2 text-end order-1 self-start">
+                            <i class="fa-solid fa-location-dot"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="flex flex-col relative bg-slate-300 p-10 gap-4">
+    <div class="flex flex-col relative bg-slate-300 p-5 md:p-10 gap-4">
         <div
-            class="flex justify-start items-center font-extrabold text-4xl w-full">
+            class="flex justify-start items-center font-extrabold text-2xl md:text-4xl w-full">
             توضیحات
         </div>
         <div class="flex">
@@ -75,30 +78,31 @@
         </div>
     </div>
     <div class="flex flex-col">
-        <div class>
-            <div class="-mt-2 justify-center flex">
-                <img class="w-full " class="rotate-img"
+        <div class="w-full">
+            <div class="-mt-2 justify-center flex w-full">
+                <img class="w-full flex" class="rotate-img"
                     src="../../../../assets/imgs/wave-meeting.svg" alt>
             </div>
             <div class="flex justify-center py-5 text-white">
-                <p class="text-6xl font-extrabold p-10 rounded-3xl"
+                <p class="md:text-6xl text-4xl font-extrabold p-10 rounded-3xl"
                     style="background-image: url(../../../../assets/imgs/svg-seperate-demo.svg);background-color: #193e41;">مدرسان
                     دوره</p>
             </div>
             <div
                 class=" grid grid-cols-1 response-users gap-3 sm:gap-3  xl:px-24 justify-items-center p-5 self-center ">
                 <div *ngFor="let user of users">
-                    <app-card-user [bgstyle]="'bg-slate-900 bg-opacity-70'"
+                    <app-card-user [user]="user"
+                    [user]="user"
+                        [bgstyle]="'bg-slate-900 bg-opacity-70'"
                         [rolestyle]="'text-gray-200'" [textstyle]="'text-white'"
                         [user]="user"></app-card-user>
                 </div>
             </div>
         </div>
         <div class>
-
             <div class="flex justify-center py-5">
                 <p
-                    class="text-5xl font-bold text-white p-10 rounded-3xl"
+                    class="text-4xl md:text-6xl font-bold text-white p-10 rounded-3xl"
                     style="background-image: url(../../../../assets/imgs/svg-seperate-demo.svg);background-color: #193e41;">حامیان
                     دوره</p>
             </div>
