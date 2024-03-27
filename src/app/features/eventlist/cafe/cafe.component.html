@@ -1,34 +1,34 @@
 <div class="background-site font-site"  >
-    <div class="flex flex-col  text-white pb-32 bg-article">
-        <div class="pt-24 ">
-            <p class="text-pretty text-7xl font-extrabold text-center">
+    <div class="flex flex-col text-white md:pb-32 pb-10 p-2 bg-article">
+        <div class="md:pt-24 pt-16">
+            <p class="text-pretty text-4xl md:text-7xl font-extrabold text-center">
                 {{ event.innovation_cafe.title }} 
             </p>
         </div>
-        <div class="flex justify-center items-center pt-8">
-            <div class="w-1/3 order-2">
-                <p class="text-xl text-center leading-loose ">
+        <div class="flex md:flex-row justify-center items-center px-5 pt-8">
+            <div class="flex md:w-1/3 order-2">
+                <p class="text-lg  leading-loose text-justify items-center">
                     {{ event.innovation_cafe.slogan }}
                 </p>
             </div>
-            <div class="w-1/4 flex justify-center order-1">
+            <div class="hidden md:flex md:w-1/4 justify-center order-1">
                 <img src="../../../../assets/imgs/Innovation-amico.svg" alt
                     class="rotate-6 w-80">
             </div>
-            <div class="w-1/4 flex justify-center order-3">
+            <div class="hidden md:flex md:w-1/4 justify-center order-3">
                 <img src="../../../../assets/imgs/cake pop-cuate (1).svg" alt
                     class="rotate-12 w-80">
             </div>
         </div>
     </div>
-    <div class="grid lg:grid-cols-6 p-10 py-24 background-site">
-        <div class="col-span-3 order-1 mx-3 grid justify-center items">
+    <div class="grid lg:grid-cols-6 md:px-10 px-4 py-8 md:py-24 background-site">
+        <div class="col-span-3 order-1 md:order-2 px-2 grid justify-center items pb-8">
             <img class
                 src="../../../../assets/imgs/digital-business-conference-flyer-design-template-5328947015bafd2306e7f33adbbbb3fa_screen(1).jpg"
                 alt>
         </div>
         <div
-            class="col-span-3 px-10 mx-3 leading-10 text-lg font-bold svg-noavary pb-8
+            class="col-span-3 px-4 md:px-10 leading-10 text-lg font-bold svg-noavary pb-8 md:order-1 order-2 text-justify
             ">
             <p>
                 {{ event.innovation_cafe.description }}
@@ -36,8 +36,8 @@
         </div>
     </div>
     <div
-        class="flex flex-row text-2xl bg-indigo-700 text-white p-9 py-12 justify-center items-center leading-loose gap-4">
-        <div class="w-1/4 text-start flex justify-center gap-2">
+        class="flex flex-col md:flex-row text-2xl bg-indigo-700 text-white p-5 md:p-9 py-12 justify-center md:items-center leading-loose gap-4">
+        <div class="md:w-1/4 text-start flex md:justify-center gap-2">
             <div class="order-2">
                 {{ changeSerice.formatPriceToPersian(event.innovation_cafe.price) }}
             </div>
@@ -46,7 +46,7 @@
             </div>
         </div>
         <div
-            class="w-5/12 justify-center text-xl leading-loose flex items-center gap-2 tracking-wider">
+            class="md:w-5/12 md:justify-center text-xl leading-loose flex items-center gap-2 tracking-wider">
             <div class="order-2">
                 شروع رویداد: {{ changeSerice.changeJalaiDate(event.innovation_cafe.start_date)[0] }}<br>ساعت: {{ changeSerice.changeJalaiDate(event.innovation_cafe.start_date)[1]  }}
             </div>
@@ -54,7 +54,7 @@
                 <i class="fa-regular fa-clock"></i>
             </div>
         </div>
-        <div class="w-1/3 text-start flex items-center justify-center gap-2">
+        <div class="md:w-1/3 text-start flex items-center md:justify-center gap-2">
             <div class="order-2">
                 {{ event.innovation_cafe.location }}
             </div>
@@ -63,13 +63,13 @@
             </div>
         </div>
     </div>
-    <div class="bg-indigo-700 text-white leading-8 p-10 relative z-20">
+    <div class="bg-indigo-700 text-white leading-7 p-6 md:p-10 relative z-20">
         <div class="flex justify-start">
             <div class="text-3xl font-extrabold py-8">
                 مخاطبین رویداد
             </div>
         </div>
-        <div class="text-right text-wrap">
+        <div class="text-wrap text-justify">
             <div>
                 اگر به توسعه‌ی بک‌اند علاقه‌مندید، در انتخاب این مسیر آموزشی شک
                 نکنید. در این مسیر، ابتدا زبان پایتون را به‌عنوان یک زبان
@@ -86,10 +86,10 @@
         </div>
         <div class="flex flex-col justify-center my-10">
             <div class="flex justify-center py-3 ">
-                <p class="text-6xl text-violet-700 rounded-3xl bg-blue-400 p-10 font-extrabold">مدرسان دوره</p>
+                <p class="text-4xl md:text-6xl text-violet-700 rounded-3xl bg-blue-400 p-10 font-extrabold">مدرسان دوره</p>
             </div>
             <div
-                class="grid grid-cols-1  response-users gap-3 sm:gap-4 xl:gap-5 justify-items-center w-full xl:px-24 my-16">
+                class="grid grid-cols-1  response-users gap-3 sm:gap-4 xl:gap-5 justify-items-center w-full xl:px-24 py-16">
                 <div *ngFor="let user of users">
                     <app-card-user [user]="user" [textstyle]="'text-gray-900'" [bgstyle]="'bg-white bg-opacity-70 '" [user]="user"></app-card-user>
                 </div>
@@ -97,11 +97,23 @@
         </div>
         <div class="flex flex-col py-8 ">
             <div class="flex justify-center text-yellow-300 py-5 " style="background-image: url(../../../../assets/imgs/svg-seprate-cafe.svg);">
-                <p class="text-5xl font-bold text-violet-700 rounded-3xl p-10">حامیان دوره</p>
+                <p class="text-3xl md:text-5xl font-bold text-violet-700 rounded-3xl p-10">شرکت برگزار کننده</p>
             </div>
             <div
-                class="grid grid-cols-1 response-brand gap-2 xl:gap-5 justify-items-center w-full p-2 lg:p-5">
+                class="grid grid-cols-1 response-brand gap-2 xl:gap-5 justify-items-center w-full p-3 lg:p-5">
                 <div *ngFor="let institute of institutes">
+                    <app-card-institute [bgstyle]="'bg-white bg-opacity-70 '" 
+                        [institute]="institute"></app-card-institute>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col py-8 ">
+            <div class="flex justify-center text-yellow-300 py-5 " style="background-image: url(../../../../assets/imgs/svg-seprate-cafe.svg);">
+                <p class="text-3xl md:text-5xl font-bold text-violet-700 rounded-3xl p-10">حامیان دوره</p>
+            </div>
+            <div
+                class="grid grid-cols-1 response-brand gap-2 xl:gap-5 justify-items-center w-full p-3 lg:p-5">
+                <div *ngFor="let institute of supporters">
                     <app-card-institute [bgstyle]="'bg-white bg-opacity-70 '" 
                         [institute]="institute"></app-card-institute>
                 </div>

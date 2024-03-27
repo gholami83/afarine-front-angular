@@ -1,0 +1,31 @@
+@media screen and (min-width: 768px) {
+    .detail-container {
+        background-image: url("../../../../assets/imgs/workshop(1)-bg.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+@media screen and (max-width: 768px) {
+    .detail-container {
+        background-color: rgb(219, 157, 0);
+    }
+}
+@media screen and (min-width: 500px) {
+    .main-container {
+        background-image: url("../../../../assets/imgs/workshop-bg.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+@media screen and (max-width: 500px) {
+    .main-container {
+        background: rgb(199,170,6);
+        background: linear-gradient(216deg, rgba(199,170,6,1) 5%, rgba(4,180,116,1) 55%);
+    }
+}
+@media screen  {
+    .organizers-container {
+        background: rgb(199,170,6);
+        background: linear-gradient(216deg, rgba(199,170,6,1) 5%, rgba(4,180,116,1) 55%);
+}
+}

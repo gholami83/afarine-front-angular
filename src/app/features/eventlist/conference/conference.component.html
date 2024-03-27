@@ -1,5 +1,4 @@
-<div class="font-site "
-    style="background-image: url(../../../../assets/imgs/bg-confer-1.svg);">
+<div class="font-site bg-confer">
     <div class="flex flex-col z-[11]">
         <div class="p-3 md:p-16 block">
             <div class="flex w-full h-full">
@@ -8,21 +7,18 @@
                     alt>
             </div>
             <div
-                class="relative -top-20 rounded-b-xl   shadow-gray-200 transition-shadow"
-                style="background: rgb(255,255,255);
-            background: linear-gradient(315deg, rgba(255,255,255,1) 22%, rgba(4,95,173,1) 100%);-webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px); ">
+                class="relative -top-20 rounded-b-xl   shadow-gray-200 transition-shadow bg-title">
                 <div
-                    class="flex flex-row text-2xl p-9 py-12 backdrop-blur-lg  justify-center items-center leading-loose gap-4">
-                    <div class="w-2/5">
+                    class="flex flex-row text-2xl p-6 md:p-9 md:py-12 backdrop-blur-lg  justify-center items-center leading-loose gap-4">
+                    <div class="md:w-2/5 md:flex hidden">
                         <img src="../../../../assets/imgs/office.svg" alt>
                     </div>
-                    <div class="w-3/5 flex flex-col text-gray-800">
+                    <div class="md:w-3/5 flex flex-col text-gray-800">
                         <div style="backdrop-filter: blur(20px);
                             background-color: rgba(255, 255, 255, 0.296)"
-                            class=" rounded-xl leading-8 p-10">
+                            class=" rounded-xl leading-8 p-6 md:p-10">
                             <div class="flex justify-start">
-                                <div class="text-2xl font-extrabold py-8">
+                                <div class="text-2xl font-extrabold md:py-8 py-4">
                                     {{ event.conference.title }}
                                 </div>
                             </div>
@@ -32,8 +28,8 @@
                                     {{ event.conference.slogan}}
                                 </div>
                             </div>
-                            <div
-                                class="text-right text-wrap leading-relaxed text-xl font-extrabold py-3">
+                            <!-- <div
+                                class="text-right text-wrap leading-relaxed text-xl font-extrabold py-5">
                                 <div>
                                     توضیحات دوره
                                 </div>
@@ -43,26 +39,26 @@
                                 <div>
                                     {{ event.conference.description}}
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
             </div>
             <div class="py-5">
                 <div style="background-color: rgb(238, 247, 255);"
-                    class="bg-gray-500  shadow-gray-200 transition-shadow border-2 rounded-lg leading-8 p-10 w-full flex flex-row">
-                    <div class="flex flex-col w-1/2">
-                        <div class="flex justify-center py-5 text-gray-900">
-                            <div class="text-4xl font-site-b py-8">
+                    class="bg-gray-500  shadow-gray-200 transition-shadow border-2 rounded-lg leading-8 p-5 py-7 md:p-10 w-full flex md:flex-row flex-col">
+                    <div class="flex flex-col md:w-1/2 order-2 md:order-1">
+                        <div class="flex justify-center py-7 text-gray-900 ">
+                            <div class="text-2xl md:text-4xl font-bold">
                                 توضیحات رویداد
                             </div>
                         </div>
-                        <div class="text-right text-wrap leading-9 text-lg ">
+                        <div class="text-wrap leading-9 text-lg text-justify">
                         {{ event.conference.description }}
                         </div>
                     </div>
-                    <div class="w-1/2">
-                        <img src="../../../../assets/imgs/finding.svg" alt>
+                    <div class="md:w-1/2 md:order-2 order-1 flex items-center justify-center">
+                        <img class="w-4/5" src="../../../../assets/imgs/finding.svg" alt>
                     </div>
                 </div>
             </div>
@@ -79,7 +75,7 @@
         </div>
         <div class="bg-emerald-400 py-10">
             <div
-                class="w-full flex flex-col md:flex-row justify-around gap-5 md:gap-3 text-xl items-start pr-10 md:pr-0 md:items-center">
+                class="w-full flex flex-col md:flex-row justify-around gap-5 md:gap-3 text-xl items-start pr-3 md:pr-0 md:items-center">
                 <div
                     class=" h-full text-start flex items-center gap-2">
                     <div class="order-2">
@@ -126,7 +122,7 @@
         <div class>
 
             <div class="flex justify-center py-5 text-yellow-400 ">
-                <p class="text-6xl font-extrabold">مدرسان دوره</p>
+                <p class="text-4xl md:text-6xl font-extrabold">مدرسان دوره</p>
             </div>
             <div
                 class=" grid grid-cols-1 response-users gap-3 sm:gap-3  xl:px-24 justify-items-center p-5 self-center ">
@@ -141,11 +137,26 @@
         <div class>
 
             <div class="flex justify-center py-5">
-                <p class="text-5xl font-bold text-yellow-400">حامیان دوره</p>
+                <p class="text-3xl md:text-5xl font-bold text-yellow-400">شرکت برگزار کننده</p>
             </div>
             <div
                 class="grid grid-cols-1 response-brand gap-2 xl:gap-5 justify-items-center w-full p-2 lg:p-5">
                 <div *ngFor="let institute of institutes">
+                    <app-card-institute
+                        [textstyle]="'text-gray-700 text-lg font-black'"
+                        [bgstyle]="'bg-white bg-opacity-70 '"
+                        [institute]="institute"></app-card-institute>
+                </div>
+            </div>
+        </div>
+        <div class>
+
+            <div class="flex justify-center py-5">
+                <p class="text-3xl md:text-5xl font-bold text-yellow-400">حامیان دوره</p>
+            </div>
+            <div
+                class="grid grid-cols-1 response-brand gap-2 xl:gap-5 justify-items-center w-full p-2 lg:p-5">
+                <div *ngFor="let institute of supporters">
                     <app-card-institute
                         [textstyle]="'text-gray-700 text-lg font-black'"
                         [bgstyle]="'bg-white bg-opacity-70 '"

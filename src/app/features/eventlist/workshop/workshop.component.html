@@ -1,117 +1,143 @@
 <div class="font-site background-site">
-    <div class="flex flex-col p-10"
-        style="background-image: url(../../../../assets/imgs/workshop-bg.svg);background-repeat: no-repeat;background-size: cover ">
-        <div class="flex flex-row ">
-            <div class="w-1/2 order-2 py-8">
-                <p class="text-4xl font-site-b font-extrabold text-pretty">
+    <div class="flex flex-col md:p-10 p-6 main-container">
+        <div class="flex md:flex-row flex-col">
+            <div class="md:w-1/2 order-2 py-8">
+                <p class="text-2xl md:text-4xl font-site-b font-extrabold text-pretty w-full py-5 md:py-10">
                     {{ event.work_shop.title}}
                 </p>
-                <p class="text-lg leading-loose text-wrap ">
+                <p class="text-lg md:text-xl leading-loose text-wrap w-full">
                     {{ event.work_shop.slogan }}
                 </p>
             </div>
-            <div class="w-1/2 order-1">
+            <div class="md:w-1/2 order-1">
                 <img src="../../../../assets/imgs/Standup meeting-pana (1).svg"
                     alt>
             </div>
         </div>
     </div>
-    <div class="flex flex-row p-10 ">
-        <div class="p-10 w-full order-1">
-            <div class="text-4xl font-extrabold py-5 text-sky-500">
-                محتوای کارگاه
-            </div>
-            <p class="text-xl leading-loose text-wrap">
-                {{event.work_shop.description}}
-            </p>
+    <div class="flex flex-col p-5 md:p-16 w-full order-1">
+        <div class="text-3xl md:text-4xl font-extrabold py-5 text-sky-500">
+            محتوای کارگاه
         </div>
+        <p class="text-xl leading-loose text-wrap">
+            {{event.work_shop.description}}
+        </p>
     </div>
-    <div class="h-96"
-        style="background-image: url(../../../../assets/imgs/workshop\(1\)-bg.svg); background-repeat: no-repeat;background-size: cover;">
+    <div class="detail-container">
         <div
-            class="pb-10 flex flex-row text-2xl text-teal-900 p-9 py-12 justify-center items-center leading-loose gap-7">
+            class="flex flex-col text-2xl md:p-9 p-5">
             <div
-                class="w-1/4 flex flex-row justify-center items-center gap-2 bg-gray-200 border-2 border-orange-300 shadow-md bg-opacity-90 rounded-lg h-36">
-                <div class="order-2">
-                    {{ changeSerice.formatPriceToPersian(event.work_shop.price) }}
-                </div>
-                <div class="text-2xl order-1 p-2 text-end ">
-                    <i class="fa-solid fa-coins"></i>
-                </div>
+                class=" text-3xl md:text-4xl w-full flex md:justify-center justify-start font-extrabold py-7 text-sky-800">
+                جزئیات رویداد
             </div>
-            <div
-                class=" w-5/12 justify-center text-xl leading-loose flex flex-col items-center gap-2 tracking-wider bg-gray-200 bg-opacity-90 border-2 border-orange-300 shadow-md rounded-lg h-36">
-                <div>
-
-                </div>
-                <div class="flex flex-row">
+            <div class="flex md:flex-row flex-col w-full text-teal-900 md:py-28 justify-center items-center leading-loose gap-7">
+                <div
+                    class="w-full md:w-1/4 flex flex-row justify-start md:justify-center items-center gap-2 bg-gray-200 border-2 border-orange-300 shadow-md bg-opacity-90 rounded-lg h-36">
                     <div class="order-2">
-                        شروع رویداد: {{ changeSerice.changeJalaiDate(event.work_shop.start_date)[0] }}<br>ساعت: {{ changeSerice.changeJalaiDate(event.work_shop.start_date)[1]  }}
+                        {{
+                        changeSerice.formatPriceToPersian(event.work_shop.price)
+                        }}
                     </div>
-                    <div class="text-2xl order-1 p-2 text-end">
-                        <i class="fa-regular fa-clock"></i>
+                    <div class="text-2xl order-1 p-2 text-end ">
+                        <i class="fa-solid fa-coins"></i>
                     </div>
                 </div>
-            </div>
-            <div
-                class="w-1/3 text-start flex items-center justify-center gap-2 bg-gray-200 bg-opacity-90 border-2 border-orange-300 shadow-md rounded-lg h-36 px-2">
-                <div class="order-2">
-                    {{event.work_shop.location}}
+                <div
+                    class="w-full md:w-5/12 justify-center text-xl leading-loose flex flex-col md:items-center items-start gap-2 p-1 tracking-wider bg-gray-200 bg-opacity-90 border-2 border-orange-300 shadow-md rounded-lg h-36">
+                    <div class="flex flex-row justify-start md:justify-center">
+                        <div class="order-2">
+                            شروع رویداد: {{
+                            changeSerice.changeJalaiDate(event.work_shop.start_date)[0]
+                            }}<br>ساعت: {{
+                            changeSerice.changeJalaiDate(event.work_shop.start_date)[1]
+                            }}
+                        </div>
+                        <div class="text-2xl order-1 p-2 text-end">
+                            <i class="fa-regular fa-clock"></i>
+                        </div>
+                    </div>
                 </div>
-                <div class="text-2xl p-2 text-end order-1">
-                    <i class="fa-solid fa-location-dot"></i>
+                <div
+                    class="w-full  md:w-1/3 text-start flex items-center justify-start md:justify-center gap-2 bg-gray-200 bg-opacity-90 border-2 border-orange-300 shadow-md rounded-lg h-36 px-2">
+                    <div class="order-2">
+                        {{event.work_shop.location}}
+                    </div>
+                    <div class="text-2xl p-2 text-end order-1">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="flex flex-row p-10">
-        <div class="flex flex-col w-3/5 text-gray-700 leading-8 p-10">
+    <div class="flex flex-row p-6 md:p-10">
+        <div class="flex flex-col md:w-3/5 text-gray-700 leading-8">
             <div class="flex justify-start">
                 <div class="text-3xl font-extrabold py-8">
                     مخاطبین رویداد
                 </div>
             </div>
-            <div class="leading-loose text-wrap text-lg">
+            <div class="leading-loose text-wrap text-lg text-justifyt">
                 <div>
-                    اگر به توسعه‌ی بک‌اند علاقه‌مندید، در انتخاب این مسیر آموزشی شک
+                    اگر به توسعه‌ی بک‌اند علاقه‌مندید، در انتخاب این مسیر آموزشی
+                    شک
                     نکنید. در این مسیر، ابتدا زبان پایتون را به‌عنوان یک زبان
-                    عام‌منظوره یاد می‌گیرید. در ادامه، فریم‌ورک جنگو و زیر و بم آن
-                    را خواهید آموخت. در این مسیر، با اصول توسعه‌ی نرم‌افزار نیز آشنا
-                    خواهید شد که از موارد مورد نیاز برای ورود به بازار کار هستند.
+                    عام‌منظوره یاد می‌گیرید. در ادامه، فریم‌ورک جنگو و زیر و بم
+                    آن
+                    را خواهید آموخت. در این مسیر، با اصول توسعه‌ی نرم‌افزار نیز
+                    آشنا
+                    خواهید شد که از موارد مورد نیاز برای ورود به بازار کار
+                    هستند.
                 </div>
             </div>
         </div>
-        <div class="w-2/5 order-1">
+        <div class="hidden md:flex w-2/5 order-1">
             <img src="../../../../assets/imgs/telecom.svg"
                 alt>
         </div>
     </div>
-    <div style="background: rgb(199,170,6);
-    background: linear-gradient(216deg, rgba(199,170,6,1) 5%, rgba(4,180,116,1) 55%);">
-            <div class="">
-                <div class="flex flex-col justify-center ">
-                    <div class="flex justify-center py-5">
-                        <p class="text-6xl text-green-950 font-extrabold">مدرسان دوره</p>
-                    </div>
-                    <div
-                        class="grid grid-cols-1  response-users gap-3 sm:gap-4 xl:gap-5 justify-items-center w-full xl:px-24 my-20">
-                        <div *ngFor="let user of users">
-                            <app-card-user [user]="user" [textstyle]="'text-gray-900'" [bgstyle]="'bg-white bg-opacity-70 '" [user]="user"></app-card-user>
-                        </div>
-                    </div>
+    <div class="organizers-container ">
+        <div class>
+            <div class="flex flex-col justify-center ">
+                <div class="flex justify-center py-5">
+                    <p class="text-4xl md:text-6xl text-green-950 font-extrabold">مدرسان
+                        دوره</p>
                 </div>
-                <div class="flex flex-col py-8 ">
-                    <div class="flex justify-center text-green-950 py-5" >
-                        <p class="text-5xl font-bold">حامیان دوره</p>
-                    </div>
-                    <div
-                        class="grid grid-cols-1 response-brand gap-2 xl:gap-5 justify-items-center w-full p-2 lg:p-5">
-                        <div *ngFor="let institute of institutes">
-                            <app-card-institute [bgstyle]="'bg-white bg-opacity-70 '" 
-                                [institute]="institute"></app-card-institute>
-                        </div>
+                <div
+                    class="grid grid-cols-1  response-users gap-3 sm:gap-4 xl:gap-5 justify-items-center w-full xl:px-24 md:py-12 py-10">
+                    <div *ngFor="let user of users">
+                        <app-card-user [user]="user"
+                            [textstyle]="'text-gray-900'"
+                            [bgstyle]="'bg-white bg-opacity-70 '"
+                            [user]="user"></app-card-user>
                     </div>
                 </div>
             </div>
+            <div class="flex flex-col py-5 ">
+                <div class="flex justify-center text-green-950 py-5">
+                    <p class="text-4xl md:text-6xl font-bold">شرکت برگزار کننده</p>
+                </div>
+                <div
+                    class="grid grid-cols-1 response-brand gap-3 sm:gap-4 xl:gap-5 justify-items-center w-full xl:px-24 md:py-12 ">
+                    <div *ngFor="let institute of institutes">
+                        <app-card-institute
+                            [bgstyle]="'bg-white bg-opacity-70 '"
+                            [institute]="institute"></app-card-institute>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col py-5 ">
+                <div class="flex justify-center text-green-950 py-5">
+                    <p class="text-4xl md:text-6xl font-bold">حامیان دوره</p>
+                </div>
+                <div
+                    class="grid grid-cols-1 response-brand gap-3 sm:gap-4 xl:gap-5 justify-items-center w-full xl:px-24 md:py-12 ">
+                    <div *ngFor="let institute of supporters">
+                        <app-card-institute
+                            [bgstyle]="'bg-white bg-opacity-70 '"
+                            [institute]="institute"></app-card-institute>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

@@ -1,38 +1,46 @@
 <div class="font-site ">
-    <div class="flex flex-row bg-gray-900 p-7  py-16">
-        <div class="flex order-2 w-5/12 items-start shadow-yellow-500 ">
-            <img class="w-auto object-contain"
+    <div class="flex flex-col md:flex-row bg-gray-900 p-7 md:py-16">
+        <div
+            class="flex order-1 md:order-2 md:w-5/12 items-start shadow-yellow-500 ">
+            <img class="w-full md:w-auto object-contain"
                 src="../../../../assets/imgs/digital-business-conference-flyer-design-template-5328947015bafd2306e7f33adbbbb3fa_screen(1).jpg"
                 alt>
         </div>
-        <div class="flex flex-col order-1 text-white px-10 w-7/12 items-start">
-            <div class="text-3xl py-5 text-yellow-300 font-bold">
+        <div
+            class="flex flex-col order-1 text-white md:px-10 md:w-7/12 items-start">
+            <div class="text-2xl md:text-3xl py-8 text-yellow-300 font-bold">
                 {{event.startup_weekend.title}}
             </div>
-            <div class="flex leading-8 text-lg">
+            <div class="flex leading-8 text-lg py-5 text-justify md:text-xl ">
                 <p>
                     {{ event.startup_weekend.slogan }}
                 </p>
             </div>
-            <div class="flex gap-4 text-xl items-center py-5">
+            <div class="flex gap-4 text-xl items-center py-2">
                 <div class="order-2 p-3">
-                    {{ changeSerice.formatPriceToPersian(event.startup_weekend.price) }}
+                    {{
+                    changeSerice.formatPriceToPersian(event.startup_weekend.price)
+                    }}
                 </div>
                 <div class="text-4xl order-1  text-yellow-300">
                     <i class="fa-solid fa-coins"></i>
                 </div>
             </div>
-            <div class="flex gap-4 text-xl items-center py-5">
+            <div class="flex gap-4 text-xl items-center py-2">
                 <div class="order-2 leading-loose p-3 rounded-xl">
-                    شروع رویداد: {{ changeSerice.changeJalaiDate(event.startup_weekend.start_date)[0] }}<br>ساعت: {{ changeSerice.changeJalaiDate(event.startup_weekend.start_date)[1]  }}
+                    شروع رویداد: {{
+                    changeSerice.changeJalaiDate(event.startup_weekend.start_date)[0]
+                    }}<br>ساعت: {{
+                    changeSerice.changeJalaiDate(event.startup_weekend.start_date)[1]
+                    }}
                 </div>
                 <div class="order-1 text-4xl text-yellow-300">
                     <i class="fa-regular fa-calendar-days"></i>
                 </div>
             </div>
-            <div class="flex text-start items-center gap-4 py-5">
+            <div class="flex text-start items-center gap-4 py-2">
                 <div class="order-2 text-xl p-3">
-                {{ event.startup_weekend.location }}
+                    {{ event.startup_weekend.location }}
                 </div>
                 <div class="text-4xl order-1 text-yellow-300">
                     <i class="fa-solid fa-location-dot"></i>
@@ -40,40 +48,37 @@
             </div>
         </div>
     </div>
-    <div class="block svg-article"
-        >
-        <div class="flex flex-row p-10  text-white">
-            <div class="w-1/2 order-2 flex justify-center items-start">
-                <img src="../../../../assets/imgs/Startup life-amico.svg"
-                    class="w-3/4" alt>
-            </div>
+    <div class="block svg-article">
+        <div class="flex flex-col md:flex-row p-7 md:p-10  text-white gap-4">
             <div
-                class="w-1/2 order-1 text-lg font-bold leading-10 flex items-center">
-                <p>
-                    یکی دیگر از مزایای شرکت در استارت آپ ویکند پیدا کردن دوستان
-                    جدید
-                    است. پیشرفت در یک فضای تک بُعدی کار سختی است. برنامه نویس
-                    ها،
-                    گرافیست ها، انیماتورها، بازاریاب ها، سرمایه گذارها و … زمانی
-                    پیشرفت می کنند که در کنار هم باشند. بدون شک در طی این سه روز
-                    با
-                    افراد متعددی آشنا می شوید که می توانید روی کمکشان در ایده
-                    های
-                    بعدی، حساب باز کنید.
+                class="md:w-1/2 order-1 md:order-2 flex justify-center items-start">
+                <img src="../../../../assets/imgs/Startup life-amico.svg"
+                    class="w-4/5" alt>
+            </div>
+
+            <div
+                class="md:w-1/2 order-1 text-lg font-bold leading-10 flex flex-col items-center">
+                <div class="flex justify-start self-start">
+                    <div class="text-2xl font-extrabold py-8">
+                        توضیحات رویداد
+                    </div>
+                </div>
+                <p class="text-justify">
+                    {{ event.startup_weekend.description}}
                 </p>
             </div>
         </div>
         <div
-            class="flex flex-row text-2xl text-white p-9 py-12 justify-center items-center leading-loose gap-4">
-            
+            class="flex flex-row text-2xl text-white p-5 py-12 justify-center items-center leading-loose gap-4">
+
             <div class="flex flex-col">
-                <div class="bg-indigo-800 text-white leading-8 p-10">
+                <div class="bg-indigo-800 text-white leading-8 p-5 py-10 md:p-10">
                     <div class="flex justify-start">
-                        <div class="text-2xl font-extrabold py-8">
+                        <div class="text-2xl font-extrabold pb-8">
                             مخاطبین رویداد
                         </div>
                     </div>
-                    <div class="text-right text-wrap leading-relaxed text-lg">
+                    <div class="text-wrap leading-relaxed text-lg text-justify">
                         <div>
                             اگر به توسعه‌ی بک‌اند علاقه‌مندید، در انتخاب این
                             مسیر
@@ -97,22 +102,43 @@
     </div>
     <div class="flex flex-col bg-gray-900">
         <div class="flex justify-center  py-10 text-white">
-            <p class="text-6xl font-extrabold text-yellow-400">مدرسان دوره</p>
+            <p class="text-4xl md:text-6xl font-extrabold text-yellow-400">مدرسان دوره</p>
         </div>
         <div
             class="grid grid-cols-1 response-users gap-3 sm:gap-4 xl:gap-5 justify-items-center w-full xl:px-24 my-16">
             <div *ngFor="let user of users">
-                <app-card-user [user]="user" [bgstyle]="'bg-slate-950 bg-opacity-70'" [textstyle]="'text-white'" [rolestyle]="'text-gray-200'" [user]="user"></app-card-user>
+                <app-card-user [user]="user"
+                    [bgstyle]="'bg-slate-950 bg-opacity-70'"
+                    [textstyle]="'text-white'" [rolestyle]="'text-gray-200'"
+                    [user]="user"></app-card-user>
             </div>
         </div>
-        <div class="flex justify-center py-5">
-            <p class="text-5xl font-bold text-yellow-400">حامیان دوره</p>
+        <div class="flex flex-col py-5 ">
+            <div class="flex justify-center text-yellow-400 py-5">
+                <p class="text-4xl md:text-6xl font-bold">شرکت برگزار کننده</p>
+            </div>
+            <div
+                class="grid grid-cols-1 response-brand gap-3 sm:gap-4 xl:gap-5 justify-items-center w-full xl:px-24 md:py-12 ">
+                <div *ngFor="let institute of institutes">
+                    <app-card-institute
+                    [textstyle]="'text-white'"
+                    [bgstyle]="'bg-slate-950 bg-opacity-70'"
+                        [institute]="institute"></app-card-institute>
+                </div>
+            </div>
         </div>
-        <div
-            class="grid grid-cols-1 response-brand gap-2 xl:gap-5 justify-items-center w-full p-2 lg:p-5">
-            <div *ngFor="let institute of institutes">
-                <app-card-institute [textstyle]="'text-white'" [bgstyle]="'bg-slate-950 bg-opacity-70'"
-                    [institute]="institute"></app-card-institute>
+        <div class="flex flex-col py-5 ">
+            <div class="flex justify-center text-yellow-400 py-5">
+                <p class="text-4xl md:text-6xl font-bold">حامیان دوره</p>
+            </div>
+            <div
+                class="grid grid-cols-1 response-brand gap-3 sm:gap-4 xl:gap-5 justify-items-center w-full xl:px-24 md:py-12 ">
+                <div *ngFor="let institute of supporters">
+                    <app-card-institute
+                    [textstyle]="'text-white'"
+                    [bgstyle]="'bg-slate-950 bg-opacity-70'"
+                        [institute]="institute"></app-card-institute>
+                </div>
             </div>
         </div>
     </div>

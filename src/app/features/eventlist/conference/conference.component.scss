@@ -1,6 +1,5 @@
 .bg-confer {
-    background-image: url("../../../../assets/imgs/bg-confer.svg");
-    background-attachment: fixed;
+    background-image: url("../../../../assets/imgs/bg-confer-1.svg");
 }
 
 // svg {
@@ -15,6 +14,12 @@
 //     }
 // }
 
+.bg-title {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(315deg, rgba(255, 255, 255, 1) 22%, rgba(4, 95, 173, 1) 100%);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
 .custom-shape-divider-bottom-1707913104 {
     // position: absolute;
     // bottom: 0;
@@ -24,13 +29,13 @@
     line-height: 0;
     transform: rotate(180deg);
 }
-.custom-shape-divider-bottom-1707913104 svg{
+.custom-shape-divider-bottom-1707913104 svg {
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
     height: 50px;
 }
-.custom-shape-divider-bottom-1707913104:last-child svg{
+.custom-shape-divider-bottom-1707913104:last-child svg {
     rotate: 180deg;
     height: 40px;
 }

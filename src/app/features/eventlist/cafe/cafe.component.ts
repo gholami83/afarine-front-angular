@@ -1,6 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { map, mergeMap, of } from 'rxjs';
+import { forkJoin, map, mergeMap, of } from 'rxjs';
 import { ChangeService } from 'src/app/services/change.service';
 import { EventService } from 'src/app/services/event.service';
 
@@ -23,6 +23,7 @@ export class CafeComponent implements OnInit {
   users:any
   eventfound: boolean = true;
   institutes:any
+  supporters:any
   instituteId!:number
 
   constructor(private route: ActivatedRoute,private router:Router,private eventService:EventService,public changeSerice:ChangeService) {}
@@ -36,25 +37,29 @@ export class CafeComponent implements OnInit {
       //   this.router.navigate(['/events']);
       // }
       this.eventService.getEvent(eventTitle.toLowerCase(), eventId).pipe(
-        map((event: any) =>{
-          return event
-        }),
-        mergeMap((eventData:any)=>{
-          return this.eventService.getEvent('institute',JSON.stringify(eventData.innovation_cafe.institute)).pipe(
-            map((instituteData:any)=>{
-              this.institutes=instituteData
+        map((event: any) => event),
+        mergeMap((eventData: any) => {
+          const instituteRequest = this.eventService.getEvent('institute', JSON.stringify(eventData.innovation_cafe.institute));
+          const supporterRequests = eventData.innovation_cafe.supporter.map((supporterId: any) => this.eventService.getEvent('institute', JSON.stringify(supporterId)));
+  
+          return forkJoin([instituteRequest, ...supporterRequests]).pipe(
+            map(([instituteData, ...supporterData]) => {
+              this.institutes = instituteData;
+              this.supporters = supporterData; // Assuming you want to store the supporter data in this.supporter
               return {
                 instituteData: instituteData,
+                supporterData: supporterData,
                 eventData: eventData,
-              }
+              };
             })
-          )
+          );
         }),
       ).subscribe(
-        (eventData: any) => {
-          this.event=eventData.eventData
-          this.institutes=[eventData.instituteData]
-          this.users=this.event['user-role']
+        (data: any) => {
+          this.event = data.eventData;
+          this.institutes = [data.instituteData];
+          this.users = this.event['user-role'];
+          this.supporters = data.supporterData;
         }
         // (err)=>{}
       )

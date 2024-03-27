@@ -17,3 +17,15 @@
 .custom-shape-divider-bottom-1707913104 .shape-fill {
     fill: rgba(0,3,69,1);
 }
+.bg-demo{
+    
+    background: rgb(126,0,0);
+    background: linear-gradient(4deg, rgba(126,0,0,1) 15%, rgba(0,3,69,1) 84%);
+}
+
+@media screen and (min-width:1280px) {
+    .bg-demo{
+        background: rgb(126,0,0);
+        background: radial-gradient(circle, rgba(126,0,0,1) 10%, rgba(0,3,69,1) 100%);
+        }
+ }
