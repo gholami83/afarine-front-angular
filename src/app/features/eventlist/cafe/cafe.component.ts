@@ -28,6 +28,7 @@ export class CafeComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,private router:Router,private eventService:EventService,public changeSerice:ChangeService) {}
   ngOnInit() {
+    window.scroll(0,0);
     const eventId = this.route.snapshot.params['id']
     const eventTitle = this.router.url.split('/')[2]
     // this.event = this.eventService.events.find(event => event.id === +this.route.snapshot.params['id'])

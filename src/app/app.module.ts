@@ -39,10 +39,8 @@ export const SCREEN_WIDTH =  new InjectionToken<string>('SCREEN_HEIGHT');
 @NgModule({
   declarations: [
     AppComponent,
-    CarouselComponent,
     UsersComponent,
     AboutComponent,
-    UserComponent,
     NotfoundComponent,
     ScrollToTopDirective,
   ],
@@ -50,7 +48,6 @@ export const SCREEN_WIDTH =  new InjectionToken<string>('SCREEN_HEIGHT');
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
     ShareModule,
     HttpClientModule
   ], 

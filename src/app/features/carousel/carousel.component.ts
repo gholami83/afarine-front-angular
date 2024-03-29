@@ -7,9 +7,9 @@ import { ActivatedRoute, Router, RouterLinkActive } from '@angular/router';
   styleUrls: ['./carousel.component.scss']
 })
 export class CarouselComponent {
-  constructor(private router:Router,private routernavigate:ActivatedRoute){
-  }
-  navigate(){
-    this.router.navigate(['about'],{relativeTo:this.routernavigate})
-  }
+  // constructor(private router:Router,private routernavigate:ActivatedRoute){
+  // }
+  // navigate(){
+  //   this.router.navigate(['about'],{relativeTo:this.routernavigate})
+  // }
 }

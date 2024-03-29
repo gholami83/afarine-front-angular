@@ -69,7 +69,7 @@ export class ChangeService {
       '9': '۹'
     };
     
-    let formattedDate = dateString;
+    let formattedDate = (Math.trunc(+dateString).toString());
     for (const digit in persianDigits) {
       formattedDate = formattedDate.replace(new RegExp(digit, 'g'), persianDigits[digit as keyof typeof persianDigits]);
     }

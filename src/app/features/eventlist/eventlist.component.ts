@@ -30,6 +30,7 @@ import { format } from 'date-fns';
 import { enUS } from 'date-fns/locale';
 import { toDate, format as formatJalali } from 'date-fns-jalali';
 import { ChangeService } from 'src/app/services/change.service';
+import { EventService } from 'src/app/services/event.service';
 
 @Component({
   selector: 'app-eventlist',
@@ -145,7 +146,8 @@ export class EventlistComponent implements OnInit {
     private router: Router,
     private ApiService: ApiService,
     private http: HttpClient,
-    private changeService:ChangeService
+    private changeService:ChangeService,
+    private eventService:EventService
   ) {
     setTimeout(() => {
       this.isloading = false;
@@ -229,7 +231,7 @@ export class EventlistComponent implements OnInit {
       '9': '۹',
     };
 
-    let formattedDate = dateString;
+    let formattedDate = (Math.trunc(+dateString).toString());
     for (const digit in persianDigits) {
       formattedDate = formattedDate.replace(
         new RegExp(digit, 'g'),
@@ -242,6 +244,7 @@ export class EventlistComponent implements OnInit {
   BASE_URL = 'https://afarine.noarino.ir';
   @ViewChild('inputFilter', { static: true }) input!: ElementRef;
   ngOnInit(): void {
+    window.scroll(0,0);
     // const interval$: Observable<any> = new Observable((observer: Observer<number>) => {
     //     vlet count = 0;
     //     setInterval(() => {
@@ -265,6 +268,8 @@ export class EventlistComponent implements OnInit {
       .get<eventInterface[]>(this.BASE_URL + '/api/events/all/')
       .subscribe((events) => (this.events = events));
     this.http.get(this.BASE_URL + '/api/events/all/').subscribe(console.log);
+
+    
 
     fromEvent(this.input.nativeElement, 'input').subscribe();
     fromEvent(document, 'click')

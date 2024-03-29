@@ -66,6 +66,7 @@ export class MeetingComponent {
     public changeSerice: ChangeService
   ) {}
   ngOnInit(): void {
+    window.scroll(0,0);
     const eventId = this.route.snapshot.params['id'];
     const eventTitle = this.router.url.split('/')[2];
     this.eventService.getEvent(eventTitle.toLowerCase(), eventId).pipe(
