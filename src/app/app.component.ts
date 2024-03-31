@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { initFlowbite } from 'flowbite';
+import { LoadingService } from './services/loading.service';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +9,20 @@ import { initFlowbite } from 'flowbite';
 })
 export class AppComponent implements OnInit {
   title = 'afarine-site';
+  isloading:boolean = true;
+  constructor(
+    private loadingService: LoadingService
+  ){
+    // setTimeout(() => {
+    //   this.isloading = false; 
+    // }, 2000);
+  }
   ngOnInit(): void {
     window.scroll(0,0);
     initFlowbite();
-  }
-  isloading = true
-  constructor(){
-    setTimeout(() => {
-      this.isloading = false; 
-    }, 2000);
+    // this.loadingService.loading$.subscribe(isloading => {
+    //   this.isloading = isloading;
+    // });
+    // console.log(this.isloading);
   }
 }

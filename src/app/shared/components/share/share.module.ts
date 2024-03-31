@@ -9,6 +9,7 @@ import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { CardPosterComponent } from '../card-poster/card-poster.component';
 import { LoaderComponent } from '../loader/loader.component';
+import { NgxSkeletonLoaderComponent, NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 
 
@@ -25,7 +26,8 @@ import { LoaderComponent } from '../loader/loader.component';
     LoaderComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    NgxSkeletonLoaderModule,
   ],
   exports:[
     CardCategoryComponent,
@@ -37,6 +39,7 @@ import { LoaderComponent } from '../loader/loader.component';
     FooterComponent,
     CardPosterComponent,
     LoaderComponent,
+    NgxSkeletonLoaderComponent,
   ]
 })
 export class ShareModule { }

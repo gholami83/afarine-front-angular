@@ -7,7 +7,7 @@ import {
   ViewChild,
   inject,
 } from '@angular/core';
-import { Router, Route } from '@angular/router';
+import { Router, Route, RouterOutlet } from '@angular/router';
 import {
   Observable,
   Observer,
@@ -31,97 +31,22 @@ import { enUS } from 'date-fns/locale';
 import { toDate, format as formatJalali } from 'date-fns-jalali';
 import { ChangeService } from 'src/app/services/change.service';
 import { EventService } from 'src/app/services/event.service';
+import { EventsService } from 'src/app/services/events.service';
+import { LoadingService } from 'src/app/services/loading.service';
+import { instituteService } from 'src/app/services/institute.service';
 
+interface Institute {
+  name: string;
+  // Add other properties as needed
+ }
 @Component({
   selector: 'app-eventlist',
   templateUrl: './eventlist.component.html',
   styleUrls: ['./eventlist.component.scss'],
 })
 export class EventlistComponent implements OnInit {
-  // events = [
-  //   {
-  //     id: 0,
-  //     image: 'assets/imgs/wp11572314.jpg',
-  //     name: 'کارگری',
-  //     date: 'سه شنبه ساعت 5 عصر',
-  //     price: '5,000,000',
-  //     location: 'پاساژ زیتون',
-  //     executer: 'شرکت آفرینه',
-  //     type: 'inovationcafe',
-  //   },
-  //   {
-  //     id: 1,
-  //     image: 'assets/imgs/wp12154950.jpg',
-  //     name: 'رویداد کارآفرینی و کارگری',
-  //     date: 'سه شنبه ساعت 5 عصر',
-  //     price: '5,000,000',
-  //     location: 'پاساژ زیتون',
-  //     executer: 'شرکت آفرینه',
-  //     type: 'conference',
-  //   },
-  //   {
-  //     id: 2,
-  //     image: 'assets/imgs/wp4700266.jpg',
-  //     name: 'رویداد کارآفرینی و کارگری',
-  //     date: 'سه شنبه ساعت 5 عصر',
-  //     price: '5,000,000',
-  //     location: 'پاساژ زیتون',
-  //     executer: 'شرکت آفرینه',
-  //     type: 'workshop',
-  //   },
-  //   {
-  //     id: 3,
-  //     image: 'assets/imgs/wp11572314.jpg',
-  //     name: 'رویداد کارآفرینی و کارگری',
-  //     date: 'سه شنبه ساعت 5 عصر',
-  //     price: '5,000,000',
-  //     location: 'پاساژ زیتون',
-  //     executer: 'شرکت آفرینه',
-  //     type: 'meeting',
-  //   },
-  //   {
-  //     id: 4,
-  //     image: 'assets/imgs/wp12154950.jpg',
-  //     name: 'رویداد کارآفرینی و کارگری',
-  //     date: 'سه شنبه ساعت 5 عصر',
-  //     price: '5,000,000',
-  //     location: 'پاساژ زیتون',
-  //     executer: 'شرکت آفرینه',
-  //     type: 'startupweekend',
-  //   },
-  //   {
-  //     id: 5,
-  //     image: 'assets/imgs/wp4700266.jpg',
-  //     name: 'رویداد کارآفرینی و کارگری',
-  //     date: 'سه شنبه ساعت 5 عصر',
-  //     price: '5,000,000',
-  //     location: 'پاساژ زیتون',
-  //     executer: 'شرکت آفرینه',
-  //     type: 'demoday',
-  //   },
-  //   {
-  //     id: 6,
-  //     image: 'assets/imgs/wp11572314.jpg',
-  //     name: 'رویداد کارآفرینی و کارگری',
-  //     date: 'سه شنبه ساعت 5 عصر',
-  //     price: '5,000,000',
-  //     location: 'پاساژ زیتون',
-  //     executer: 'شرکت آفرینه',
-  //     type: 'meeting',
-  //   },
-  //   {
-  //     id: 7,
-  //     image: 'assets/imgs/wp12154950.jpg',
-  //     name: 'رویداد ��ارآفرینی و کارگری',
-  //     date: 'سه شنبه ساعت 5 عصر',
-  //     price: '5,000,000',
-  //     location: 'پاساژ زیتون',
-  //     executer: 'شرکت آفرینه',
-  //     type: 'startupweekend',
-  //   },
-  // ];
-  isloading = true;
-
+  loading = true;
+  loaded = false
   public events: eventInterface[] = [
     {
       id: 0,
@@ -147,17 +72,22 @@ export class EventlistComponent implements OnInit {
     private ApiService: ApiService,
     private http: HttpClient,
     private changeService:ChangeService,
-    private eventService:EventService
-  ) {
-    setTimeout(() => {
-      this.isloading = false;
-    }, 2000);
+    private eventService:EventService,
+    private eventsService:EventsService,
+    private loadingService:LoadingService,
+    private institutesService:instituteService,
+  ) {  }
+  sendData() {
+    if(this.events[0].poster!=""){
+      setTimeout(() => {
+        this.loaded = true
+      }, 500);
+    }
   }
-
-  public log() {
+   log() {
     this.generalService.log(this.generalService.username);
   }
-  public onChange(event: Event) {
+  onChange(event: Event) {
     this.generalService.username = (event.target as HTMLInputElement).value;
     this.router.navigate(['event'], {
       queryParams: { eventfound: 'true' },
@@ -167,112 +97,48 @@ export class EventlistComponent implements OnInit {
   public http$!: Observable<any[]>;
   public Event$!: Observable<any[]>;
 
-  public getTranslateEvent(name: string) {
-    return eventTypeList.find((item: any) => {
-      return item.name === name;
-    })?.translateName;
+  getTranslateEvent(name: string) {
+    return this.changeService.getTranslateEvent(name);
   }
 
-  public changeJalaiDate(data: string) {
-    const date = new Date(data);
-
-    if (isNaN(date.getTime())) {
-      // console.error("Invalid date object.");
-      return '';
-    }
-    const jalaliDateWithTime = formatJalali(date, 'yyyy/MM/dd HH:mm:ss', {
-      locale: enUS,
-    });
-    const time = jalaliDateWithTime.split(' ');
-    return this.formatDateToPersian(time);
-  }
-
-  formatDateToPersian(dateString: string[]) {
-    const persianDigits = {
-      '0': '۰',
-      '1': '۱',
-      '2': '۲',
-      '3': '۳',
-      '4': '۴',
-      '5': '۵',
-      '6': '۶',
-      '7': '۷',
-      '8': '۸',
-      '9': '۹',
-    };
-
-    let formattedDate = dateString;
-    for (const digit in persianDigits) {
-      formattedDate[0] = formattedDate[0].replace(
-        new RegExp(digit, 'g'),
-        persianDigits[digit as keyof typeof persianDigits]
-      );
-    }
-    for (const digit in persianDigits) {
-      formattedDate[1] = formattedDate[1].replace(
-        new RegExp(digit, 'g'),
-        persianDigits[digit as keyof typeof persianDigits]
-      );
-    }
-
-    return formattedDate;
+  changeJalaiDate(data: string) {
+    return this.changeService.changeJalaiDate(data);
   }
   formatPriceToPersian(dateString: string) {
-    const persianDigits = {
-      '0': '۰',
-      '1': '۱',
-      '2': '۲',
-      '3': '۳',
-      '4': '۴',
-      '5': '۵',
-      '6': '۶',
-      '7': '۷',
-      '8': '۸',
-      '9': '۹',
-    };
-
-    let formattedDate = (Math.trunc(+dateString).toString());
-    for (const digit in persianDigits) {
-      formattedDate = formattedDate.replace(
-        new RegExp(digit, 'g'),
-        persianDigits[digit as keyof typeof persianDigits]
-      );
-    }
-
-    return formattedDate;
+    return this.changeService.formatPriceToPersian(dateString)
   }
   BASE_URL = 'https://afarine.noarino.ir';
   @ViewChild('inputFilter', { static: true }) input!: ElementRef;
   ngOnInit(): void {
     window.scroll(0,0);
     // const interval$: Observable<any> = new Observable((observer: Observer<number>) => {
-    //     vlet count = 0;
-    //     setInterval(() => {
-    //       observer.next(count++);
-    //       if (count == 5) {
-    //         observer.complete();
-    //       }
-    //     }, 1000);
-    //   }
+      //     vlet count = 0;
+      //     setInterval(() => {
+        //       observer.next(count++);
+        //       if (count == 5) {
+          //         observer.complete();
+          //       }
+          //     }, 1000);
+          //   }
     // );
     // of(['arr','ar1','ar2']).subscribe(console.log)
-    of('arr', 'ar1', 'ar2').subscribe(console.log);
-    from(['arr', 'ar1', 'ar2']).subscribe(console.log);
+    // of('arr', 'ar1', 'ar2').subscribe(console.log);
+    // from(['arr', 'ar1', 'ar2']).subscribe(console.log);
     // from is of that should be list in that
 
     // this.Event$= this.http$.pipe(
-    //   map((todo) => todo.filter((todo)=> todo.completed === true))
-    //   )
-    // this.http.get('https://jsonplaceholder.typicode.com/todos').subscribe(console.log)
-    this.http
-      .get<eventInterface[]>(this.BASE_URL + '/api/events/all/')
-      .subscribe((events) => (this.events = events));
-    this.http.get(this.BASE_URL + '/api/events/all/').subscribe(console.log);
-
-    
-
-    fromEvent(this.input.nativeElement, 'input').subscribe();
-    fromEvent(document, 'click')
+      //   map((todo) => todo.filter((todo)=> todo.completed === true))
+      //   )
+      // this.http.get('https://jsonplaceholder.typicode.com/todos').subscribe(console.log)
+      
+      this.eventsService.getEvents('/api/events/all/').subscribe((events) => {
+        this.events = events
+      this.sendData()});
+      // this.http.get(this.BASE_URL + '/api/events/all/').subscribe(console.log);
+      
+      
+      // fromEvent(this.input.nativeElement, 'input').subscribe();
+      fromEvent(document, 'click')
       .pipe(
         map((event) => event as MouseEvent),
         // tap(item => console.log(item)),
@@ -281,7 +147,14 @@ export class EventlistComponent implements OnInit {
         }),
         takeWhile((item) => item.x < 100),
         tap((item) => console.log(item))
-      )
-      .subscribe();
-  }
-}
+        )
+        // .subscribe();
+      }
+      getInstitute(instituteId: number) {
+        let instituteObject: any ;
+        // this.eventService.getEvent('institute', instituteId.toString()).subscribe((institute)=>instituteObject=institute);
+        // console.log(instituteObject)
+        return instituteObject
+     }
+    }
+    

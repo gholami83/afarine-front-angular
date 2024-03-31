@@ -1,4 +1,7 @@
-<div class="flex flex-col ">
+<div *ngIf="loading">
+    <app-loader></app-loader>
+</div>
+<div *ngIf="!loading" class="flex flex-col ">
     <div class="flex flex-col md:flex-row xl:px-16  py-8 px-4"
         style="background-color: #111722;">
         <div
