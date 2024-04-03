@@ -48,4 +48,19 @@ export class ConferenceComponent implements OnInit {
       this.setLoading()
     })
   }
+  swiperConfig = {
+    slidesPerView: 3,
+    spaceBetween: 1,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+   },
+    pagination: { clickable: true },
+    scrollbar: { draggable: true },
+    on: {
+      init: function () {
+        console.log('swiper initialized');
+      },
+    },
+  };
 }
