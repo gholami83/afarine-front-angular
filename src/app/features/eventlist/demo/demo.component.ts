@@ -27,36 +27,23 @@ export class DemoComponent implements OnInit {
     private eventService: EventService,
     public changeSerice: ChangeService
   ) {}
+  loading = false; 
+  setLoading(){
+    if(this.event!==null){  
+      setTimeout(() => {
+        this.loading = true
+      }, 1000);
+    }
+  }
   ngOnInit(): void {
     window.scroll(0,0);
     const eventId = this.route.snapshot.params['id'];
     const eventTitle = this.router.url.split('/')[2];
-    this.eventService.getEvent(eventTitle.toLowerCase(), eventId).pipe(
-      map((event: any) => event),
-      mergeMap((eventData: any) => {
-        const instituteRequest = this.eventService.getEvent('institute', JSON.stringify(eventData.demo_day.institute));
-        const supporterRequests = eventData.demo_day.supporter.map((supporterId: any) => this.eventService.getEvent('institute', JSON.stringify(supporterId)));
-
-        return forkJoin([instituteRequest, ...supporterRequests]).pipe(
-          map(([instituteData, ...supporterData]) => {
-            this.institutes = instituteData;
-            this.supporters = supporterData; // Assuming you want to store the supporter data in this.supporter
-            return {
-              instituteData: instituteData,
-              supporterData: supporterData,
-              eventData: eventData,
-            };
-          })
-        );
-      }),
-    ).subscribe(
-      (data: any) => {
-        this.event = data.eventData;
-        this.institutes = [data.instituteData];
-        this.users = this.event['user-role'];
-        this.supporters = data.supporterData;
-      }
-      // (err)=>{}
-    )
+    this.eventService.getEvent(eventTitle.toLowerCase(), eventId).subscribe(event=>{
+      this.event=event
+      this.users = this.event['user-role']
+      this.institutes = this.event['demo_day'].institute
+      this.setLoading()
+    })
   }
 }

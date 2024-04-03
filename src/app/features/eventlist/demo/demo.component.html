@@ -1,5 +1,9 @@
-<div class="font-site background-site">
-    <div class="flex flex-row pb-32 px-6 md:px-16 pt-16 bg-demo justify-center items-center">
+<div>
+    <app-loader *ngIf="!loading"></app-loader>
+</div>
+<div *ngIf="loading" class="font-site background-site">
+    <div
+        class="flex flex-row pb-32 px-6 md:px-16 pt-16 bg-demo justify-center items-center">
         <div class="hidden md:flex w-1/4 order-3">
             <img src="../../../../assets/imgs/demo.svg" alt>
         </div>
@@ -19,7 +23,8 @@
     </div>
     <div
         class="bg-indigo-950 text-white py-12 px-6 md:px-10 leading-10 text-lg font-bold flex flex-col md:flex-row">
-        <div class="order-1 md:order-2 mx-3 grid justify-center items md:w-1/2 py-7">
+        <div
+            class="order-1 md:order-2 mx-3 grid justify-center items md:w-1/2 py-7">
             <img class
                 [src]="event.demo_day.poster"
                 alt>
@@ -110,14 +115,15 @@
             </div>
             <div class="flex flex-col py-8 ">
                 <div class="flex justify-center text-yellow-300 py-5">
-                    <p class="text-3xl md:text-5xl font-bold bg-indigo-900 rounded-3xl p-10"
+                    <p
+                        class="text-3xl md:text-5xl font-bold bg-indigo-900 rounded-3xl p-10"
                         style="background-image: url(../../../../assets/imgs/svg-seperate-demo.svg);">
                         شرکت برگزار کننده
                     </p>
                 </div>
                 <div
                     class="grid grid-cols-1 response-brand gap-2 xl:gap-5 justify-items-center w-full p-2 lg:p-5">
-                    <div *ngFor="let institute of institutes">
+                    <div *ngFor="let institute of [institutes]">
                         <app-card-institute
                             [bgstyle]="'bg-white bg-opacity-70 '"
                             [institute]="institute"></app-card-institute>
@@ -126,7 +132,8 @@
             </div>
             <div class="flex flex-col py-8 ">
                 <div class="flex justify-center text-yellow-300 py-5">
-                    <p class="text-3xl md:text-5xl  font-bold bg-indigo-900 rounded-3xl p-10"
+                    <p
+                        class="text-3xl md:text-5xl  font-bold bg-indigo-900 rounded-3xl p-10"
                         style="background-image: url(../../../../assets/imgs/svg-seperate-demo.svg);">
                         حامیان
                         دوره
@@ -134,7 +141,7 @@
                 </div>
                 <div
                     class="grid grid-cols-1 response-brand gap-2 xl:gap-5 justify-items-center w-full p-2 lg:p-5">
-                    <div *ngFor="let institute of supporters">
+                    <div *ngFor="let institute of event.demo_day.supporter">
                         <app-card-institute
                             [bgstyle]="'bg-white bg-opacity-70 '"
                             [institute]="institute"></app-card-institute>

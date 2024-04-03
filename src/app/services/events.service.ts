@@ -17,7 +17,10 @@ export class EventsService {
       location: '',
       type_name: '',
       description: '',
-      institute: [],
+      institute: {
+        name:'',
+        logo:'',
+      },
       executer: [],
       start_date: '',
     },

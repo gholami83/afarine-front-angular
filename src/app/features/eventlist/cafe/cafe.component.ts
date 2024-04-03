@@ -27,43 +27,58 @@ export class CafeComponent implements OnInit {
   instituteId!:number
 
   constructor(private route: ActivatedRoute,private router:Router,private eventService:EventService,public changeSerice:ChangeService) {}
+  loading = false; 
+  setLoading(){
+    if(this.event!==null){  
+      setTimeout(() => {
+        this.loading = true
+      }, 1000);
+    }
+  }
   ngOnInit() {
     window.scroll(0,0);
     const eventId = this.route.snapshot.params['id']
     const eventTitle = this.router.url.split('/')[2]
+      this.eventService.getEvent(eventTitle.toLowerCase(), eventId).subscribe(event=>{
+        this.event=event
+        this.users = this.event['user-role']
+        this.institutes = this.event['innovation_cafe'].institute
+        this.setLoading()
+      })
+
     // this.event = this.eventService.events.find(event => event.id === +this.route.snapshot.params['id'])
     // console.log(this.event)
     // if (!this.event){
       //   this.eventfound = false;
       //   this.router.navigate(['/events']);
       // }
-      this.eventService.getEvent(eventTitle.toLowerCase(), eventId).pipe(
-        map((event: any) => event),
-        mergeMap((eventData: any) => {
-          const instituteRequest = this.eventService.getEvent('institute', JSON.stringify(eventData.innovation_cafe.institute));
-          const supporterRequests = eventData.innovation_cafe.supporter.map((supporterId: any) => this.eventService.getEvent('institute', JSON.stringify(supporterId)));
+      // this.eventService.getEvent(eventTitle.toLowerCase(), eventId).pipe(
+      //   map((event: any) => event),
+      //   mergeMap((eventData: any) => {
+      //     const instituteRequest = this.eventService.getEvent('institute', JSON.stringify(eventData.innovation_cafe.institute));
+      //     const supporterRequests = eventData.innovation_cafe.supporter.map((supporterId: any) => this.eventService.getEvent('institute', JSON.stringify(supporterId)));
   
-          return forkJoin([instituteRequest, ...supporterRequests]).pipe(
-            map(([instituteData, ...supporterData]) => {
-              this.institutes = instituteData;
-              this.supporters = supporterData; // Assuming you want to store the supporter data in this.supporter
-              return {
-                instituteData: instituteData,
-                supporterData: supporterData,
-                eventData: eventData,
-              };
-            })
-          );
-        }),
-      ).subscribe(
-        (data: any) => {
-          this.event = data.eventData;
-          this.institutes = [data.instituteData];
-          this.users = this.event['user-role'];
-          this.supporters = data.supporterData;
-        }
-        // (err)=>{}
-      )
+      //     return forkJoin([instituteRequest, ...supporterRequests]).pipe(
+      //       map(([instituteData, ...supporterData]) => {
+      //         this.institutes = instituteData;
+      //         this.supporters = supporterData; // Assuming you want to store the supporter data in this.supporter
+      //         return {
+      //           instituteData: instituteData,
+      //           supporterData: supporterData,
+      //           eventData: eventData,
+      //         };
+      //       })
+      //     );
+      //   }),
+      // ).subscribe(
+      //   (data: any) => {
+      //     this.event = data.eventData;
+      //     this.institutes = [data.instituteData];
+      //     this.users = this.event['user-role'];
+      //     this.supporters = data.supporterData;
+      //   }
+      //   // (err)=>{}
+      // )
       
       // this.eventService.getEvent(eventTitle.toLowerCase(),eventId).subscribe(console.log)
   }

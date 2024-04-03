@@ -1,8 +1,11 @@
-<div class="background-site font-site"  >
+<div>
+<app-loader *ngIf="!loading"></app-loader>
+</div>
+<div *ngIf="loading" class="background-site font-site">
     <div class="flex flex-col text-white md:pb-32 pb-10 p-4 bg-article">
         <div class="md:pt-24 pt-12 text-4xl md:text-7xl">
             <p class="text-pretty leading-loose  font-extrabold text-center">
-                {{ event.innovation_cafe.title }} 
+                {{ event.innovation_cafe.title }}
             </p>
         </div>
         <div class="flex md:flex-row justify-center items-center px-2 pt-8">
@@ -21,8 +24,10 @@
             </div>
         </div>
     </div>
-    <div class="grid lg:grid-cols-6 md:px-10 px-4 py-8 md:py-24 background-site">
-        <div class="col-span-3 order-1 md:order-2 px-2 grid justify-center items pb-8">
+    <div
+        class="grid lg:grid-cols-6 md:px-10 px-4 py-8 md:py-24 background-site">
+        <div
+            class="col-span-3 order-1 md:order-2 px-2 grid justify-center items pb-8">
             <img class
                 src="../../../../assets/imgs/digital-business-conference-flyer-design-template-5328947015bafd2306e7f33adbbbb3fa_screen(1).jpg"
                 alt>
@@ -39,7 +44,9 @@
         class="flex flex-col md:flex-row text-2xl bg-indigo-700 text-white p-5 md:p-9 py-12 justify-center md:items-center leading-loose gap-4">
         <div class="md:w-1/4 text-start flex md:justify-center gap-2">
             <div class="order-2">
-                {{ changeSerice.formatPriceToPersian(event.innovation_cafe.price) }}
+                {{
+                changeSerice.formatPriceToPersian(event.innovation_cafe.price)
+                }}
             </div>
             <div class="text-2xl order-1 p-2 text-end ">
                 <i class="fa-solid fa-coins"></i>
@@ -48,13 +55,18 @@
         <div
             class="md:w-5/12 md:justify-center text-xl leading-loose flex items-center gap-2 tracking-wider">
             <div class="order-2">
-                شروع رویداد: {{ changeSerice.changeJalaiDate(event.innovation_cafe.start_date)[0] }}<br>ساعت: {{ changeSerice.changeJalaiDate(event.innovation_cafe.start_date)[1]  }}
+                شروع رویداد: {{
+                changeSerice.changeJalaiDate(event.innovation_cafe.start_date)[0]
+                }}<br>ساعت: {{
+                changeSerice.changeJalaiDate(event.innovation_cafe.start_date)[1]
+                }}
             </div>
             <div class="text-2xl order-1 p-2 text-end">
                 <i class="fa-regular fa-clock"></i>
             </div>
         </div>
-        <div class="md:w-1/3 text-start flex items-center md:justify-center gap-2">
+        <div
+            class="md:w-1/3 text-start flex items-center md:justify-center gap-2">
             <div class="order-2">
                 {{ event.innovation_cafe.location }}
             </div>
@@ -86,43 +98,48 @@
         </div>
         <div class="flex flex-col justify-center my-10">
             <div class="flex justify-center py-3 ">
-                <p class="text-4xl md:text-6xl text-violet-700 rounded-3xl bg-blue-400 p-10 font-extrabold">مدرسان دوره</p>
+                <p
+                    class="text-4xl md:text-6xl text-violet-700 rounded-3xl bg-blue-400 p-10 font-extrabold">مدرسان
+                    دوره</p>
             </div>
             <div
                 class="grid grid-cols-1  response-users gap-3 sm:gap-4 xl:gap-5 justify-items-center w-full xl:px-24 py-16">
                 <div *ngFor="let user of users">
-                    <app-card-user [user]="user" [textstyle]="'text-gray-900'" [bgstyle]="'bg-white bg-opacity-70 '" [user]="user"></app-card-user>
+                    <app-card-user [user]="user" [textstyle]="'text-gray-900'"
+                        [bgstyle]="'bg-white bg-opacity-70 '"
+                        [user]="user"></app-card-user>
                 </div>
             </div>
         </div>
         <div class="flex flex-col py-8 ">
-            <div class="flex justify-center text-yellow-300 py-5 " style="background-image: url(../../../../assets/imgs/svg-seprate-cafe.svg);">
-                <p class="text-3xl md:text-5xl font-bold text-violet-700 rounded-3xl p-10">شرکت برگزار کننده</p>
+            <div class="flex justify-center text-yellow-300 py-5 "
+                style="background-image: url(../../../../assets/imgs/svg-seprate-cafe.svg);">
+                <p
+                    class="text-3xl md:text-5xl font-bold text-violet-700 rounded-3xl p-10">شرکت
+                    برگزار کننده</p>
             </div>
             <div
                 class="grid grid-cols-1 response-brand gap-2 xl:gap-5 justify-items-center w-full p-3 lg:p-5">
-                <div *ngFor="let institute of institutes">
-                    <app-card-institute [bgstyle]="'bg-white bg-opacity-70 '" 
+                <div *ngFor="let institute of [institutes]">
+                    <app-card-institute [bgstyle]="'bg-white bg-opacity-70 '"
                         [institute]="institute"></app-card-institute>
                 </div>
             </div>
         </div>
         <div class="flex flex-col py-8 ">
-            <div class="flex justify-center text-yellow-300 py-5 " style="background-image: url(../../../../assets/imgs/svg-seprate-cafe.svg);">
-                <p class="text-3xl md:text-5xl font-bold text-violet-700 rounded-3xl p-10">حامیان دوره</p>
+            <div class="flex justify-center text-yellow-300 py-5 "
+                style="background-image: url(../../../../assets/imgs/svg-seprate-cafe.svg);">
+                <p
+                    class="text-3xl md:text-5xl font-bold text-violet-700 rounded-3xl p-10">حامیان
+                    دوره</p>
             </div>
             <div
                 class="grid grid-cols-1 response-brand gap-2 xl:gap-5 justify-items-center w-full p-3 lg:p-5">
-                <div *ngFor="let institute of supporters">
-                    <app-card-institute [bgstyle]="'bg-white bg-opacity-70 '" 
+                <div *ngFor="let institute of event.innovation_cafe.supporter">
+                    <app-card-institute [bgstyle]="'bg-white bg-opacity-70 '"
                         [institute]="institute"></app-card-institute>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<ng-template *ngIf="!eventfound" >
-    <h1>
-        event Not found 
-    </h1>
-</ng-template>

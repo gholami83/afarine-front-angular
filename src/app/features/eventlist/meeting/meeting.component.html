@@ -1,4 +1,7 @@
-<div class="backgroud-site font-site">
+<div>
+    <app-loader *ngIf="!loading"></app-loader>
+</div>
+<div *ngIf="loading" class="backgroud-site font-site">
     <div class="py-8 px-3 md:px-10">
         <div
             class="flex flex-row items-center justify-center py-10 bg-slate-300 pb-24">
@@ -92,7 +95,7 @@
                 class=" grid grid-cols-1 response-users gap-3 sm:gap-3  xl:px-24 justify-items-center p-5 self-center ">
                 <div *ngFor="let user of users">
                     <app-card-user [user]="user"
-                    [user]="user"
+                        [user]="user"
                         [bgstyle]="'bg-slate-900 bg-opacity-70'"
                         [rolestyle]="'text-gray-200'" [textstyle]="'text-white'"
                         [user]="user"></app-card-user>
@@ -109,7 +112,7 @@
             </div>
             <div
                 class="grid grid-cols-1 response-brand gap-2 xl:gap-5 justify-items-center w-full p-2 lg:p-5">
-                <div *ngFor="let institute of institutes">
+                <div *ngFor="let institute of [institutes]">
                     <app-card-institute [textstyle]="'text-white font-bold'"
                         [bgstyle]="'bg-slate-900 bg-opacity-70'"
                         [institute]="institute"></app-card-institute>
@@ -125,7 +128,7 @@
             </div>
             <div
                 class="grid grid-cols-1 response-brand gap-2 xl:gap-5 justify-items-center w-full p-2 lg:p-5">
-                <div *ngFor="let institute of supporters">
+                <div *ngFor="let institute of event.meeting.supporter">
                     <app-card-institute [textstyle]="'text-white font-bold'"
                         [bgstyle]="'bg-slate-900 bg-opacity-70'"
                         [institute]="institute"></app-card-institute>

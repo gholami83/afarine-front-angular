@@ -8,6 +8,9 @@ export interface eventInterface{
     location: string,
     executer: string[],
     type_name: string,
-    institute: string[],
+    institute:{
+        name:string,
+        logo:string,
+    },
     start_date:string,
 }

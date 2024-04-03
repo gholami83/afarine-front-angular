@@ -1,4 +1,7 @@
-<div class="font-site ">
+<div>
+    <app-loader *ngIf="!loading"></app-loader>
+</div>
+<div *ngIf="loading" class="font-site ">
     <div class="flex flex-col md:flex-row bg-gray-900 p-7 md:py-16">
         <div
             class="flex order-1 md:order-2 md:w-5/12 items-start shadow-yellow-500 ">
@@ -72,7 +75,8 @@
             class="flex flex-row text-2xl text-white p-5 py-12 justify-center items-center leading-loose gap-4">
 
             <div class="flex flex-col">
-                <div class="bg-indigo-800 text-white leading-8 p-5 py-10 md:p-10">
+                <div
+                    class="bg-indigo-800 text-white leading-8 p-5 py-10 md:p-10">
                     <div class="flex justify-start">
                         <div class="text-2xl font-extrabold pb-8">
                             مخاطبین رویداد
@@ -102,7 +106,9 @@
     </div>
     <div class="flex flex-col bg-gray-900">
         <div class="flex justify-center  py-10 text-white">
-            <p class="text-4xl md:text-6xl font-extrabold text-yellow-400">مدرسان دوره</p>
+            <p
+                class="text-4xl md:text-6xl font-extrabold text-yellow-400">مدرسان
+                دوره</p>
         </div>
         <div
             class="grid grid-cols-1 response-users gap-3 sm:gap-4 xl:gap-5 justify-items-center w-full xl:px-24 my-16">
@@ -119,10 +125,10 @@
             </div>
             <div
                 class="grid grid-cols-1 response-brand gap-3 sm:gap-4 xl:gap-5 justify-items-center w-full xl:px-24 md:py-12 ">
-                <div *ngFor="let institute of institutes">
+                <div *ngFor="let institute of [institutes]">
                     <app-card-institute
-                    [textstyle]="'text-white'"
-                    [bgstyle]="'bg-slate-950 bg-opacity-70'"
+                        [textstyle]="'text-white'"
+                        [bgstyle]="'bg-slate-950 bg-opacity-70'"
                         [institute]="institute"></app-card-institute>
                 </div>
             </div>
@@ -133,10 +139,10 @@
             </div>
             <div
                 class="grid grid-cols-1 response-brand gap-3 sm:gap-4 xl:gap-5 justify-items-center w-full xl:px-24 md:py-12 ">
-                <div *ngFor="let institute of supporters">
+                <div *ngFor="let institute of event.startup_weekend.supporter">
                     <app-card-institute
-                    [textstyle]="'text-white'"
-                    [bgstyle]="'bg-slate-950 bg-opacity-70'"
+                        [textstyle]="'text-white'"
+                        [bgstyle]="'bg-slate-950 bg-opacity-70'"
                         [institute]="institute"></app-card-institute>
                 </div>
             </div>

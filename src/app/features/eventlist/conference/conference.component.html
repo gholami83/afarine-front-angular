@@ -1,4 +1,7 @@
-<div class="font-site bg-confer">
+<div>
+    <app-loader *ngIf="!loading"></app-loader>
+</div>
+<div *ngIf="loading" class="font-site bg-confer">
     <div class="flex flex-col z-[11]">
         <div class="p-3 md:p-16 block">
             <div class="flex w-full h-full">
@@ -7,18 +10,19 @@
                     alt>
             </div>
             <div
-                class="relative -top-20 rounded-b-xl   shadow-gray-200 transition-shadow bg-title">
+                class="relative -top-20 rounded-b-xl shadow-gray-200 transition-shadow bg-title">
                 <div
                     class="flex flex-row text-2xl p-6 md:p-9 md:py-12 backdrop-blur-lg  justify-center items-center leading-loose gap-4">
                     <div class="md:w-2/5 md:flex hidden">
                         <img src="../../../../assets/imgs/office.svg" alt>
                     </div>
-                    <div class="md:w-3/5 flex flex-col text-gray-800">
+                    <div class="md:w-3/5 flex flex-col text-gray-800 ">
                         <div style="backdrop-filter: blur(20px);
                             background-color: rgba(255, 255, 255, 0.296)"
                             class=" rounded-xl leading-8 p-6 md:p-10">
                             <div class="flex justify-start">
-                                <div class="text-2xl font-extrabold md:py-8 py-4">
+                                <div
+                                    class="text-2xl font-extrabold md:py-8 py-4">
                                     {{ event.conference.title }}
                                 </div>
                             </div>
@@ -45,8 +49,8 @@
                 </div>
             </div>
             <div class="py-5">
-                <div style="background-color: rgb(238, 247, 255);"
-                    class="bg-gray-500  shadow-gray-200 transition-shadow border-2 rounded-lg leading-8 p-5 py-7 md:p-10 w-full flex md:flex-row flex-col">
+                <div style="background-color: rgb(255 ,255 ,255 ,84%);"
+                    class=" shadow-gray-200 transition-shadow border-2 rounded-lg leading-8 p-5 py-7 md:p-10 w-full flex md:flex-row flex-col">
                     <div class="flex flex-col md:w-1/2 order-2 md:order-1">
                         <div class="flex justify-center py-7 text-gray-900 ">
                             <div class="text-2xl md:text-4xl font-bold">
@@ -54,32 +58,40 @@
                             </div>
                         </div>
                         <div class="text-wrap leading-9 text-lg text-justify">
-                        {{ event.conference.description }}
+                            {{ event.conference.description }}
                         </div>
                     </div>
-                    <div class="md:w-1/2 md:order-2 order-1 flex items-center justify-center">
-                        <img class="w-4/5" src="../../../../assets/imgs/finding.svg" alt>
+                    <div
+                        class="md:w-1/2 md:order-2 order-1 flex items-center justify-center">
+                        <img class="w-4/5"
+                            src="../../../../assets/imgs/finding.svg" alt>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="w-full custom-shape-divider-bottom-1707913104 -mb-1">
-            <!-- <img src="../../../../assets/imgs/wave-haikei (3).svg" alt=""> -->
+        <!-- <div class="w-full custom-shape-divider-bottom-1707913104 -mb-1">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 1200 120" preserveAspectRatio="none">
                 <path
                     d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z"
                     class="shape-fill"></path>
             </svg>
-        </div>
-        <div class="bg-emerald-400 py-10">
+        </div> -->
+        <div class="bg-slate-900 text-white opacity-90 py-16">
             <div
                 class="w-full flex flex-col md:flex-row justify-around gap-5 md:gap-3 text-xl items-start pr-3 md:pr-0 md:items-center">
+                <div class="flex justify-center py-7  ">
+                    <div class="text-2xl md:text-4xl font-bold">
+                        جزئیات رویداد
+                    </div>
+                </div>
                 <div
                     class=" h-full text-start flex items-center gap-2">
                     <div class="order-2">
-                        {{ changeSerice.formatPriceToPersian(event.conference.price) }}
+                        {{
+                        changeSerice.formatPriceToPersian(event.conference.price)
+                        }}
                     </div>
                     <div
                         class="text-2xl order-1 p-2 text-end place-self-start">
@@ -89,7 +101,11 @@
                 <div
                     class=" justify-start  leading-loose flex items-center gap-2 tracking-wider">
                     <div class="order-2">
-                        شروع رویداد: {{ changeSerice.changeJalaiDate(event.conference.start_date)[0] }}<br>ساعت: {{ changeSerice.changeJalaiDate(event.conference.start_date)[1]  }}
+                        شروع رویداد: {{
+                        changeSerice.changeJalaiDate(event.conference.start_date)[0]
+                        }}<br>ساعت: {{
+                        changeSerice.changeJalaiDate(event.conference.start_date)[1]
+                        }}
                     </div>
                     <div
                         class="text-2xl order-1 p-2 text-end place-self-start">
@@ -108,15 +124,14 @@
                 </div>
             </div>
         </div>
-        <div class="w-full custom-shape-divider-bottom-1707913104 z-10 -mt-1">
-            <!-- <img src="../../../../assets/imgs/wave-haikei (3).svg" alt=""> -->
+        <!-- <div class="w-full custom-shape-divider-bottom-1707913104 z-10 -mt-1">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 1200 120" preserveAspectRatio="none">
                 <path
                     d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z"
                     class="shape-fill"></path>
             </svg>
-        </div>
+        </div> -->
     </div>
     <div class="flex flex-col  py-7 z-0">
         <div class>
@@ -127,7 +142,8 @@
             <div
                 class=" grid grid-cols-1 response-users gap-3 sm:gap-3  xl:px-24 justify-items-center p-5 self-center ">
                 <div *ngFor="let user of users">
-                    <app-card-user [user]="user" [bgstyle]="'bg-white bg-opacity-70 '"
+                    <app-card-user [user]="user"
+                        [bgstyle]="'bg-white bg-opacity-70 '"
                         [rolestyle]="'text-gray-900'"
                         [textstyle]="'text-gray-800'"
                         [user]="user"></app-card-user>
@@ -137,11 +153,12 @@
         <div class>
 
             <div class="flex justify-center py-5">
-                <p class="text-3xl md:text-5xl font-bold text-yellow-400">شرکت برگزار کننده</p>
+                <p class="text-3xl md:text-5xl font-bold text-yellow-400">شرکت
+                    برگزار کننده</p>
             </div>
             <div
                 class="grid grid-cols-1 response-brand gap-2 xl:gap-5 justify-items-center w-full p-2 lg:p-5">
-                <div *ngFor="let institute of institutes">
+                <div *ngFor="let institute of [institutes]">
                     <app-card-institute
                         [textstyle]="'text-gray-700 text-lg font-black'"
                         [bgstyle]="'bg-white bg-opacity-70 '"
@@ -152,11 +169,12 @@
         <div class>
 
             <div class="flex justify-center py-5">
-                <p class="text-3xl md:text-5xl font-bold text-yellow-400">حامیان دوره</p>
+                <p class="text-3xl md:text-5xl font-bold text-yellow-400">حامیان
+                    دوره</p>
             </div>
             <div
                 class="grid grid-cols-1 response-brand gap-2 xl:gap-5 justify-items-center w-full p-2 lg:p-5">
-                <div *ngFor="let institute of supporters">
+                <div *ngFor="let institute of event.conference.supporter">
                     <app-card-institute
                         [textstyle]="'text-gray-700 text-lg font-black'"
                         [bgstyle]="'bg-white bg-opacity-70 '"
@@ -166,11 +184,3 @@
         </div>
     </div>
 </div>
-
-<!-- <div class="w-40" style="color: #2555ae">
-    <svg xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 250 250">
-        <polygon fill="#2555ae"
-            points="124 1 247.64 90.83 200.41 236.17 48.41 236.17 0.36 90.83" />
-    </svg>
-</div> -->
