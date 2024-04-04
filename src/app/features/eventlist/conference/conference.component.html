@@ -141,9 +141,9 @@
             </div>
             <div 
                 class="flex gap-3 sm:gap-3  xl:px-24 justify-items-center p-5 self-center ">
-                <swiper *ngFor="let user of users" [config]="swiperConfig">
-                    <ng-template swiperSlide>
-                        <app-card-user [user]="user" 
+                <swiper *ngFor="let user of users" [config]="swiperConfig" class="w-full">
+                    <ng-template swiperSlide class="w-full">
+                        <app-card-user  [user]="user" 
                         [bgstyle]="'bg-white bg-opacity-70 '"
                         [rolestyle]="'text-gray-900'"
                         [textstyle]="'text-gray-800'"

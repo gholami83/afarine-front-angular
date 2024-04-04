@@ -7,6 +7,12 @@
     // opacity: 0.9;
     background: url('../../../../assets/imgs/svg-footer.svg');
     background-color: rgb(2,6,23);
-    background-repeat: round;
+    background-repeat: repeat-x ;
+}
+@media screen and (max-width: 1000px) {
+    .background-footer{
+        background-repeat: no-repeat;
+        background-size: cover;
+    } 
 }
 

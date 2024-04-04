@@ -41,12 +41,17 @@ export class ConferenceComponent implements OnInit {
     window.scroll(0,0);
     const eventId = this.route.snapshot.params['id'];
     const eventTitle = this.router.url.split('/')[2];
-    this.eventService.getEvent(eventTitle.toLowerCase(), eventId).subscribe(event=>{
-      this.event=event
-      this.users = this.event['user-role']
-      this.institutes = this.event['conference'].institute
-      this.setLoading()
-    })
+    this.eventService.getEvent(eventTitle.toLowerCase(), eventId).subscribe(
+      event => {
+        this.event = event;
+        this.users = this.event['user-role'];
+        this.institutes = this.event['conference'].institute;
+        this.setLoading();
+      },
+      error => {
+        console.error('Error fetching event data:', error);
+      }
+    );
   }
   swiperConfig = {
     slidesPerView: 3,
