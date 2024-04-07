@@ -135,25 +135,27 @@
     </div>
     <div class="flex flex-col  py-7 z-0">
         <div class>
-
             <div class="flex justify-center py-5 text-yellow-400 ">
                 <p class="text-4xl md:text-6xl font-extrabold">مدرسان دوره</p>
             </div>
-            <div 
-                class="flex gap-3 sm:gap-3  xl:px-24 justify-items-center p-5 self-center ">
-                <swiper *ngFor="let user of users" [config]="swiperConfig" class="w-full">
-                    <ng-template swiperSlide class="w-full">
-                        <app-card-user  [user]="user" 
-                        [bgstyle]="'bg-white bg-opacity-70 '"
-                        [rolestyle]="'text-gray-900'"
-                        [textstyle]="'text-gray-800'"
-                        [user]="user"></app-card-user>
-                    </ng-template>
-                </swiper>
+            <div
+                class="flex respose-users gap-3 sm:gap-3  xl:px-24 justify-items-center p-5 self-center w-full">
+                <div *ngFor="let user of users"
+                    class="w-full">
+                    <!-- <ng-template swiperSlide> -->
+                        <div class="">
+                            <app-card-user [user]="user"
+                                [bgstyle]="'bg-white bg-opacity-70 '"
+                                [rolestyle]="'text-gray-900'"
+                                [textstyle]="'text-gray-800'"
+                                [user]="user">
+                            </app-card-user>
+                        </div>
+                    <!-- </ng-template> -->
+                    </div>
             </div>
         </div>
         <div class>
-
             <div class="flex justify-center py-5">
                 <p class="text-3xl md:text-5xl font-bold text-yellow-400">شرکت
                     برگزار کننده</p>
@@ -186,31 +188,50 @@
         </div>
     </div>
 </div>
-
-
+<!-- 
 <div class="flex">
     <swiper [config]="swiperConfig">
         <ng-template class="p-5" swiperSlide>
-            <img src="../../../../assets/imgs/wp12154950.jpg" class="rounded-2xl" alt>
-            <p class="font-site p-5">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای 
+            <div>
+                <img src="../../../../assets/imgs/wp12154950.jpg"
+                    class="rounded-2xl" alt>
+                <p class="font-site p-5">لورم ایپسوم متن ساختگی با تولید سادگی
+                    نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                    چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که
+                    لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای
+                </p>
+            </div>
+        </ng-template>
+        <ng-template class="p-5" swiperSlide>
+            <img src="../../../../assets/imgs/wp12154950.jpg"
+                class="rounded-2xl" alt>
+            <p class="font-site p-5">لورم ایپسوم متن ساختگی با تولید سادگی
+                نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و
+                متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای
+                شرایط فعلی تکنولوژی مورد نیاز و کاربردهای
             </p>
         </ng-template>
         <ng-template class="p-5" swiperSlide>
-            <img src="../../../../assets/imgs/wp12154950.jpg" class="rounded-2xl" alt>
-            <p class="font-site p-5">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای 
+            <img src="../../../../assets/imgs/wp12154950.jpg"
+                class="rounded-2xl" alt>
+            <p class="font-site p-5">لورم ایپسوم متن ساختگی با تولید سادگی
+                نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و
+                متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای
+                شرایط فعلی تکنولوژی مورد نیاز و کاربردهای
             </p>
         </ng-template>
         <ng-template class="p-5" swiperSlide>
-            <img src="../../../../assets/imgs/wp12154950.jpg" class="rounded-2xl" alt>
-            <p class="font-site p-5">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای 
-            </p>
-        </ng-template>
-        <ng-template class="p-5" swiperSlide>
-            <img src="../../../../assets/imgs/wp12154950.jpg" class="rounded-2xl" alt>
-            <p class="font-site p-5">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای 
+            <img src="../../../../assets/imgs/wp12154950.jpg"
+                class="rounded-2xl" alt>
+            <p class="font-site p-5">لورم ایپسوم متن ساختگی با تولید سادگی
+                نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و
+                متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای
+                شرایط فعلی تکنولوژی مورد نیاز و کاربردهای
             </p>
         </ng-template>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
     </swiper>
-</div>
+    <button (click)="changeSlide()">Change Slide</button>
+
+</div> -->
