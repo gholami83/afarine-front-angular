@@ -7,12 +7,9 @@ import { Component } from '@angular/core';
 })
 export class ConsultComponent {
   loading: boolean = true;
-  setLoading(){
-    setTimeout(() => {
+  ngAfterViewInit(): void {
+    setTimeout(()=>{
       this.loading = false
-    }, 1000)
-  }
-  ngOnInit(){
-    this.setLoading()
-  }
+    },500)
+}
 }

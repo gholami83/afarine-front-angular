@@ -7,7 +7,7 @@ import { LoadingService } from 'src/app/services/loading.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit,AfterViewInit {
+export class HomeComponent implements OnInit, AfterViewInit {
   loading = true
   constructor(private loadingService:LoadingService,
     private router:Router
@@ -18,6 +18,27 @@ export class HomeComponent implements OnInit,AfterViewInit {
   ngAfterViewInit(): void {
       setTimeout(()=>{
         this.loading = false
-      },500)
+      },500);
+  }
+
+  toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    if (sidebar) {
+        sidebar.classList.toggle('translate-x-full');
+    }
+  }
+
+  openNav() {
+    const sidenav = document.getElementById("mySidenav");
+    if (sidenav) {
+      sidenav.style.width = "250px";
+    }
+  }
+
+  closeNav() {
+    const sidenav = document.getElementById("mySidenav");
+    if (sidenav) {
+      sidenav.style.width = "0";
+    }
   }
 }
