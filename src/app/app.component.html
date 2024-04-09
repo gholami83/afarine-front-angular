@@ -1,8 +1,10 @@
-<!-- <app-loader *ngIf="isloading"></app-loader> -->
-<div>
+<app-loader class="overflow-hidden" *ngIf="isloading"></app-loader>
+<div *ngIf="!isloading">
     <app-header></app-header>
     <div class="pt-[60px] bg-gray-900">
     </div>
-    <router-outlet></router-outlet>
+    <div class="min-h-[1000px]">
+        <router-outlet></router-outlet>
+    </div>
     <app-footer></app-footer>
 </div>

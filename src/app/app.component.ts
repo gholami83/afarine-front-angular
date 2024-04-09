@@ -13,9 +13,9 @@ export class AppComponent implements OnInit {
   constructor(
     private loadingService: LoadingService
   ){
-    // setTimeout(() => {
-    //   this.isloading = false; 
-    // }, 2000);
+    setTimeout(() => {
+      this.isloading = false; 
+    }, 1000);
   }
   ngOnInit(): void {
     window.scroll(0,0);
