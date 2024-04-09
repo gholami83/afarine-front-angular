@@ -2,3 +2,29 @@
     transition-property: all;
   transition-duration: 5s;
 }
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: -100%;
+  // background-color: #ffffff;
+  overflow-x: hidden;
+  transition: opacity 0.5s, right 0.8s; /* Adjust the transition properties as needed */
+  opacity: 1; /* Fully opaque by default */
+}
+
+.overlay.open {
+  // transition: 2s;
+  width: 100%; 
+  right: 0;
+  // opacity: 50%;
+
+}
+.overlay.closing {
+    right: -100%;
+    // opacity: 0;
+    transition-duration: 2s;
+    transition: ease-in-out;
+}
