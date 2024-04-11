@@ -42,21 +42,21 @@
                         <li
                             class="hover:bg-yellow-400 bg-opacity-0 hover:bg-opacity-100 transition-colors ease-in-out duration-300 p-5  2x:ltext-lg">
                             <div
-                                class="px-3 text-white border-b border-gray-100 hover:bg-yellow-300 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700  dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">رویداد</div>
+                                class="px-3 text-white border-b border-gray-100 hover:bg-yellow-300 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700">رویداد</div>
                         </li>
                     </a>
                     <a href="./consult">
                         <li
                             class="hover:bg-yellow-400 bg-opacity-0 hover:bg-opacity-100 transition-colors ease-in-out duration-300 p-5  2x:ltext-lg">
                             <div
-                                class="px-3 text-white border-b border-gray-100 hover:bg-yellow-300 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700  dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">مشاوره</div>
+                                class="px-3 text-white border-b border-gray-100 hover:bg-yellow-300 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700">مشاوره</div>
                         </li>
                     </a>
                     <a href="./">
                         <li
                             class="hover:bg-yellow-400 bg-opacity-0 hover:bg-opacity-100 transition-colors ease-in-out duration-300 p-5  2x:ltext-lg">
                             <div 
-                                class="px-3 text-white border-b border-gray-100 hover:bg-yellow-300 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700  dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">معرفی
+                                class="px-3 text-white border-b border-gray-100 hover:bg-yellow-300 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700">معرفی
                                 شرکت</div>
                         </li>
                     </a>
@@ -66,9 +66,11 @@
         </div>
     </nav>
     <div [class.open]="isNavbarOpen" class=" overlay flex justify-start" id="myNav">
-        <div class="flex-col w-1/4 bg-gray-900 text-white">
+        <div class="flex-col w-1/4 bg-gray-900 text-white border-l-2 ">
             <div class="w-full flex justify-center items-center p-3">
+            <button>
                 <i class="text-4xl fa fa-window-close" aria-hidden="true" (click)="closeHeader()" id="closeNav"  ></i>
+            </button>
             </div>
             <ul
                     class="flex flex-col justify-center font-medium lg:flex-row ">
@@ -77,28 +79,32 @@
                     </li> -->
                     <a href="./events">
                         <li
-                            class="hover:bg-yellow-400 bg-opacity-0 hover:bg-opacity-100 transition-colors ease-in-out duration-300 py-5 px-2 flex justify-center  2x:ltext-lg">
+                            class="hover:bg-yellow-400 bg-opacity-0 hover:bg-opacity-100 transition-colors ease-in-out duration-300 py-5 px-2 flex justify-center">
                             <div 
-                                class="py-3 text-white  border-gray-100 lg:border-0 lg:hover:text-primary-700  dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">رویداد</div>
+                                class="py-3 text-white  border-gray-100 lg:border-0 lg:hover:text-primary-700">رویداد</div>
                         </li>
                     </a>
                     <a  href="./consult">
                         <li
-                            class="hover:bg-yellow-400 bg-opacity-0 hover:bg-opacity-100 transition-colors ease-in-out duration-300 py-5 px-2 flex justify-center 2x:ltext-lg">
+                            class="hover:bg-yellow-400 bg-opacity-0 hover:bg-opacity-100 transition-colors ease-in-out duration-300 py-5 px-2 flex justify-center">
                             <div
-                                class="py-3 text-white  border-gray-100 lg:border-0 lg:hover:text-primary-700  dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">مشاوره</div>
+                                class="py-3 text-white  border-gray-100 lg:border-0 lg:hover:text-primary-700">مشاوره</div>
                         </li>
                     </a>
                     <a href="./">
                         <li
-                            class="hover:bg-yellow-400 bg-opacity-0 hover:bg-opacity-100 transition-colors ease-in-out duration-300 py-5 px-2 flex justify-center 2x:ltext-lg">
+                            class="hover:bg-yellow-400 bg-opacity-0 hover:bg-opacity-100 transition-colors ease-in-out duration-300 py-5 px-1 flex justify-center text-sm ">
                             <div
-                                class="py-3 text-white border-gray-100 lg:border-0 lg:hover:text-primary-700 ">معرفی
+                                class="py-3 text-white border-gray-100 lg:border-0 lg:hover:text-primary-700 leading-relaxed ">معرفی
                                 شرکت</div>
                         </li>
                     </a>
                 </ul>
         </div>
-
+        <div class="w-full" (click)="closeHeader()" >
+            <div>
+                
+            </div>
+        </div>
     </div>
 </header>
