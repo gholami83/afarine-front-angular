@@ -1,4 +1,6 @@
 # AfarineSite
+## project with call api and that was builded on https://afarine.noarino.ir/ 
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
 
