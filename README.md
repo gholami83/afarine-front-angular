@@ -1,6 +1,5 @@
 # AfarineSite
-## project with call api and that was builded on https://afarine.noarino.ir/ 
-
+## project with call api and that was builded on https://afarine.noarino.ir/ and developed by angular and typeScript
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
 
